@@ -48,3 +48,36 @@ To learn more about Next.js, take a look at the following resources:
 The easiest way to deploy this Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+
+## Deploy with Docker
+
+This guide will walk you through the steps to deploy this application using Docker.
+
+### Prerequisites
+
+Before you start, ensure you have the following installed:
+
+- [Docker](https://docs.docker.com/engine/install/) - Download and install Docker for your operating system.
+
+### Getting Started
+
+1. Clone the docker image:
+
+```bash
+docker pull chandu123557/azure-periodic-table-dockerversion:latest
+```
+2. Once you pulled the image, use the below command to check the docker images
+
+```bash
+docker images
+```
+3. Once the image shows up, it's time to run the image on your docker engine.
+
+```bash
+docker run -d -p 3000:3000 <docker-imageid>
+```
+4. Please use the below command to verify the DockerImage is running sucessfully.
+
+```bash
+docker ps -a
+```
