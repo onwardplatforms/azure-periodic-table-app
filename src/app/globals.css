@@ -1,0 +1,75 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --hover-light: hsla(210, 50%, 85%, 0.483); /* Light color */
+  --hover-dark: hsl(210, 50%, 15%); /* Dark color */
+
+  --bg-dark: rgb(2, 6, 23); /* Dark color */
+  --bg-light: hsl(0, 0%, 100%); /* Light color */
+
+  --secondary-dark: hsla(210, 50%, 15%, 0.446); /* Dark color */
+  --secondary-light: hsla(210, 50%, 85%, 0.52); /* Light color */
+}
+
+.dark {
+  --hover: var(--hover-dark);
+  --bg: var(--bg-dark);
+  --primary: var(--bg-light);
+  --secondary: var(--secondary-dark);
+
+  --background: hsl(240 10% 3.9%);
+  --foreground: hsl(0 0% 98%);
+  --muted: hsl(240 3.7% 15.9%);
+  --muted-foreground: hsl(240 5% 64.9%);
+  --popover: hsl(240 10% 3.9%);
+  --popover-foreground: hsl(0 0% 98%);
+  --card: hsl(240 10% 3.9%);
+  --card-foreground: hsl(0 0% 98%);
+  --border: hsl(240 3.7% 15.9%);
+  --input: hsl(240 3.7% 15.9%);
+  --primary: hsl(0 0% 98%);
+  --primary-foreground: hsl(240 5.9% 10%);
+  --secondary: hsl(240 3.7% 15.9%);
+  --secondary-foreground: hsl(0 0% 98%);
+  --accent: hsl(240 3.7% 15.9%);
+  --accent-foreground: hsl(0 0% 98%);
+  --destructive: hsl(0 62.8% 30.6%);
+  --destructive-foreground: hsl(0 85.7% 97.3%);
+  --ring: hsl(240 3.7% 15.9%);
+}
+
+.light {
+  --hover: var(--hover-light);
+  --bg: var(--bg-light);
+  --primary: var(--bg-dark);
+  --secondary: var(--secondary-light);
+
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 3.9%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 3.9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 3.9%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --primary: hsl(240 5.9% 10%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4.8% 95.9%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --accent: hsl(240 4.8% 95.9%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --ring: hsl(240 5% 64.9%);
+  --radius: hsl(0.5rem);
+}
+
+body {
+  background-color: var(--bg);
+}

@@ -1,0 +1,27 @@
+name: Linting and Build
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Linting
+        run: yarn run lint
+
+      - name: Build
+        run: yarn run build
