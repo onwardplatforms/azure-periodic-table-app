@@ -87,4 +87,73 @@ export const Icons = {
       ></path>
     </svg>
   ),
+  Terraform: (props: LucideProps) => (
+    <svg width={32} height={32} {...props} viewBox="0 0 128 128">
+      <g fillRule="evenodd">
+        <path
+          d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0"
+          fill="#5c4ee5"
+        ></path>
+        <path
+          d="M81.41 81.336l31.633-18.418V26.082L81.41 44.5zm0 0"
+          fill="#4040b2"
+        ></path>
+        <path
+          d="M11.242 42.36L42.86 60.776V23.941L11.242 5.523zm0 0M77.941 85.375L46.324 66.957v36.82l31.617 18.418zm0 0"
+          fill="#5c4ee5"
+        ></path>
+      </g>
+    </svg>
+  ),
+  Microsoft: (props: LucideProps) => (
+    <svg
+      width={32}
+      height={32}
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 50 50"
+    >
+      <path fill="#f25022" d="M7.097 7.097H24.14V24.14H7.097z" />
+      <path fill="#7fba00" d="M25.859 7.097h17.043V24.14H25.859z" />
+      <path fill="#00a4ef" d="M7.097 25.859H24.14v17.043H7.097z" />
+      <path fill="#ffb900" d="M25.859 25.859h17.043v17.043H25.859z" />
+    </svg>
+  ),
 };
+
+function TerraformLogo({ width: width = 32, height: height = 32 }) {
+  return (
+    <svg width={width} height={height} viewBox="0 0 128 128">
+      <g fillRule="evenodd">
+        <path
+          d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0"
+          fill="#5c4ee5"
+        ></path>
+        <path
+          d="M81.41 81.336l31.633-18.418V26.082L81.41 44.5zm0 0"
+          fill="#4040b2"
+        ></path>
+        <path
+          d="M11.242 42.36L42.86 60.776V23.941L11.242 5.523zm0 0M77.941 85.375L46.324 66.957v36.82l31.617 18.418zm0 0"
+          fill="#5c4ee5"
+        ></path>
+      </g>
+    </svg>
+  );
+}
+
+function MicrosoftLogo({ width: width = 32, height: height = 32 }) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 50 50"
+    >
+      <path fill="#f25022" d="M7.097 7.097H24.14V24.14H7.097z" />
+      <path fill="#7fba00" d="M25.859 7.097h17.043V24.14H25.859z" />
+      <path fill="#00a4ef" d="M7.097 25.859H24.14v17.043H7.097z" />
+      <path fill="#ffb900" d="M25.859 25.859h17.043v17.043H25.859z" />
+    </svg>
+  );
+}

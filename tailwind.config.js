@@ -17,15 +17,19 @@ module.exports = {
     },
     extend: {
       colors: {
-        background: '',
+        // background: '',
         accent: '#3bc8f4',
-        hover: 'var(--hover)',
-        bg: 'var(--bg)',
-        background: 'var(--bg)',
-        primary: 'var(--primary)',
-        secondary: 'var(--secondary)',
-        border: 'var(--border)',
-        input: 'var(--input)',
+        hover: 'hsl(var(--hover))',
+        bg: 'hsl(var(--bg))',
+        background: 'hsl(var(--bg))',
+        primary: 'hsl(var(--primary))',
+        secondary: 'hsl(var(--secondary))',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
       },
       scale: {
         '200': '2',
@@ -34,10 +38,10 @@ module.exports = {
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
-          to: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 'hsl(var(--radix-accordion-content-height))' },
         },
         'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
+          from: { height: 'hsl(var(--radix-accordion-content-height))' },
           to: { height: 0 },
         },
       },
