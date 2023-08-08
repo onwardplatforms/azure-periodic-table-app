@@ -47,16 +47,6 @@ export type Item = {
       publicDnsForwarderNames: string[];
     };
   };
-  dnsConfigGovernment?: {
-    subresources: string[];
-    privateDnsZoneNames: string[];
-    publicDnsZoneForwarders: string[];
-  };
-  dnsConfigChina?: {
-    subresources: string[];
-    privateDnsZoneNames: string[];
-    publicDnsZoneForwarders: string[];
-  };
 };
 
 export type ColumnType = {
@@ -1441,6 +1431,68 @@ export const columns: ColumnType[] = [
         icon: '/icons/Data/Azure Cosmos DB.png',
         code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DocumentDb%2FdatabaseAccounts',
+        dnsConfiguration: {
+          commercial: {
+            subresourceNames: [
+              'Sql',
+              'MongoDB',
+              'Cassandra',
+              'Gremlin',
+              'Table',
+              'coordinator'
+            ],
+            privateDnsZoneNames: [
+              'privatelink.documents.azure.com',
+              'privatelink.mongo.cosmos.azure.com',
+              'privatelink.cassandra.cosmos.azure.com',
+              'privatelink.gremlin.cosmos.azure.com',
+              'privatelink.table.cosmos.azure.com',
+              'privatelink.postgres.cosmos.azure.com'
+            ],
+            publicDnsForwarderNames: [
+              'documents.azure.com',
+              'mongo.cosmos.azure.com',
+              'cassandra.cosmos.azure.com',
+              'gremlin.cosmos.azure.com',
+              'table.cosmos.azure.com',
+              'postgres.cosmos.azure.com'
+            ],
+          },
+          government: {
+            subresourceNames: [
+              'Sql',
+            ],
+            privateDnsZoneNames: [
+              'privatelink.redis.cache.usgovcloudapi.net',
+            ],
+            publicDnsForwarderNames: [
+              'documents.azure.us',
+            ],
+          },
+          china: {
+            subresourceNames: [
+              'Sql',
+              'MongoDB',
+              'Cassandra',
+              'Gremlin',
+              'Table',
+            ],
+            privateDnsZoneNames: [
+              'privatelink.documents.azure.cn',
+              'privatelink.mongo.cosmos.azure.cn',
+              'privatelink.cassandra.cosmos.azure.cn',
+              'privatelink.gremlin.cosmos.azure.cn',
+              'privatelink.table.cosmos.azure.cn',
+            ],
+            publicDnsForwarderNames: [
+              'documents.azure.cn',
+              'mongo.cosmos.azure.cn',
+              'cassandra.cosmos.azure.cn',
+              'gremlin.cosmos.azure.cn',
+              'table.cosmos.azure.cn',
+            ],
+          },
+        },
       },
       {
         name: 'cache for redis',

@@ -17,7 +17,7 @@ const CopyBox: React.FC<CopyBoxProps> = ({ text, className }) => {
   const [copied, setCopied] = useState(false);
 
   const boxClasses = cn(
-    'relative justify-start items-center text-sm flex break-all border mt-2 py-2 px-4 pr-8 cursor-pointer rounded-lg border-border dark:hover:border-gray-200 hover:border-gray-500 transition-all',
+    'relative font-light justify-start items-center text-sm flex break-all border mr-2 mt-2 py-2 px-4 pr-8 cursor-pointer rounded-lg border-border dark:hover:border-gray-200 hover:border-gray-500 transition-all',
     className
   );
 
