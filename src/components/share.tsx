@@ -25,7 +25,7 @@ export function Share() {
     <Popover>
       <PopoverTrigger asChild>
         <Button variant={'secondary'}>
-          <ShareIcon className="mr-2" />
+          <ShareIcon className="mr-2 w-4 h-4" />
           <span className="">Share</span>
         </Button>
       </PopoverTrigger>

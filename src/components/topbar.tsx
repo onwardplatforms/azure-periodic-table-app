@@ -1,125 +1,102 @@
-import Link from 'next/link';
+import { Expand, FilterIcon, Shrink } from 'lucide-react';
+import { Download } from './download';
+import Search from './search';
+import { Share } from './share';
 import { Button } from './ui/button';
-import { Icons } from './ui/icons';
-import { siteConfig } from '@/config';
-import { useTheme } from 'next-themes';
-import { themes } from '@/lib/utils';
-import { useState } from 'react';
-import { Sheet, SheetContent } from './ui/sheet';
 
-export default function Topbar() {
-  const { theme, setTheme } = useTheme();
-  const [open, setOpen] = useState(false);
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from './ui/dropdown-menu';
+import { categoryData } from './periodic-table';
+
+export default function Topbar({
+  setTextSearch,
+  toggleFullScreen,
+  isFullScreen,
+  setOpen,
+  open,
+  activeCategory,
+  setActiveCategory,
+}: {
+  setTextSearch: Function;
+  toggleFullScreen: Function;
+  isFullScreen: boolean;
+  setOpen: Function;
+  open: boolean;
+  activeCategory: any;
+  setActiveCategory: Function;
+}) {
   return (
-    <nav className="flex w-full">
-      <Sheet open={open} onOpenChange={() => setOpen((prev) => !prev)}>
-        <SheetContent>
-          <div className="flex flex-col w-full justify-center items-center">
-            <Link
-              className="flex w-full my-2 justify-start items-center"
-              href={siteConfig.github}
-              target="_blank"
-            >
-              <Button className="" variant={'ghost'}>
-                <Icons.GitHub className="h-6 w-6 fill-current" />
-                <span className="px-4 font-bold text-lg">GitHub</span>
-              </Button>
-            </Link>
-            <Link
-              className="flex my-2 w-full justify-start items-center"
-              href={siteConfig.twitter}
-            >
-              <Button variant={'ghost'}>
-                <Icons.Twitter className="h-6 w-6 fill-current" />
-                <span className="px-4 font-bold text-lg">Twitter</span>
-              </Button>
-            </Link>
-            <Link
-              className="flex w-full my-2 justify-start items-center"
-              href={siteConfig.linkedin}
-            >
-              <Button variant={'ghost'}>
-                <Icons.Linkedin className="h-6 w-6 fill-current" />
-                <span className="px-4 font-bold text-lg">LinkedIn</span>
-              </Button>
-            </Link>
-
-            <Button
-              onClick={() =>
-                theme === themes.DARK
-                  ? setTheme(themes.LIGHT)
-                  : setTheme(themes.DARK)
-              }
-              variant={'ghost'}
-              className="w-full flex justify-start items-center my-2"
-            >
-              {theme === themes.DARK ? (
-                <div className="flex my-2 justify-start items-center">
-                  <Icons.Moon className="h-6 w-6 fill-current" />
-                  <span className="px-4 font-bold text-lg">Dark Mode</span>
-                </div>
-              ) : (
-                <div className="flex my-2 justify-start items-center">
-                  <Icons.Sun className="h-6 w-6 fill-current" />
-                  <span className="px-4 font-bold text-lg">Light Mode</span>
-                </div>
-              )}
-            </Button>
-          </div>
-        </SheetContent>
-      </Sheet>
-
-      <div className="flex justify-start items-center">
-        <Icons.Logo className="h-5 w-5 text-black dark:text-white mr-2" />
-        <span className="font-bold text-xl text-black dark:text-white">
-          {siteConfig.title}
-        </span>
-      </div>
-      <div className="flex ml-auto md:hidden">
-        <Button onClick={() => setOpen((prev) => !prev)} variant={'ghost'}>
-          <Icons.Menu className="h-5 w-5 fill-current" />
-        </Button>
+    <div className="flex justify-center  items-center w-full border-b border-border p-4">
+      <div className="hidden lg:flex flex-1 mr-auto w-full xl:w-auto">
+        <Share />
+        <Download />
       </div>
 
-      <div className="ml-auto hidden md:flex">
-        <a href={siteConfig.github} target="_blank">
-          <Button className="" variant={'ghost'}>
-            <Icons.GitHub className="h-5 w-5 fill-current" />
-          </Button>
-        </a>
-        <a
-          href={siteConfig.linkedin}
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <Button variant={'ghost'}>
-            <Icons.Linkedin className="h-5 w-5 fill-current" />
-          </Button>
-        </a>
-        <a
-          href={siteConfig.twitter}
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <Button variant={'ghost'}>
-            <Icons.Twitter className="h-5 w-5 fill-current" />
-          </Button>
-        </a>
+      <div className="flex justify-center items-center w-full xl:w-auto">
+        <Search className="mx-2 flex-2" setTextSearch={setTextSearch} />
+        <div className="flex xl:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button
+                onClick={() => setOpen((prev: any) => !prev)}
+                variant={'secondary'}
+              >
+                <FilterIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className=" justify-center items-center flex-col max-h-52 overflow-scroll">
+              {categoryData.map((item, i) => {
+                const isActive =
+                  activeCategory === null || activeCategory === item.name;
+                return (
+                  <DropdownMenuItem
+                    key={i}
+                    className="justify-center items-center"
+                  >
+                    <Button
+                      onClick={() => {
+                        setActiveCategory((prev: any) =>
+                          prev === item.name ? null : item.name
+                        );
+                        setOpen(false);
+                      }}
+                      variant={'ghost'}
+                      className={`flex justify-start items-center w-full ${
+                        isActive ? 'brightness-100' : 'brightness-75'
+                      }  hover:brightness-90`}
+                    >
+                      <div
+                        className={`px-1 lg:mx-0 w-6 h-6 rounded my-1 ${item.color}`}
+                      ></div>
+                      <span className="text-sm px-2">{item.name}</span>
+                    </Button>
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      </div>
+
+      <div className=" hidden lg:flex flex-1 justify-end items-center ml-auto">
         <Button
-          onClick={() =>
-            theme === themes.DARK
-              ? setTheme(themes.LIGHT)
-              : setTheme(themes.DARK)
-          }
-          variant={'ghost'}
+          variant={'secondary'}
+          onClick={() => {
+            toggleFullScreen();
+          }}
+          className=""
         >
-          {theme === themes.DARK ? (
-            <Icons.Moon className="h-5 w-5 fill-current" />
+          {isFullScreen ? (
+            <Shrink className="w-4 h-4" />
           ) : (
-            <Icons.Sun className="h-5 w-5 fill-current" />
+            <Expand className="w-4 h-4" />
           )}
         </Button>
       </div>
-    </nav>
+    </div>
   );
 }
