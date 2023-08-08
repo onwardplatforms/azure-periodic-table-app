@@ -1,0 +1,10 @@
+# This is a comment.
+# These owners will be the default owners for everything in the repo.
+*       @admins
+
+<!-- # Order is important; the last matching pattern takes the most precedence.
+# If a pull request modifies any file in the 'apps/' directory, only these users will be requested for review.
+apps/   @app-team @another-user
+
+# You can also specify exact file matches using a leading `/`.
+/LICENSE @legal-team -->
