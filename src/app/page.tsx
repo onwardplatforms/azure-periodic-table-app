@@ -11,6 +11,7 @@ import { Categories } from './constants';
 import useFullScreen from '@/custom-hooks/use-full-screen';
 import Header from '@/components/header';
 import { Icons } from '@/components/ui/icons';
+import { Label } from '@/components/ui/label';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -18,6 +19,18 @@ export default function Page() {
   const [textSearch, setTextSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<Categories | null>(null);
   const { toggleFullScreen, isFullScreen } = useFullScreen();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 768);
+    }
+  
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // when there's one result left after user searches for an element, set that element as active element only if they hit enter
   // to listen for keystroke it needs to be a usEffect
@@ -53,11 +66,21 @@ export default function Page() {
         {isFullScreen ? null : (
           <>
             <Header />
-            <div className="flex flex-col gap-2 justify-center sm:justify-center w-full md:items-center items-start my-8">
-              <span className="md:text-5xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl flex justify-center items-center">
-                <Icons.Azure className="h-6 w-6 md:h-10 md:w-10 " />
-                Azure Periodic Table
-              </span>
+            <div className="flex flex-col gap-2 justify-center w-full md:items-center items-center mt-2 mb-8">
+              {/* Wrapper div to house Azure icon, main title, and subtitle */}
+              <div className="flex items-center justify-center">
+                <Icons.Azure className="h-12 w-12 md:h-16 md:w-16 self-center mr-4" />
+                <div className="flex flex-col">
+                  <span className="md:text-4xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl">
+                    The Azure Periodic Table
+                  </span>
+                  <Label className="mt-2">
+                    {isMobile 
+                      ? 'Supercharge your productivity in Azure.'
+                      : 'Bringing together core Azure content to supercharge your productivity.'}
+                  </Label>
+                </div>
+              </div>
             </div>
           </>
         )}
@@ -66,7 +89,7 @@ export default function Page() {
           className={
             isFullScreen
               ? 'flex flex-col justify-center items-center'
-              : 'border border-border rounded-md w-full'
+              : 'border-border rounded-md w-full'
           }
         >
           <Sidebar

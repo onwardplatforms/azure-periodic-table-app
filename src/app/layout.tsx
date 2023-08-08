@@ -34,7 +34,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image:alt"
-          content="Azure Resource Naming Convention Periodic Table"
+          content="The Azure Periodic Table"
         />
         <meta
           property="twitter:image"
@@ -42,7 +42,7 @@ export default function RootLayout({
         />
         <meta
           property="twitter:image:alt"
-          content="Azure Resource Naming Convention Periodic Table"
+          content="The Azure Periodic Table"
         />
       </Head>
       <Script
