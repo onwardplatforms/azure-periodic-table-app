@@ -56,7 +56,7 @@ export default function Page() {
             <div className="flex flex-col gap-2 justify-center sm:justify-center w-full md:items-center items-start my-8">
               <span className="md:text-5xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl flex justify-center items-center">
                 <Icons.Azure className="h-6 w-6 md:h-10 md:w-10 " />
-                zure Periodic Table
+                Azure Periodic Table
               </span>
             </div>
           </>
