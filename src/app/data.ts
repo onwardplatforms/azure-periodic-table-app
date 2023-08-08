@@ -79,7 +79,7 @@ export const columns: ColumnType[] = [
         entity: 'managementGroups',
         scope: 'tenant',
         icon: '/icons/Management/Management Group.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview',
       },
       {
@@ -95,7 +95,7 @@ export const columns: ColumnType[] = [
         entity: 'subscriptions',
         scope: 'tenant',
         icon: '/icons/Management/Subscription.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade',
       },
       {
@@ -111,7 +111,7 @@ export const columns: ColumnType[] = [
         entity: 'resourcegroups',
         scope: 'subscription',
         icon: '/icons/Management/Resource Group.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups',
       },
       {
@@ -127,7 +127,7 @@ export const columns: ColumnType[] = [
         entity: 'userAssignedIdentities',
         scope: 'resource group',
         icon: '/icons/Identity/Managed Identity.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ManagedIdentity%2FuserAssignedIdentities',
       },
       {
@@ -143,7 +143,7 @@ export const columns: ColumnType[] = [
         entity: 'policySetDefinitions',
         scope: 'scope of definition',
         icon: '/icons/Management/Policy Initiative.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview',
       },
       {
@@ -159,7 +159,7 @@ export const columns: ColumnType[] = [
         entity: 'policyDefinitions',
         scope: 'scope of definition',
         icon: '/icons/Management/Policy Definition.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview',
       },
     ],
@@ -179,7 +179,7 @@ export const columns: ColumnType[] = [
         entity: 'applicationGateways',
         scope: 'resource group',
         icon: '/icons/Networking/Application Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
@@ -195,7 +195,7 @@ export const columns: ColumnType[] = [
         entity: 'applicationSecurityGroups',
         scope: 'resource group',
         icon: '/icons/Application/Application Security Group.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FapplicationSecurityGroups',
       },
       {
@@ -211,7 +211,7 @@ export const columns: ColumnType[] = [
         entity: 'profiles',
         scope: 'resource group',
         icon: '/icons/Networking/CDN Profile.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -227,7 +227,7 @@ export const columns: ColumnType[] = [
         entity: 'profiles/endpoints',
         scope: 'global',
         icon: '/icons/Networking/CDN Profile.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -243,7 +243,7 @@ export const columns: ColumnType[] = [
         entity: 'expressRouteCircuits',
         scope: 'resource group',
         icon: '/icons/Networking/ExpressRoute Circuit.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
@@ -259,7 +259,7 @@ export const columns: ColumnType[] = [
         entity: 'connections',
         scope: 'resource group',
         icon: '/icons/Networking/ExpressRoute Connection.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
@@ -275,7 +275,7 @@ export const columns: ColumnType[] = [
         entity: 'dnsZones',
         scope: 'resource group',
         icon: '/icons/Networking/DNS Zone (Public).png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FdnsZones',
       },
       {
@@ -291,7 +291,7 @@ export const columns: ColumnType[] = [
         entity: 'privateDnsZones',
         scope: 'resource group',
         icon: '/icons/Networking/DNS Zone (Private).png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FprivateDnsZones',
       },
       {
@@ -307,7 +307,7 @@ export const columns: ColumnType[] = [
         entity: 'azureFirewalls',
         scope: 'resource group',
         icon: '/icons/Security/Azure Firewall.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FazureFirewalls',
       },
       {
@@ -323,7 +323,7 @@ export const columns: ColumnType[] = [
         entity: 'firewallPolicies',
         scope: 'resource group',
         icon: '/icons/Security/Azure Firewall Policy.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FfirewallPolicies',
       },
     ],
@@ -343,7 +343,7 @@ export const columns: ColumnType[] = [
         entity: 'bastionHosts',
         scope: 'resource group',
         icon: '/icons/Networking/Bastion.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FbastionHosts',
       },
       {
@@ -359,7 +359,7 @@ export const columns: ColumnType[] = [
         entity: 'frontDoors',
         scope: 'global',
         icon: '/icons/Networking/Azure Front Door.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -375,7 +375,7 @@ export const columns: ColumnType[] = [
         entity: 'frontdoorWebApplicationFirewallPolicies',
         scope: 'resource group',
         icon: '/icons/Networking/Azure Front Door.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -391,7 +391,7 @@ export const columns: ColumnType[] = [
         entity: 'loadBalancers',
         scope: 'resource group',
         icon: '/icons/Networking/Load Balancer.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -407,7 +407,7 @@ export const columns: ColumnType[] = [
         entity: 'loadBalancers',
         scope: 'resource group',
         icon: '/icons/Networking/Load Balancer.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -423,7 +423,7 @@ export const columns: ColumnType[] = [
         entity: 'loadBalancers/inboundNatRules',
         scope: 'load balancer',
         icon: '/icons/Networking/Load Balancer Backend Load Balancing Rule.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -439,7 +439,7 @@ export const columns: ColumnType[] = [
         entity: 'localNetworkGateways',
         scope: 'resource group',
         icon: '/icons/Networking/Local Network Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Flocalnetworkgateways',
       },
       {
@@ -455,7 +455,7 @@ export const columns: ColumnType[] = [
         entity: 'natGateways',
         scope: 'resource group',
         icon: '/icons/Networking/NAT Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FnatGateways',
       },
       {
@@ -471,7 +471,7 @@ export const columns: ColumnType[] = [
         entity: 'networkInterfaces',
         scope: 'resource group',
         icon: '/icons/Networking/Network Interface.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Fnetworkinterfaces',
       },
       {
@@ -487,7 +487,7 @@ export const columns: ColumnType[] = [
         entity: 'networkSecurityGroups',
         scope: 'resource group',
         icon: '/icons/Networking/Network Security Group.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FNetworkSecurityGroups',
       },
     ],
@@ -507,7 +507,7 @@ export const columns: ColumnType[] = [
         entity: 'networkSecurityGroups/securityRules',
         scope: 'network security group',
         icon: '/icons/Networking/Network Security Group Inbound Rule.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FNetworkSecurityGroups',
       },
       {
@@ -523,7 +523,7 @@ export const columns: ColumnType[] = [
         entity: 'networkWatchers',
         scope: 'resource group',
         icon: '/icons/Networking/Network Watcher.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/NetworkWatcherMenuBlade/~/overview',
       },
       {
@@ -539,7 +539,7 @@ export const columns: ColumnType[] = [
         entity: 'privateEndpoints',
         scope: 'resource group',
         icon: '/icons/Networking/Private Endpoint.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/PrivateLinkCenterBlade/~/privateendpoints',
       },
       {
@@ -555,7 +555,7 @@ export const columns: ColumnType[] = [
         entity: 'publicIPAddresses',
         scope: 'resource group',
         icon: '/icons/Networking/Public IP Address.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FPublicIpAddresses',
       },
       {
@@ -571,7 +571,7 @@ export const columns: ColumnType[] = [
         entity: 'publicIPPrefixes',
         scope: 'resource group',
         icon: '/icons/Networking/Public IP Prefix.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FpublicIpPrefixes',
       },
       {
@@ -587,7 +587,7 @@ export const columns: ColumnType[] = [
         entity: 'routeFilters',
         scope: 'resource group',
         icon: '/icons/Networking/Route Filter.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteFilters',
       },
       {
@@ -603,7 +603,7 @@ export const columns: ColumnType[] = [
         entity: 'routeTables',
         scope: 'resource group',
         icon: '/icons/Networking/Route Table.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteTables',
       },
       {
@@ -619,7 +619,7 @@ export const columns: ColumnType[] = [
         entity: 'serviceEndpointPolicies',
         scope: 'resource group',
         icon: '/icons/Application/Service Endpoint Policy.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FserviceEndpointPolicies',
       },
       {
@@ -635,7 +635,7 @@ export const columns: ColumnType[] = [
         entity: 'trafficmanagerprofiles',
         scope: 'global',
         icon: '/icons/Networking/Traffic Manager Profile.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/TrafficManagers',
       },
       {
@@ -651,7 +651,7 @@ export const columns: ColumnType[] = [
         entity: 'routeTables/routes',
         scope: 'route table',
         icon: '/icons/Networking/Route Table.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteTables',
       },
     ],
@@ -671,7 +671,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualNetworks',
         scope: 'resource group',
         icon: '/icons/Networking/Virtual Network.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -687,7 +687,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualnetworks/subnets',
         scope: 'virtual network',
         icon: '/icons/Networking/Virtual Subnet.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -703,7 +703,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualNetworks/virtualNetworkPeerings',
         scope: 'virtual network',
         icon: '/icons/Networking/Virtual Network Peering.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -719,7 +719,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualWans',
         scope: 'resource group',
         icon: '/icons/Networking/Virtual WAN.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualWans',
       },
       {
@@ -735,7 +735,7 @@ export const columns: ColumnType[] = [
         entity: 'vpnGateways',
         scope: 'resource group',
         icon: '/icons/Networking/Virtual Network Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
@@ -751,7 +751,7 @@ export const columns: ColumnType[] = [
         entity: 'vpnGateways/vpnConnections',
         scope: 'VPN gateway',
         icon: '/icons/Networking/Virtual Network Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -767,7 +767,7 @@ export const columns: ColumnType[] = [
         entity: 'vpnSites',
         scope: 'resource group',
         icon: '/icons/Networking/Virtual Network Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -783,7 +783,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualNetworkGateways',
         scope: 'resource group',
         icon: '/icons/Networking/Virtual Network Gateway.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -799,7 +799,7 @@ export const columns: ColumnType[] = [
         entity: 'firewallPolicies',
         scope: 'resource group',
         icon: '/icons/Security/WAF Policy.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FFrontDoorWebApplicationFirewallPolicies',
       },
       {
@@ -815,7 +815,7 @@ export const columns: ColumnType[] = [
         entity: 'firewallPolicies/ruleGroups',
         scope: 'firewall policy',
         icon: '/icons/Security/WAF Policy.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FFrontDoorWebApplicationFirewallPolicies',
       },
     ],
@@ -835,7 +835,7 @@ export const columns: ColumnType[] = [
         entity: 'sites',
         scope: 'global or per domain',
         icon: '/icons/Application/Application Service Environment.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FHostingEnvironments',
         dnsConfiguration: {
           commercial: {
@@ -890,7 +890,7 @@ export const columns: ColumnType[] = [
         entity: 'serverfarms',
         scope: 'resource group',
         icon: '/icons/Application/Application Service Plan.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FserverFarms',
       },
       {
@@ -906,7 +906,7 @@ export const columns: ColumnType[] = [
         entity: 'availabilitySets',
         scope: 'resource group',
         icon: '/icons/Compute/Virtual Machine Availability Set.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FavailabilitySets',
       },
       {
@@ -922,7 +922,7 @@ export const columns: ColumnType[] = [
         entity: 'serverfarms',
         scope: 'resource group',
         icon: '/icons/Management/Azure Arc SCVMM Management Server.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_HybridCompute/AzureArcCenterBlade/~/scVmmManagementServer',
       },
       {
@@ -938,7 +938,7 @@ export const columns: ColumnType[] = [
         entity: 'managedClusters',
         scope: 'resource group',
         icon: '/icons/Management/Azure Arc Kubernetes.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_HybridCompute/AzureArcCenterBlade/~/kubernetesclusters',
         dnsConfiguration: {
           commercial: {
@@ -968,7 +968,7 @@ export const columns: ColumnType[] = [
         entity: 'diskEncryptionSets',
         scope: 'resource group',
         icon: '/icons/Storage/Disk Encryption Set.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FdiskEncryptionSets',
       },
       {
@@ -984,7 +984,7 @@ export const columns: ColumnType[] = [
         entity: 'sites/functions',
         scope: 'global or per domain',
         icon: '/icons/Application/Function App.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp',
       },
       {
@@ -1000,7 +1000,7 @@ export const columns: ColumnType[] = [
         entity: 'galleries',
         scope: 'resource group',
         icon: '/icons/Compute/Shared Image Gallery.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fgalleries',
       },
       {
@@ -1016,7 +1016,7 @@ export const columns: ColumnType[] = [
         entity: 'disks',
         scope: 'resource group',
         icon: '/icons/Storage/Managed Disk Standard SSD.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
       },
       {
@@ -1032,7 +1032,7 @@ export const columns: ColumnType[] = [
         entity: 'loadTests',
         scope: 'resource group',
         icon: '/icons/Management/Azure Load Testing.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.LoadTestService%2FLoadTests',
       },
     ],
@@ -1052,7 +1052,7 @@ export const columns: ColumnType[] = [
         entity: 'disks',
         scope: 'resource group',
         icon: '/icons/Storage/Managed Disk Standard SSD.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
       },
       {
@@ -1068,7 +1068,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces/notificationHubs',
         scope: 'namespace',
         icon: '/icons/Application/Notification Hub.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces%2FnotificationHubs',
       },
       {
@@ -1084,7 +1084,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces',
         scope: 'global',
         icon: '/icons/Application/Notification Hub.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces',
       },
       {
@@ -1100,7 +1100,7 @@ export const columns: ColumnType[] = [
         entity: 'snapshots',
         scope: 'resource group',
         icon: '/icons/Storage/Managed Disk Snapshot.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fsnapshots',
       },
       {
@@ -1116,7 +1116,7 @@ export const columns: ColumnType[] = [
         entity: 'sites',
         scope: 'global or per domain',
         icon: '/icons/Application/Static Web App.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites',
         dnsConfiguration: {
           commercial: {
@@ -1171,7 +1171,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualMachines',
         scope: 'resource group',
         icon: '/icons/Compute/Virtual Machine Windows.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
@@ -1187,7 +1187,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualMachines',
         scope: 'resource group',
         icon: '/icons/Compute/Virtual Machine Linux.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
@@ -1203,7 +1203,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
         icon: '/icons/Compute/Virtual Machine Scale Set.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
@@ -1219,7 +1219,7 @@ export const columns: ColumnType[] = [
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
         icon: '/icons/Compute/Virtual Machine Scale Set.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
@@ -1235,7 +1235,7 @@ export const columns: ColumnType[] = [
         entity: 'sites',
         scope: 'global or per domain',
         icon: '/icons/Application/Application Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites',
         dnsConfiguration: {
           commercial: {
@@ -1294,7 +1294,7 @@ export const columns: ColumnType[] = [
         entity: 'managedClusters',
         scope: 'resource group',
         icon: '/icons/Compute/Container Kubernetes Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerService%2FmanagedClusters',
         dnsConfiguration: {
           commercial: {
@@ -1324,7 +1324,7 @@ export const columns: ColumnType[] = [
         entity: 'registries',
         scope: 'global',
         icon: '/icons/Compute/Container Registry.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries',
         dnsConfiguration: {
           commercial: {
@@ -1355,7 +1355,7 @@ export const columns: ColumnType[] = [
         entity: 'containerGroups',
         scope: 'resource group',
         icon: '/icons/Compute/Container Instance.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerInstance%2FcontainerGroups',
       },
       {
@@ -1371,7 +1371,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'region',
         icon: '/icons/Compute/Container Service Fabric Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fclusters',
       },
       {
@@ -1387,7 +1387,7 @@ export const columns: ColumnType[] = [
         entity: 'managedClusters',
         scope: 'region',
         icon: '/icons/Application/Service Fabric Managed Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fmanagedclusters',
       },
       {
@@ -1403,7 +1403,7 @@ export const columns: ColumnType[] = [
         entity: 'managedEnvironments',
         scope: 'resource group',
         icon: '/icons/Application/Container App Environment.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.App%2FmanagedEnvironments',
       },
       {
@@ -1419,7 +1419,7 @@ export const columns: ColumnType[] = [
         entity: 'containerApps',
         scope: 'resource group',
         icon: '/icons/Application/Container App.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.App%2FcontainerApps',
       },
     ],
@@ -1439,7 +1439,7 @@ export const columns: ColumnType[] = [
         entity: 'databaseAccounts',
         scope: 'global',
         icon: '/icons/Data/Azure Cosmos DB.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DocumentDb%2FdatabaseAccounts',
       },
       {
@@ -1455,7 +1455,7 @@ export const columns: ColumnType[] = [
         entity: 'Redis',
         scope: 'global',
         icon: '/icons/Networking/Azure Cache for Redis.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Cache%2FRedis',
         dnsConfiguration: {
           commercial: {
@@ -1506,7 +1506,7 @@ export const columns: ColumnType[] = [
         entity: 'servers',
         scope: 'global',
         icon: '/icons/Data/SQL Server.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers',
         dnsConfiguration: {
           commercial: {
@@ -1557,7 +1557,7 @@ export const columns: ColumnType[] = [
         entity: 'servers/databases',
         scope: 'server',
         icon: '/icons/Data/SQL Database.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases',
       },
       {
@@ -1573,7 +1573,7 @@ export const columns: ColumnType[] = [
         entity: 'servers/databases',
         scope: 'servers',
         icon: '/icons/Data/Azure Database for MySQL.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DBforMySQL%2Fservers',
       },
       {
@@ -1589,7 +1589,7 @@ export const columns: ColumnType[] = [
         entity: 'servers/databases',
         scope: 'servers',
         icon: '/icons/Data/Azure Database for PostgreSQL.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AzureArcData%2FpostgresInstances',
       },
       {
@@ -1605,7 +1605,7 @@ export const columns: ColumnType[] = [
         entity: 'servers/databases',
         scope: 'server',
         icon: '/icons/Data/SQL Database.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases/kind/v12.0%2Cuser%2Cstretch',
       },
       {
@@ -1621,7 +1621,7 @@ export const columns: ColumnType[] = [
         entity: 'managedInstances',
         scope: 'global',
         icon: '/icons/Data/SQL Managed Instance.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2FmanagedInstances',
         dnsConfiguration: {
           commercial: {
@@ -1661,7 +1661,7 @@ export const columns: ColumnType[] = [
         entity: 'storageAccounts',
         scope: 'global',
         icon: '/icons/Storage/Storage Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts',
         dnsConfiguration: {
           commercial: {
@@ -1770,7 +1770,7 @@ export const columns: ColumnType[] = [
         entity: 'managers',
         scope: 'resource group',
         icon: '/icons/Data/StorSimple Device Manager.png',
-        code: '',
+        code: ``,
         portalUrl: '',
       },
     ],
@@ -1790,7 +1790,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'resource group',
         icon: '/icons/AI/Machine Learning.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearning%2Fworkspaces',
       },
       {
@@ -1806,7 +1806,7 @@ export const columns: ColumnType[] = [
         entity: 'searchServices',
         scope: 'resource group',
         icon: '/icons/AI/Search Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/CognitiveSearch',
         dnsConfiguration: {
           commercial: {
@@ -1846,7 +1846,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Azure OpenAI.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI',
         dnsConfiguration: {
           commercial: {
@@ -1888,7 +1888,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Speech Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/SpeechServices',
         dnsConfiguration: {
           commercial: {
@@ -1930,7 +1930,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Language.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextAnalytics',
         dnsConfiguration: {
           commercial: {
@@ -1972,7 +1972,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Text Translator.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextTranslation',
         dnsConfiguration: {
           commercial: {
@@ -2014,7 +2014,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Vision.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ComputerVision',
         dnsConfiguration: {
           commercial: {
@@ -2056,7 +2056,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Face API.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/Face',
         dnsConfiguration: {
           commercial: {
@@ -2098,7 +2098,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Anomaly Detector.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/AnomalyDetector',
         dnsConfiguration: {
           commercial: {
@@ -2140,7 +2140,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Content Safety.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ContentSafety',
         dnsConfiguration: {
           commercial: {
@@ -2186,7 +2186,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Personaliser.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/Personalizer',
         dnsConfiguration: {
           commercial: {
@@ -2228,7 +2228,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Bot Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/AppliedAIHub/~/BotServices',
         dnsConfiguration: {
           commercial: {
@@ -2270,7 +2270,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Form Recogniser.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/FormRecognizer',
         dnsConfiguration: {
           commercial: {
@@ -2312,7 +2312,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/Management/Metrics Advisor.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/MetricsAdvisor',
         dnsConfiguration: {
           commercial: {
@@ -2354,7 +2354,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Video Indexer.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.VideoIndexer%2Faccounts',
         dnsConfiguration: {
           commercial: {
@@ -2396,7 +2396,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/AI/Cognitive Services Immersive Reader.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ImmersiveReader',
         dnsConfiguration: {
           commercial: {
@@ -2438,7 +2438,7 @@ export const columns: ColumnType[] = [
         entity: 'capacity',
         scope: 'region',
         icon: '/icons/AI/Microsoft Fabric.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities',
       },
     ],
@@ -2458,7 +2458,7 @@ export const columns: ColumnType[] = [
         entity: 'servers',
         scope: 'resource group',
         icon: '/icons/Data/Analysis Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AnalysisServices%2Fservers',
       },
       {
@@ -2474,7 +2474,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'resource group',
         icon: '/icons/Data/Azure Databricks.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Databricks%2Fworkspaces',
         dnsConfiguration: {
           commercial: {
@@ -2504,7 +2504,7 @@ export const columns: ColumnType[] = [
         entity: 'streamingjobs',
         scope: 'resource group',
         icon: '/icons/Application/Stream Analytics Job.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.StreamAnalytics%2FStreamingJobs',
       },
       {
@@ -2520,7 +2520,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Data/Azure Data Explorer Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Kusto%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2560,7 +2560,7 @@ export const columns: ColumnType[] = [
         entity: '/clusters/databases',
         scope: 'cluster',
         icon: '/icons/Data/Azure Data Explorer Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Kusto%2Fclusters',
       },
       {
@@ -2576,7 +2576,7 @@ export const columns: ColumnType[] = [
         entity: 'factories',
         scope: 'global',
         icon: '/icons/Data/Data Factory.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataFactory%2FdataFactories',
         dnsConfiguration: {
           commercial: {
@@ -2622,7 +2622,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts/dataLakeStoreAccounts',
         scope: 'account',
         icon: '/icons/Data/Data Lake.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeStore%2Faccounts',
       },
       {
@@ -2638,7 +2638,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'global',
         icon: '/icons/Data/Data Lake Analytics.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeAnalytics%2Faccounts',
       },
       {
@@ -2654,7 +2654,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces',
         scope: 'global',
         icon: '/icons/Application/Event Hub.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces',
         dnsConfiguration: {
           commercial: {
@@ -2705,7 +2705,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'resource group',
         icon: '/icons/Application/Event Hub.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces',
       },
     ],
@@ -2725,7 +2725,7 @@ export const columns: ColumnType[] = [
         entity: 'domains',
         scope: 'resource group',
         icon: '/icons/Application/Event Grid Namespace.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/overview',
         dnsConfiguration: {
           commercial: {
@@ -2765,7 +2765,7 @@ export const columns: ColumnType[] = [
         entity: 'eventSubscriptions',
         scope: 'resource group',
         icon: '/icons/Application/Event Grid Subscription.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/overview',
       },
       {
@@ -2781,7 +2781,7 @@ export const columns: ColumnType[] = [
         entity: 'domains/topics',
         scope: 'domain',
         icon: '/icons/Application/Event Grid Topic.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/system_topics',
       },
       {
@@ -2797,7 +2797,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2826,7 +2826,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2855,7 +2855,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2884,7 +2884,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2913,7 +2913,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2942,7 +2942,7 @@ export const columns: ColumnType[] = [
         entity: 'clusters',
         scope: 'global',
         icon: '/icons/Compute/HDInsight Cluster.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2971,7 +2971,7 @@ export const columns: ColumnType[] = [
         entity: 'IotHubs',
         scope: 'global',
         icon: '/icons/IoT/IoT Hub.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
         dnsConfiguration: {
           commercial: {
@@ -3027,7 +3027,7 @@ export const columns: ColumnType[] = [
         entity: 'provisioningServices',
         scope: 'resource group',
         icon: '/icons/IoT/IoT Device Provisioning Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
         dnsConfiguration: {
           commercial: {
@@ -3078,7 +3078,7 @@ export const columns: ColumnType[] = [
         entity: 'provisioningServices/certificates',
         scope: 'provisioningServices',
         icon: '/icons/IoT/IoT Device Provisioning Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
       },
       {
@@ -3094,7 +3094,7 @@ export const columns: ColumnType[] = [
         entity: 'capacities',
         scope: 'resource group',
         icon: '/icons/AI/Power BI Embedded.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.PowerBIDedicated%2Fcapacities',
       },
       {
@@ -3110,7 +3110,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaceCollections',
         scope: 'region',
         icon: '/icons/AI/Power BI.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://app.powerbi.com/',
       },
       {
@@ -3126,7 +3126,7 @@ export const columns: ColumnType[] = [
         entity: 'environments',
         scope: 'resource group',
         icon: '/icons/Data/Time Series Insights Environment.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.TimeSeriesInsights%2Fenvironments',
       },
       {
@@ -3142,7 +3142,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'global',
         icon: '/icons/Data/Azure Synapse Analytics.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
         dnsConfiguration: {
           commercial: {
@@ -3177,7 +3177,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces/sqlPools',
         scope: 'workspace',
         icon: '/icons/Data/Azure Synapse Analytics Dedicated SQL Pool.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
@@ -3193,7 +3193,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces/bigDataPools',
         scope: 'workspace',
         icon: '/icons/Data/Azure Synapse Analytics Spark Pool.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
@@ -3209,7 +3209,7 @@ export const columns: ColumnType[] = [
         entity: 'digitalTwinsInstances',
         scope: 'resource group',
         icon: '/icons/IoT/IoT Digital Twin.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances',
       },
       {
@@ -3225,7 +3225,7 @@ export const columns: ColumnType[] = [
         entity: 'batchAccounts',
         scope: 'region',
         icon: '/icons/Data/Azure Batch Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Batch%2FbatchAccounts',
         dnsConfiguration: {
           commercial: {
@@ -3289,7 +3289,7 @@ export const columns: ColumnType[] = [
         entity: 'hostPools',
         scope: 'resource group',
         icon: '/icons/Compute/AVD Host Pool.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FHostPools',
       },
       {
@@ -3305,7 +3305,7 @@ export const columns: ColumnType[] = [
         entity: 'applicationGroups',
         scope: 'resource group',
         icon: '/icons/Application/Application Group.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FApplicationGroups',
       },
       {
@@ -3321,7 +3321,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'resource group',
         icon: '/icons/Compute/AVD Workspace.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_WVD/WvdManagerMenuBlade/~/overview',
         dnsConfiguration: {
           commercial: {
@@ -3372,7 +3372,7 @@ export const columns: ColumnType[] = [
         entity: 'configurationStores',
         scope: 'resource group',
         icon: '/icons/Application/App Configuration.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AppConfiguration%2FconfigurationStores',
         dnsConfiguration: {
           commercial: {
@@ -3412,7 +3412,7 @@ export const columns: ColumnType[] = [
         entity: 'signalR',
         scope: 'global',
         icon: '/icons/Application/SignalR.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.SignalRService%2FSignalR',
         dnsConfiguration: {
           commercial: {
@@ -3452,7 +3452,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/Application/Azure Maps Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Maps%2Faccounts',
       },
     ],
@@ -3472,7 +3472,7 @@ export const columns: ColumnType[] = [
         entity: 'service',
         scope: 'global',
         icon: '/icons/Management/API Management Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ApiManagement%2Fservice',
         dnsConfiguration: {
           commercial: {
@@ -3501,7 +3501,7 @@ export const columns: ColumnType[] = [
         entity: 'integrationAccounts',
         scope: 'resource group',
         icon: '/icons/Deployment/Integration Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2FintegrationAccounts',
       },
       {
@@ -3517,7 +3517,7 @@ export const columns: ColumnType[] = [
         entity: 'workflows',
         scope: 'resource group',
         icon: '/icons/Application/Logic App.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2Fworkflows',
       },
       {
@@ -3533,7 +3533,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces',
         scope: 'global',
         icon: '/icons/Data/Service Bus.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
         dnsConfiguration: {
           commercial: {
@@ -3584,7 +3584,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces/queues',
         scope: 'namespace',
         icon: '/icons/Data/Service Bus Queue.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
@@ -3600,7 +3600,7 @@ export const columns: ColumnType[] = [
         entity: 'namespaces/topics',
         scope: 'namespace',
         icon: '/icons/Data/Service Bus Topic.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
@@ -3616,7 +3616,7 @@ export const columns: ColumnType[] = [
         entity: 'services',
         scope: 'resource group',
         icon: '/icons/Management/Database Migration Service.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices',
       },
       {
@@ -3632,7 +3632,7 @@ export const columns: ColumnType[] = [
         entity: 'services/projects',
         scope: 'service',
         icon: '/icons/Management/Database Migration Project.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices%2Fprojects',
       },
       {
@@ -3648,7 +3648,7 @@ export const columns: ColumnType[] = [
         entity: 'vaults',
         scope: 'resource group',
         icon: '/icons/Management/Recovery Services Vault.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.RecoveryServices%2Fvaults',
         dnsConfiguration: {
           commercial: {
@@ -3698,7 +3698,7 @@ export const columns: ColumnType[] = [
         entity: 'automationAccounts',
         scope: 'resource group and region',
         icon: '/icons/Management/Automation Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Automation%2FAutomationAccounts',
         dnsConfiguration: {
           commercial: {
@@ -3752,7 +3752,7 @@ export const columns: ColumnType[] = [
         entity: 'components',
         scope: 'resource group',
         icon: '/icons/Management/Application Insights.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents',
       },
       {
@@ -3768,7 +3768,7 @@ export const columns: ColumnType[] = [
         entity: 'actionGroups',
         scope: 'resource group',
         icon: '/icons/Management/Azure Monitor.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Monitoring_Alerts/ActionGroupsBlade/resourceGroupNames~/%5B%5D',
       },
       {
@@ -3784,7 +3784,7 @@ export const columns: ColumnType[] = [
         entity: 'accounts',
         scope: 'resource group',
         icon: '/icons/Data/Purview Account.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts',
       },
       {
@@ -3800,7 +3800,7 @@ export const columns: ColumnType[] = [
         entity: 'blueprint',
         scope: 'Management groups, Subscriptions, Resource groups',
         icon: '/icons/Deployment/Blueprint.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
@@ -3816,7 +3816,7 @@ export const columns: ColumnType[] = [
         entity: 'blueprintAssignments',
         scope: 'Management groups, Subscriptions, Resource groups',
         icon: '/icons/Deployment/Blueprint.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
@@ -3832,7 +3832,7 @@ export const columns: ColumnType[] = [
         entity: 'vaults',
         scope: 'global',
         icon: '/icons/Security/Key Vault.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults',
         dnsConfiguration: {
           commercial: {
@@ -3885,7 +3885,7 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'resource group',
         icon: '/icons/Management/Log Analytics Workspace.png',
-        code: '',
+        code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.OperationalInsights%2Fworkspaces',
       },
     ],
