@@ -12,6 +12,7 @@ import useFullScreen from '@/custom-hooks/use-full-screen';
 import Header from '@/components/header';
 import { Icons } from '@/components/ui/icons';
 import { Label } from '@/components/ui/label';
+import useMobile from '@/custom-hooks/use-mobile';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -19,18 +20,7 @@ export default function Page() {
   const [textSearch, setTextSearch] = useState('');
   const [activeCategory, setActiveCategory] = useState<Categories | null>(null);
   const { toggleFullScreen, isFullScreen } = useFullScreen();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 768);
-    }
-  
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isMobile = useMobile();
 
   // when there's one result left after user searches for an element, set that element as active element only if they hit enter
   // to listen for keystroke it needs to be a usEffect
