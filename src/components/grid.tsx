@@ -95,7 +95,7 @@ const Cell: React.FC<CellProps> = ({
         setActiveElement(item);
         select();
       }}
-      className={`${height} ${width}  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+      className={`2xl:w-16 2xl:h-16 h-14 w-14  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
       aria-describedby={`${item.slug}-desc`}
     >
       <div className="flex flex-col  relative h-full w-full">
@@ -114,14 +114,14 @@ const Cell: React.FC<CellProps> = ({
           ) : null}
           <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
         </div>
-        <h2 className="justify-start w-full font-bold text-xs">
-          {item.slug}
-        </h2>
+        <h2 className="justify-start w-full font-bold text-xs">{item.slug}</h2>
         <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
           <span>{item.name}</span>
         </p>
       </div>
-      <div id={`${item.slug}`} className="hidden">{item.description}</div>
+      <div id={`${item.slug}`} className="hidden">
+        {item.description}
+      </div>
     </article>
   );
 };

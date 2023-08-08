@@ -24,12 +24,12 @@ export function Share() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={'outline'}>
-          <ShareIcon className="mr-2" />
+        <Button variant={'secondary'}>
+          <ShareIcon className="mr-2 w-4 h-4" />
           <span className="">Share</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent align="end" className="w-[520px] bg-bg">
+      <PopoverContent align="end" className="w-[520px]">
         <div className="flex flex-col space-y-2 text-center sm:text-left">
           <h3 className="text-lg font-semibold">
             Copy the link or share to Twitter or LinkedIn below
@@ -54,6 +54,7 @@ export function Share() {
               setCopied(true);
             }}
             size="sm"
+            variant="secondary"
             className="px-3"
           >
             {copied ? <Check width={16} /> : <CopyIcon width={16} />}

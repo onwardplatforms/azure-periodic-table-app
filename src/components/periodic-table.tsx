@@ -37,8 +37,8 @@ export default function PeriodicTable({
   zoomLevel: 0 | 1 | 2;
 }) {
   return (
-    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll md:overflow-visible flex-nowrap">
-      <div className="flex justify-start md:justify-center items-start">
+    <div className="flex-col-reverse p-4 flex w-full xl:flex-row lg:flex text-white justify-center  items-start py-6 overflow-scroll xl:overflow-visible flex-nowrap">
+      <div className="flex justify-start md:justify-center items-start ml-0 xl:ml-auto">
         {columns.map((group, i) => (
           <Column
             select={() => setOpen(true)}
@@ -53,7 +53,6 @@ export default function PeriodicTable({
           />
         ))}
       </div>
-
       <CategorySelector
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
