@@ -3,32 +3,19 @@ import CodeSnippet from './code-snippet';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
 import { useEffect, useState } from 'react';
 import type { Item } from '@/app/data';
-import { Check, CopyIcon } from 'lucide-react';
 import { categoryData } from './periodic-table';
 import { prefix } from '@/prefix';
 import useMobile from '@/custom-hooks/use-mobile';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { CopyBox } from "./ui/copy-box";
-import { Icons } from "./ui/icons";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "./ui/select"
+import { Label } from './ui/label';
+import { CopyBox } from './ui/copy-box';
+import { Icons } from './ui/icons';
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
-} from "./ui/card"
+} from './ui/card';
 
 export default function Sidebar({
   setOpen,
@@ -39,7 +26,6 @@ export default function Sidebar({
   open: boolean;
   activeElement: Item | null;
 }) {
-  const [showCopy, setShowCopy] = useState(false);
   const [copied, setCopied] = useState(false);
   const isMobile = useMobile();
 
@@ -54,7 +40,7 @@ export default function Sidebar({
 
   return (
     <Sheet onOpenChange={() => setOpen((prev: boolean) => !prev)} open={open}>
-      <SheetContent className="bg-bg sm:max-w-[720px] overflow-y-scroll">
+      <SheetContent className="sm:max-w-[720px] overflow-y-scroll">
         <SheetHeader>
           <div className="flex justify-start items-center">
             <Image
@@ -72,7 +58,9 @@ export default function Sidebar({
               <span className="font-bold text-xl">{activeElement.name}</span>
             </div>
             <div className="font-light">
-              <CopyBox text={`${activeElement?.resource}/${activeElement?.entity}`} />
+              <CopyBox
+                text={`${activeElement?.resource}/${activeElement?.entity}`}
+              />
             </div>
           </div>
         </SheetTitle>
@@ -98,10 +86,11 @@ export default function Sidebar({
               )}
             </span>
             <div
-              className={`lg:mx-0 w-6 h-6 rounded my-1 ${categoryData.find(
-                (item) => item.name === activeElement.category
-              )?.color
-                }`}
+              className={`lg:mx-0 w-6 h-6 rounded my-1 ${
+                categoryData.find(
+                  (item) => item.name === activeElement.category
+                )?.color
+              }`}
             />
             <span className="ml-2">{activeElement.category}</span>
           </div>
@@ -109,27 +98,29 @@ export default function Sidebar({
         <Card className="w-[100%]">
           <CardHeader>
             <CardTitle>Naming</CardTitle>
-            <CardDescription>The conventions, rules, and restrictions for naming this service.</CardDescription>
+            <CardDescription>
+              The conventions, rules, and restrictions for naming this service.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <div>
-              <div className='mb-4'>
+              <div className="mb-4">
                 <Label>Resource Name Shorthand</Label>
                 <CopyBox text={activeElement.slug} />
               </div>
-              <div className='mb-4'>
+              <div className="mb-4">
                 <Label>Length</Label>
                 <div>
                   <span>{activeElement?.length}</span>
                 </div>
               </div>
-              <div className='mb-4'>
+              <div className="mb-4">
                 <Label>Valid Characters</Label>
                 <div>
                   <span>{activeElement?.restrictions}</span>
                 </div>
               </div>
-              <div className='mb-4'>
+              <div className="mb-4">
                 <Label>Scope</Label>
                 <div>
                   <span>{activeElement?.scope}</span>
@@ -143,7 +134,10 @@ export default function Sidebar({
             <Card className="w-[100%]">
               <CardHeader>
                 <CardTitle>Code</CardTitle>
-                <CardDescription>Deploy your infrastructure as code using your preferred tooling.</CardDescription>
+                <CardDescription>
+                  Deploy your infrastructure as code using your preferred
+                  tooling.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="text-left">
@@ -197,7 +191,9 @@ export default function Sidebar({
             <Card className="w-[100%]">
               <CardHeader>
                 <CardTitle>Utilities</CardTitle>
-                <CardDescription>Utilities to support with app deployment or configuration.</CardDescription>
+                <CardDescription>
+                  Utilities to support with app deployment or configuration.
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex justify-start items-center flex-wrap">

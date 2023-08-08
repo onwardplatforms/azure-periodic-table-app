@@ -9,7 +9,7 @@ export default function Search({ setTextSearch, className }: props) {
   return (
     <Command
       className={cn(
-        'rounded-lg border dark:border-white border-stone-700 w-96',
+        'rounded-lg border w-96 flex h-12 border-input bg-background ',
         className
       )}
     >

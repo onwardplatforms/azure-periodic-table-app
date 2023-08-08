@@ -17,7 +17,7 @@ export const CategorySelector = ({
   categoryData: CategoryData;
 }) => {
   return (
-    <div className="hidden xl:flex flex-shrink flex-wrap overflow-hidden lg:flex-col md:ml-12 w-auto text-white">
+    <div className="hidden xl:flex flex-shrink flex-wrap overflow-hidden xl:flex-col ml-4 2xl:ml-12 w-auto text-white">
       {categoryData.map((item, i) => {
         const isActive =
           activeCategory === null || activeCategory === item.name;

@@ -13,7 +13,7 @@ export default function Topbar() {
   return (
     <nav className="flex w-full">
       <Sheet open={open} onOpenChange={() => setOpen((prev) => !prev)}>
-        <SheetContent className="bg-bg">
+        <SheetContent>
           <div className="flex flex-col w-full justify-center items-center">
             <Link
               className="flex w-full my-2 justify-start items-center"
@@ -51,7 +51,7 @@ export default function Topbar() {
                   : setTheme(themes.DARK)
               }
               variant={'ghost'}
-              className="w-full flex justify-start items-center"
+              className="w-full flex justify-start items-center my-2"
             >
               {theme === themes.DARK ? (
                 <div className="flex my-2 justify-start items-center">
