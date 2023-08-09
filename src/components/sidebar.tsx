@@ -9,6 +9,7 @@ import useMobile from '@/custom-hooks/use-mobile';
 import { Label } from './ui/label';
 import { CopyBox } from './ui/copy-box';
 import { Icons } from './ui/icons';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
 import {
   Card,
   CardContent,
@@ -28,6 +29,14 @@ export default function Sidebar({
 }) {
   const [copied, setCopied] = useState(false);
   const isMobile = useMobile();
+  const hasPrivateEndpointData = (element: any) => {
+    if (!element?.dnsConfiguration) return false;
+
+    const { commercial, government, china } = element.dnsConfiguration;
+    return (commercial?.subresourceNames?.length > 0) ||
+      (government?.subresourceNames?.length > 0) ||
+      (china?.subresourceNames?.length > 0);
+  }
 
   // after 2 seconds have copied be false if active
   useEffect(() => {
@@ -53,7 +62,7 @@ export default function Sidebar({
         </SheetHeader>
 
         <SheetTitle className="mb-4">
-          <div className="flex flex-col justify-center items-start mt-4 mb-2">
+          <div className="flex flex-col justify-center items-start mt-6 mb-2">
             <div className="flex">
               <span className="font-bold text-xl">{activeElement.name}</span>
             </div>
@@ -86,11 +95,10 @@ export default function Sidebar({
               )}
             </span>
             <div
-              className={`lg:mx-0 w-6 h-6 rounded my-1 ${
-                categoryData.find(
-                  (item) => item.name === activeElement.category
-                )?.color
-              }`}
+              className={`lg:mx-0 w-6 h-6 rounded my-1 ${categoryData.find(
+                (item) => item.name === activeElement.category
+              )?.color
+                }`}
             />
             <span className="ml-2">{activeElement.category}</span>
           </div>
@@ -213,6 +221,136 @@ export default function Sidebar({
               </CardContent>
             </Card>
           </div>
+          {hasPrivateEndpointData(activeElement) && (
+            <div className="my-6 text-left">
+              <Card className="w-[100%]">
+                <CardHeader>
+                  <CardTitle>Private Endpoints</CardTitle>
+                  <CardDescription>
+                    Details to successfully deploy private endpoints on Azure.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Tabs defaultValue="commercial">
+                    <TabsList>
+                      {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
+                        <TabsTrigger value="commercial">Commercial</TabsTrigger>
+                      )}
+                      {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
+                        <TabsTrigger value="government">Government</TabsTrigger>
+                      )}
+                      {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
+                        <TabsTrigger value="china">China</TabsTrigger>
+                      )}
+                    </TabsList>
+
+                    {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
+                      <TabsContent value="commercial">
+                        <div className="mt-6">
+                          <Label>Sub-Resource Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.commercial?.subresourceNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Private DNS Zone Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.commercial?.privateDnsZoneNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Public DNS Zone Forwarders</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.commercial?.publicDnsForwarderNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                      </TabsContent>
+                    )}
+                    {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
+                      <TabsContent value="government">
+                        <div className="mt-6">
+                          <Label>Sub-Resource Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.government?.subresourceNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Private DNS Zone Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.government?.privateDnsZoneNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Public DNS Zone Forwarders</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.government?.publicDnsForwarderNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                      </TabsContent>
+                    )}
+                    {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
+                      <TabsContent value="china">
+                        <div className="mt-6">
+                          <Label>Sub-Resource Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.china?.subresourceNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Private DNS Zone Names</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.china?.privateDnsZoneNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="mt-6">
+                          <Label>Public DNS Zone Forwarders</Label>
+                          <div>
+                            <span className="flex flex-wrap">
+                              {activeElement?.dnsConfiguration?.china?.publicDnsForwarderNames?.map((name, index) => (
+                                <CopyBox key={index} text={name} />
+                              ))}
+                            </span>
+                          </div>
+                        </div>
+                      </TabsContent>
+                    )}
+                  </Tabs>
+                </CardContent>
+              </Card>
+            </div>
+          )}
         </div>
       </SheetContent>
     </Sheet>

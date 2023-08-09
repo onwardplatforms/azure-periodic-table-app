@@ -1,0 +1,1840 @@
+[
+    {
+        "private_link_resource_type": "Azure Automation (Microsoft.Automation/automationAccounts)",
+        "subresource": [
+            "Webhook",
+            "DSCAndHybridWorker"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-automation.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-automation.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure SQL Database (Microsoft.Sql/servers)",
+        "subresource": [
+            "sqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.database.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "database.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure SQL Managed Instance (Microsoft.Sql/managedInstances)",
+        "subresource": [
+            "managedInstance"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{dnsPrefix}.database.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{instanceName}.{dnsPrefix}.database.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Synapse Analytics (Microsoft.Synapse/workspaces)",
+        "subresource": [
+            "Sql"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.sql.azuresynapse.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "sql.azuresynapse.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Synapse Analytics (Microsoft.Synapse/workspaces)",
+        "subresource": [
+            "SqlOnDemand"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.sql.azuresynapse.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{workspaceName}-ondemand.sql.azuresynapse.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Synapse Analytics (Microsoft.Synapse/workspaces)",
+        "subresource": [
+            "Dev"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.dev.azuresynapse.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "dev.azuresynapse.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Synapse Studio (Microsoft.Synapse/privateLinkHubs)",
+        "subresource": [
+            "Web"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azuresynapse.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azuresynapse.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "blob",
+            "blob_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.blob.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "blob.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "table",
+            "table_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.table.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "table.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "queue",
+            "queue_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.queue.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "queue.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "file"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.file.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "file.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "web",
+            "web_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.web.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "web.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Data Lake File System Gen2 (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "dfs",
+            "dfs_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.dfs.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "dfs.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Sql"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.documents.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "documents.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "MongoDB"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mongo.cosmos.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "mongo.cosmos.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Cassandra"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.cassandra.cosmos.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "cassandra.cosmos.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Gremlin"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.gremlin.cosmos.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "gremlin.cosmos.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Table"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.table.cosmos.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "table.cosmos.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.DBforPostgreSQL/serverGroupsv2)",
+        "subresource": [
+            "coordinator"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.postgres.cosmos.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "postgres.cosmos.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "batchAccount"
+        ],
+        "private_dns_zone_name": [
+            "{regionName}.privatelink.batch.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.batch.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "nodeManagement"
+        ],
+        "private_dns_zone_name": [
+            "{regionName}.service.privatelink.batch.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.service.batch.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Database for PostgreSQL - Single server (Microsoft.DBforPostgreSQL/servers)",
+        "subresource": [
+            "postgresqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.postgres.database.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "postgres.database.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MySQL (Microsoft.DBforMySQL/servers)",
+        "subresource": [
+            "mysqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mysql.database.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "mysql.database.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MariaDB (Microsoft.DBforMariaDB/servers)",
+        "subresource": [
+            "mariadbServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mariadb.database.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "mariadb.database.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Key Vault (Microsoft.KeyVault/vaults)",
+        "subresource": [
+            "vault"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.vaultcore.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "vault.azure.net",
+            "vaultcore.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Key Vault (Microsoft.KeyVault/managedHSMs)",
+        "subresource": [
+            "managedhsm"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.managedhsm.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "managedhsm.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Kubernetes Service - Kubernetes API (Microsoft.ContainerService/managedClusters)",
+        "subresource": [
+            "management"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{regionName}.azmk8s.io",
+            "{subzone}.privatelink.{regionName}.azmk8s.io"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.azmk8s.io"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Search (Microsoft.Search/searchServices)",
+        "subresource": [
+            "searchService"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.search.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "search.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Container Registry (Microsoft.ContainerRegistry/registries)",
+        "subresource": [
+            "registry"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurecr.io",
+            "{regionName}.privatelink.azurecr.io"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurecr.io",
+            "{regionName}.azurecr.io"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure App Configuration (Microsoft.AppConfiguration/configurationStores)",
+        "subresource": [
+            "configurationStores"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azconfig.io"
+        ],
+        "public_dns_zone_forwarders": [
+            "azconfig.io"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Backup (Microsoft.RecoveryServices/vaults)",
+        "subresource": [
+            "AzureBackup"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{regionCode}.backup.windowsazure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionCode}.backup.windowsazure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Site Recovery (Microsoft.RecoveryServices/vaults)",
+        "subresource": [
+            "AzureSiteRecovery"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.siterecovery.windowsazure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionCode}.siterecovery.windowsazure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Event Hubs (Microsoft.EventHub/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Service Bus (Microsoft.ServiceBus/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub (Microsoft.Devices/IotHubs)",
+        "subresource": [
+            "iotHub"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices.netprivatelink.servicebus.windows.net1"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices.netservicebus.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub Device Provisioning Service (Microsoft.Devices/ProvisioningServices)",
+        "subresource": [
+            "iotDps"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices-provisioning.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices-provisioning.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Relay (Microsoft.Relay/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Event Grid (Microsoft.EventGrid/topics)",
+        "subresource": [
+            "topic"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.eventgrid.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "eventgrid.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Event Grid (Microsoft.EventGrid/domains)",
+        "subresource": [
+            "domain"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.eventgrid.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "eventgrid.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Web Apps - Azure Function Apps (Microsoft.Web/sites)",
+        "subresource": [
+            "sites"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurewebsites.net",
+            "scm.privatelink.azurewebsites.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurewebsites.net",
+            "scm.azurewebsites.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Machine Learning (Microsoft.MachineLearningServices/workspaces)",
+        "subresource": [
+            "amlworkspace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.api.azureml.msprivatelink.notebooks.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "api.azureml.msnotebooks.azure.netinstances.azureml.msaznbcontent.netinference.ml.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "SignalR (Microsoft.SignalRService/SignalR)",
+        "subresource": [
+            "signalR"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.service.signalr.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "service.signalr.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Monitor (Microsoft.Insights/privateLinkScopes)",
+        "subresource": [
+            "azuremonitor"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.monitor.azure.com privatelink.oms.opinsights.azure.com",
+            "privatelink.ods.opinsights.azure.com",
+            "privatelink.agentsvc.azure-automation.net",
+            "privatelink.blob.core.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "monitor.azure.com oms.opinsights.azure.com ods.opinsights.azure.com agentsvc.azure-automation.net",
+            "blob.core.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure AI services (Microsoft.CognitiveServices/accounts)",
+        "subresource": [
+            "account"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.cognitiveservices.azure.com",
+            "privatelink.openai.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "cognitiveservices.azure.com",
+            "openai.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure File Sync (Microsoft.StorageSync/storageSyncServices)",
+        "subresource": [
+            "afs"
+        ],
+        "private_dns_zone_name": [
+            "{regionName}.privatelink.afs.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.afs.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Data Factory (Microsoft.DataFactory/factories)",
+        "subresource": [
+            "dataFactory"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.datafactory.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "datafactory.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Data Factory (Microsoft.DataFactory/factories)",
+        "subresource": [
+            "portal"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.adf.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "adf.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cache for Redis (Microsoft.Cache/Redis)",
+        "subresource": [
+            "redisCache"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.redis.cache.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "redis.cache.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Cache for Redis Enterprise (Microsoft.Cache/RedisEnterprise)",
+        "subresource": [
+            "redisEnterprise"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.redisenterprise.cache.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "redisenterprise.cache.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Microsoft Purview (Microsoft.Purview)",
+        "subresource": [
+            "account"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.purview.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "purview.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Microsoft Purview (Microsoft.Purview)",
+        "subresource": [
+            "portal"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.purviewstudio.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "purview.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Digital Twins (Microsoft.DigitalTwins)",
+        "subresource": [
+            "digitalTwinsInstances"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.digitaltwins.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "digitaltwins.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure HDInsight (Microsoft.HDInsight/clusters)",
+        "subresource": [
+            "N/A"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurehdinsight.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurehdinsight.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Arc (Microsoft.HybridCompute)",
+        "subresource": [
+            "hybridcompute"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.his.arc.azure.com",
+            "privatelink.guestconfiguration.azure.com",
+            "privatelink.kubernetesconfiguration.azure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "his.arc.azure.com",
+            "guestconfiguration.azure.com",
+            "kubernetesconfiguration.azure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Media Services (Microsoft.Media)",
+        "subresource": [
+            "keydelivery",
+            "liveevent",
+            "streamingendpoint"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.media.azure.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "media.azure.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Data Explorer (Microsoft.Kusto/Clusters)",
+        "subresource": [
+            "cluster"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{regionName}.kusto.windows.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.kusto.windows.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Static Web Apps (Microsoft.Web/staticSites)",
+        "subresource": [
+            "staticSites"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurestaticapps.net",
+            "privatelink.{partitionId}.azurestaticapps.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurestaticapps.net",
+            "{partitionId}.azurestaticapps.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Migrate (Microsoft.Migrate/migrateProjects)",
+        "subresource": [
+            "Default"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.prod.migration.windowsazure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "prod.migration.windowsazure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Migrate (Microsoft.Migrate/assessmentProjects)",
+        "subresource": [
+            "Default"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.prod.migration.windowsazure.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "prod.migration.windowsazure.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure API Management (Microsoft.ApiManagement/service)",
+        "subresource": [
+            "gateway"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-api.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-api.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Microsoft PowerBI (Microsoft.PowerBI/privateLinkServicesForPowerBI)",
+        "subresource": [
+            "tenant"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.analysis.windows.net",
+            "privatelink.pbidedicated.windows.net",
+            "privatelink.tip1.powerquery.microsoft.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "analysis.windows.net",
+            "pbidedicated.windows.net",
+            "tip1.powerquery.microsoft.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Bot Service (Microsoft.BotService/botServices)",
+        "subresource": [
+            "Bot"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.directline.botframework.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "directline.botframework.com",
+            "europe.directline.botframework.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Bot Service (Microsoft.BotService/botServices)",
+        "subresource": [
+            "Token"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.token.botframework.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "token.botframework.com",
+            "europe.token.botframework.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Health Data Services (Microsoft.HealthcareApis/workspaces)",
+        "subresource": [
+            "healthcareworkspace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.workspace.azurehealthcareapis.com",
+            "privatelink.fhir.azurehealthcareapis.com",
+            "privatelink.dicom.azurehealthcareapis.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "workspace.azurehealthcareapis.com",
+            "fhir.azurehealthcareapis.com",
+            "dicom.azurehealthcareapis.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Databricks (Microsoft.Databricks/workspaces)",
+        "subresource": [
+            "databricks_ui_api",
+            "browser_authentication"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azuredatabricks.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "azuredatabricks.net"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces)",
+        "subresource": [
+            "global"
+        ],
+        "private_dns_zone_name": [
+            "privatelink-global.wvd.microsoft.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.microsoft.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces  Microsoft.DesktopVirtualization/hostpools)",
+        "subresource": [
+            "feed",
+            "connection"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.wvd.microsoft.com"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.microsoft.com"
+        ],
+        "cloud_type": "commercial"
+    },
+    {
+        "private_link_resource_type": "Azure Automation / (Microsoft.Automation/automationAccounts)",
+        "subresource": [
+            "Webhook",
+            "DSCAndHybridWorker"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-automation.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-automation.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure SQL Database (Microsoft.Sql/servers)",
+        "subresource": [
+            "sqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.database.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "database.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure SQL Managed Instance (Microsoft.Sql/managedInstances)",
+        "subresource": [
+            "managedInstance"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{dnsPrefix}.database.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{instanceName}.{dnsPrefix}.database.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "blob",
+            "blob_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.blob.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "blob.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "table",
+            "table_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.table.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "table.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "queue",
+            "queue_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.queue.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "queue.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "file",
+            "file_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.file.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "file.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "web",
+            "web_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.web.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "web.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Sql"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.documents.azure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "documents.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "batchAccount"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.batch.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.batch.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "nodeManagement"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.batch.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.service.batch.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Database for PostgreSQL - Single server (Microsoft.DBforPostgreSQL/servers)",
+        "subresource": [
+            "postgresqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.postgres.database.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "postgres.database.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MySQL (Microsoft.DBforMySQL/servers)",
+        "subresource": [
+            "mysqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mysql.database.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "mysql.database.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MariaDB (Microsoft.DBforMariaDB/servers)",
+        "subresource": [
+            "mariadbServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mariadb.database.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "mariadb.database.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Key Vault (Microsoft.KeyVault/vaults)",
+        "subresource": [
+            "vault"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.vaultcore.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "vault.usgovcloudapi.net",
+            "vaultcore.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Search (Microsoft.Search/searchServices)",
+        "subresource": [
+            "searchService"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.search.windows.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "search.windows.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure App Configuration (Microsoft.AppConfiguration/configurationStores)",
+        "subresource": [
+            "configurationStores"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azconfig.azure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "azconfig.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Backup (Microsoft.RecoveryServices/vaults)",
+        "subresource": [
+            "AzureBackup"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{regionCode}.backup.windowsazure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionCode}.backup.windowsazure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Site Recovery (Microsoft.RecoveryServices/vaults)",
+        "subresource": [
+            "AzureSiteRecovery"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.siterecovery.windowsazure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionCode}.siterecovery.windowsazure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Event Hubs (Microsoft.EventHub/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Service Bus (Microsoft.ServiceBus/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub (Microsoft.Devices/IotHubs)",
+        "subresource": [
+            "iotHub"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices.usprivatelink.servicebus.windows.us1"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices.usservicebus.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub Device Provisioning Service (Microsoft.Devices/ProvisioningServices)",
+        "subresource": [
+            "iotDps"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices-provisioning.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices-provisioning.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Relay (Microsoft.Relay/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Web Apps (Microsoft.Web/sites)",
+        "subresource": [
+            "sites"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurewebsites.us",
+            "scm.privatelink.azurewebsites.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurewebsites.us",
+            "scm.azurewebsites.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Monitor (Microsoft.Insights/privateLinkScopes)",
+        "subresource": [
+            "azuremonitor"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.monitor.azure.us",
+            "privatelink.adx.monitor.azure.us",
+            "privatelink.\toms.opinsights.azure.us",
+            "privatelink.ods.opinsights.azure.us",
+            "privatelink.agentsvc.azure-automation.us",
+            "privatelink.blob.core.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "monitor.azure.us",
+            "adx.monitor.azure.us",
+            "oms.opinsights.azure.us ods.opinsights.azure.us agentsvc.azure-automation.us",
+            "blob.core.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure AI services (Microsoft.CognitiveServices/accounts)",
+        "subresource": [
+            "account"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.cognitiveservices.azure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "cognitiveservices.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Cache for Redis (Microsoft.Cache/Redis)",
+        "subresource": [
+            "redisCache"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.redis.cache.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "redis.cache.usgovcloudapi.net"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure HDInsight (Microsoft.HDInsight)",
+        "subresource": [
+            "N/A"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurehdinsight.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurehdinsight.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Machine Learning (Microsoft.MachineLearningServices/workspaces)",
+        "subresource": [
+            "amlworkspace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.api.ml.azure.usprivatelink.notebooks.usgovcloudapi.net"
+        ],
+        "public_dns_zone_forwarders": [
+            "api.ml.azure.usnotebooks.usgovcloudapi.net",
+            "instances.azureml.usaznbcontent.net",
+            "inference.ml.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces)",
+        "subresource": [
+            "global"
+        ],
+        "private_dns_zone_name": [
+            "privatelink-global.wvd.azure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces  Microsoft.DesktopVirtualization/hostpools)",
+        "subresource": [
+            "feed",
+            "connection"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.wvd.azure.us"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.azure.us"
+        ],
+        "cloud_type": "Government"
+    },
+    {
+        "private_link_resource_type": "Azure Automation / (Microsoft.Automation/automationAccounts)",
+        "subresource": [
+            "Webhook",
+            "DSCAndHybridWorker"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-automation.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-automation.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure SQL Database (Microsoft.Sql/servers)",
+        "subresource": [
+            "sqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.database.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "database.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "blob",
+            "blob_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.blob.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "blob.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "table",
+            "table_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.table.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "table.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "queue",
+            "queue_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.queue.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "queue.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "file",
+            "file_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.file.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "file.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Storage account (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "web",
+            "web_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.web.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "web.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Data Lake File System Gen2 (Microsoft.Storage/storageAccounts)",
+        "subresource": [
+            "dfs",
+            "dfs_secondary"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.dfs.core.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "dfs.core.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Sql"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.documents.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "documents.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "MongoDB"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mongo.cosmos.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "mongo.cosmos.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Cassandra"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.cassandra.cosmos.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "cassandra.cosmos.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Gremlin"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.gremlin.cosmos.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "gremlin.cosmos.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cosmos DB (Microsoft.AzureCosmosDB/databaseAccounts)",
+        "subresource": [
+            "Table"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.table.cosmos.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "table.cosmos.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "batchAccount"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.batch.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "{region}.batch.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Batch (Microsoft.Batch/batchAccounts)",
+        "subresource": [
+            "nodeManagement"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.batch.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "{region}.service.batch.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Database for PostgreSQL - Single server (Microsoft.DBforPostgreSQL/servers)",
+        "subresource": [
+            "postgresqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.postgres.database.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "postgres.database.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MySQL (Microsoft.DBforMySQL/servers)",
+        "subresource": [
+            "mysqlServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mysql.database.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "mysql.database.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Database for MariaDB (Microsoft.DBforMariaDB/servers)",
+        "subresource": [
+            "mariadbServer"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.mariadb.database.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "mariadb.database.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Key Vault (Microsoft.KeyVault/vaults)",
+        "subresource": [
+            "vault"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.vaultcore.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "vaultcore.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Event Hubs (Microsoft.EventHub/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Service Bus (Microsoft.ServiceBus/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub (Microsoft.Devices/IotHubs)",
+        "subresource": [
+            "iotHub"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices.cn",
+            "privatelink.servicebus.chinacloudapi.cn 1"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices.cnservicebus.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure IoT Hub Device Provisioning Service (Microsoft.Devices/ProvisioningServices)",
+        "subresource": [
+            "iotDps"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azure-devices-provisioning.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "azure-devices-provisioning.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Relay (Microsoft.Relay/namespaces)",
+        "subresource": [
+            "namespace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.servicebus.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "servicebus.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Event Grid (Microsoft.EventGrid/topics)",
+        "subresource": [
+            "topic"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.eventgrid.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "eventgrid.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Event Grid (Microsoft.EventGrid/domains)",
+        "subresource": [
+            "domain"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.eventgrid.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "eventgrid.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Web Apps (Microsoft.Web/sites)",
+        "subresource": [
+            "sites"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.chinacloudsites.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "chinacloudsites.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Machine Learning (Microsoft.MachineLearningServices/workspaces)",
+        "subresource": [
+            "amlworkspace"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.api.ml.azure.cnprivatelink.notebooks.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "api.ml.azure.cnnotebooks.chinacloudapi.cn",
+            "instances.azureml.cn",
+            "aznbcontent.net",
+            "inference.ml.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "SignalR (Microsoft.SignalRService/SignalR)",
+        "subresource": [
+            "signalR"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.signalr.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "service.signalr.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure File Sync (Microsoft.StorageSync/storageSyncServices)",
+        "subresource": [
+            "afs"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.afs.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "afs.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Data Factory (Microsoft.DataFactory/factories)",
+        "subresource": [
+            "dataFactory"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.datafactory.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "datafactory.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Data Factory (Microsoft.DataFactory/factories)",
+        "subresource": [
+            "portal"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.adf.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "adf.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Cache for Redis (Microsoft.Cache/Redis)",
+        "subresource": [
+            "redisCache"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.redis.cache.chinacloudapi.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "redis.cache.chinacloudapi.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure HDInsight (Microsoft.HDInsight)",
+        "subresource": [
+            "N/A"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.azurehdinsight.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "azurehdinsight.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Data Explorer (Microsoft.Kusto/Clusters)",
+        "subresource": [
+            "cluster"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.{regionName}.kusto.windows.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "{regionName}.kusto.windows.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces)",
+        "subresource": [
+            "global"
+        ],
+        "private_dns_zone_name": [
+            "privatelink-global.wvd.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.azure.cn"
+        ],
+        "cloud_type": "China"
+    },
+    {
+        "private_link_resource_type": "Azure Virtual Desktop (Microsoft.DesktopVirtualization/workspaces and Microsoft.DesktopVirtualization/hostpools)",
+        "subresource": [
+            "feed",
+            "connection"
+        ],
+        "private_dns_zone_name": [
+            "privatelink.wvd.azure.cn"
+        ],
+        "public_dns_zone_forwarders": [
+            "wvd.azure.cn"
+        ],
+        "cloud_type": "China"
+    }
+]
