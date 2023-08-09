@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "node_modules/next/dist/bin/yarn start",
+    "start": "next start",
     "serve": "serve -s out",
     "export": "next export",
     "lint": "next lint && eslint ."
