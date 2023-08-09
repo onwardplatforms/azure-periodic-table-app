@@ -64,7 +64,7 @@ Before you start, ensure you have the following installed:
 1. Clone the docker image:
 
 ```bash
-docker pull chandu123557/azure-periodic-table-dockerversion:latest
+docker pull onwardplatforms/azure-periodic-table-dockerversion
 ```
 2. Once you pulled the image, use the below command to check the docker images
 
