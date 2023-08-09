@@ -233,18 +233,18 @@ export default function Sidebar({
                 <CardContent>
                   <Tabs defaultValue="commercial">
                     <TabsList>
-                      {activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length > 0 && (
+                      {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="commercial">Commercial</TabsTrigger>
                       )}
-                      {activeElement?.dnsConfiguration?.government?.subresourceNames?.length > 0 && (
+                      {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="government">Government</TabsTrigger>
                       )}
-                      {activeElement?.dnsConfiguration?.china?.subresourceNames?.length > 0 && (
+                      {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="china">China</TabsTrigger>
                       )}
                     </TabsList>
 
-                    {activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length > 0 && (
+                    {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
                       <TabsContent value="commercial">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
@@ -278,7 +278,7 @@ export default function Sidebar({
                         </div>
                       </TabsContent>
                     )}
-                    {activeElement?.dnsConfiguration?.government?.subresourceNames?.length > 0 && (
+                    {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
                       <TabsContent value="government">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
@@ -312,7 +312,7 @@ export default function Sidebar({
                         </div>
                       </TabsContent>
                     )}
-                    {activeElement?.dnsConfiguration?.china?.subresourceNames?.length > 0 && (
+                    {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
                       <TabsContent value="china">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
