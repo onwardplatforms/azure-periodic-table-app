@@ -29,7 +29,7 @@ export default function Sidebar({
 }) {
   const [copied, setCopied] = useState(false);
   const isMobile = useMobile();
-  const hasPrivateEndpointData = (element) => {
+  const hasPrivateEndpointData = (element: any) => {
     if (!element?.dnsConfiguration) return false;
 
     const { commercial, government, china } = element.dnsConfiguration;
