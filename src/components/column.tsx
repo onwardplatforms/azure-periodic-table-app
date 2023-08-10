@@ -1,4 +1,4 @@
-/* src/components/grid.tsx */
+/* src/components/column.tsx */
 
 import type { Categories } from '@/app/constants';
 import type { CategoryData } from './category-selector';

@@ -13,6 +13,8 @@ import Header from '@/components/header';
 import { Icons } from '@/components/ui/icons';
 import { Label } from '@/components/ui/label';
 import useMobile from '@/custom-hooks/use-mobile';
+import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/config';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -56,20 +58,33 @@ export default function Page() {
         {isFullScreen ? null : (
           <>
             <Header />
-            <div className="flex flex-col gap-2 justify-center w-full md:items-center items-center mt-2 mb-8">
+            <div className="flex flex-col justify-start w-full md:items-start items-start my-8 ">
               {/* Wrapper div to house Azure icon, main title, and subtitle */}
-              <div className="flex items-center justify-center">
-                <Icons.Azure className="h-12 w-12 md:h-16 md:w-16 self-center mr-4" />
+              <div className="flex items-center justify-start w-full ">
+                <Icons.Azure className="h-28 w-28 self-center mr-4 hidden sm:block" />
                 <div className="flex flex-col">
-                  <span className="md:text-4xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl">
+                  <h1 className="text-3xl font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1] mb-1">
                     The Azure Periodic Table
+                  </h1>
+                  <span className="max-w-[650px] text-lg text-muted-foreground sm:text-xl mb-1">
+                    Bringing together core Azure content to supercharge your
+                    productivity. Open source. Built for the community ❤️
                   </span>
-                  <Label className="mt-2">
-                    {isMobile 
-                      ? 'Supercharge your productivity in Azure.'
-                      : 'Bringing together core Azure content to supercharge your productivity.'}
-                  </Label>
                 </div>
+              </div>
+              <div className="flex my-4">
+                <Button className="mr-4">View Demo</Button>
+                <Button variant={'outline'}>
+                  <a
+                    className="flex justify-center items-center"
+                    href={siteConfig.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Icons.GitHub className="w-4 h-4 mr-2" />
+                    Github
+                  </a>
+                </Button>
               </div>
             </div>
           </>
@@ -79,7 +94,7 @@ export default function Page() {
           className={
             isFullScreen
               ? 'flex flex-col justify-center items-center'
-              : 'border-border rounded-md w-full'
+              : 'border-border border rounded-md w-full'
           }
         >
           <Sidebar
