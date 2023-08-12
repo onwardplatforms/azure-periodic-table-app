@@ -874,7 +874,7 @@ export const columns: ColumnType[] = [
         length: '1-40',
         category: Categories.COMPUTEANDWEB,
         learnUrl: 'https://docs.microsoft.com/en-us/azure/app-service/overview-hosting-plans',
-        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_plan',
+        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_plan',
         restrictions: 'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode',
         resource: 'Microsoft.Web',
         entity: 'serverfarms',
@@ -882,6 +882,61 @@ export const columns: ColumnType[] = [
         icon: '/icons/Application/Application Service Plan.png',
         code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FserverFarms',
+      },
+      {
+        name: 'app service',
+        slug: 'app-',
+        description: 'Azure App Service is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
+        length: '2-60',
+        category: Categories.COMPUTEANDWEB,
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/app-service/',
+        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_web_app',
+        restrictions: 'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.',
+        resource: 'Microsoft.Web',
+        entity: 'sites',
+        scope: 'global or per domain',
+        icon: '/icons/Application/Application Service.png',
+        code: ``,
+        portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites',
+        dnsConfiguration: {
+          commercial: {
+            subresourceNames: [
+              'sites',
+            ],
+            privateDnsZoneNames: [
+              'privatelink.azurewebsites.net',
+              'scm.privatelink.azurewebsites.net',
+            ],
+            publicDnsForwarderNames: [
+              'azurewebsites.net',
+              'scm.azurewebsites.net',
+            ],
+          },
+          government: {
+            subresourceNames: [
+              'sites',
+            ],
+            privateDnsZoneNames: [
+              'privatelink.azurewebsites.us',
+              'scm.privatelink.azurewebsites.us',
+            ],
+            publicDnsForwarderNames: [
+              'azurewebsites.us',
+              'scm.azurewebsites.us',
+            ],
+          },
+          china: {
+            subresourceNames: [
+              'sites',
+            ],
+            privateDnsZoneNames: [
+              'privatelink.chinacloudsites.cn',
+            ],
+            publicDnsForwarderNames: [
+              'chinacloudsites.cn',
+            ],
+          },
+        },
       },
       {
         name: 'availability set',
@@ -1008,22 +1063,6 @@ export const columns: ColumnType[] = [
         icon: '/icons/Storage/Managed Disk Standard SSD.png',
         code: ``,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
-      },
-      {
-        name: 'load testing service',
-        slug: 'lt-',
-        description: 'Microsoft Load Testing Service is a fully managed service in Azure, designed to help developers and testers generate high-scale load and run simulations. The service supports creating tests quickly without deep knowledge of load-testing tools, or allows uploading of existing Apache JMeter scripts. It provides actionable insights into performance, scalability, and capacity, supporting continuous improvement through automated CI/CD workflows.',
-        length: '1-64',
-        category: Categories.COMPUTEANDWEB,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/load-testing/',
-        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/load_test',
-        restrictions: 'Alphanumerics, underscores, periods, and hyphens.',
-        resource: 'Microsoft.LoadTestService',
-        entity: 'loadTests',
-        scope: 'resource group',
-        icon: '/icons/Management/Azure Load Testing.png',
-        code: ``,
-        portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.LoadTestService%2FLoadTests',
       },
     ],
   },
@@ -1213,59 +1252,20 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
-        name: 'app service',
-        slug: 'app-',
-        description: 'Azure App Service is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
-        length: '2-60',
+        name: 'load testing service',
+        slug: 'lt-',
+        description: 'Microsoft Load Testing Service is a fully managed service in Azure, designed to help developers and testers generate high-scale load and run simulations. The service supports creating tests quickly without deep knowledge of load-testing tools, or allows uploading of existing Apache JMeter scripts. It provides actionable insights into performance, scalability, and capacity, supporting continuous improvement through automated CI/CD workflows.',
+        length: '1-64',
         category: Categories.COMPUTEANDWEB,
-        learnUrl: 'https://learn.microsoft.com/en-us/azure/app-service/',
-        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_web_app',
-        restrictions: 'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.',
-        resource: 'Microsoft.Web',
-        entity: 'sites',
-        scope: 'global or per domain',
-        icon: '/icons/Application/Application Service.png',
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/load-testing/',
+        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/load_test',
+        restrictions: 'Alphanumerics, underscores, periods, and hyphens.',
+        resource: 'Microsoft.LoadTestService',
+        entity: 'loadTests',
+        scope: 'resource group',
+        icon: '/icons/Management/Azure Load Testing.png',
         code: ``,
-        portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites',
-        dnsConfiguration: {
-          commercial: {
-            subresourceNames: [
-              'sites',
-            ],
-            privateDnsZoneNames: [
-              'privatelink.azurewebsites.net',
-              'scm.privatelink.azurewebsites.net',
-            ],
-            publicDnsForwarderNames: [
-              'azurewebsites.net',
-              'scm.azurewebsites.net',
-            ],
-          },
-          government: {
-            subresourceNames: [
-              'sites',
-            ],
-            privateDnsZoneNames: [
-              'privatelink.azurewebsites.us',
-              'scm.privatelink.azurewebsites.us',
-            ],
-            publicDnsForwarderNames: [
-              'azurewebsites.us',
-              'scm.azurewebsites.us',
-            ],
-          },
-          china: {
-            subresourceNames: [
-              'sites',
-            ],
-            privateDnsZoneNames: [
-              'privatelink.chinacloudsites.cn',
-            ],
-            publicDnsForwarderNames: [
-              'chinacloudsites.cn',
-            ],
-          },
-        },
+        portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.LoadTestService%2FLoadTests',
       },
     ],
   },
