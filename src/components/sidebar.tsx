@@ -189,6 +189,11 @@ export default function Sidebar({
                     )}
                   </div>
                 </div>
+                {(activeElement?.code ?? '') && (
+                <div className="mt-6">
+                  <Label>Terraform starter:</Label>
+                </div>
+                )}
                 <div className="mb-4">
                   <CodeSnippet codeString={activeElement?.code ?? ''} />
                 </div>

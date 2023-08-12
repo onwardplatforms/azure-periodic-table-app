@@ -101,7 +101,10 @@ export const columns: ColumnType[] = [
         entity: 'resourcegroups',
         scope: 'subscription',
         icon: '/icons/Management/Resource Group.png',
-        code: ``,
+        code: `resource "azurerm_resource_group" "this" {
+  name     = "rg-\${var.naming_suffix}"
+  location = var.location
+}`,
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups',
       },
       {
