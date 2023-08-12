@@ -61,9 +61,9 @@ export default function Page() {
               <div className="flex items-center justify-center">
                 <Icons.Azure className="h-12 w-12 md:h-16 md:w-16 self-center mr-4" />
                 <div className="flex flex-col">
-                  <span className="md:text-4xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl">
+                  <h1 className="md:text-4xl font-bold leading-tight tracking-tighter lg:leading-[1.1] text-2xl">
                     The Azure Periodic Table
-                  </span>
+                  </h1>
                   <Label className="mt-2">
                     {isMobile 
                       ? 'Supercharge your productivity in Azure.'
