@@ -232,7 +232,7 @@ export default function Sidebar({
                 </CardHeader>
                 <CardContent>
                   <Tabs defaultValue="commercial">
-                    <TabsList className="flex flex-wrap">
+                    <TabsList>
                       {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="commercial">Commercial</TabsTrigger>
                       )}
