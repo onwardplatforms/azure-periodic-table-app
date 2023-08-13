@@ -60,7 +60,9 @@ export default function RootLayout({
       </Script>
       <body className={inter.className} style={{ width: '100%' }}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <TableWrapper>{children}</TableWrapper>
+          <TableWrapper>
+            <>{children}</>
+          </TableWrapper>
         </ThemeProvider>
       </body>
     </html>

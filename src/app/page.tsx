@@ -1,3 +1,3 @@
-export default function Page({ children }: { children: React.ReactNode }) {
-  return children;
+export default function Page() {
+  return <></>;
 }
