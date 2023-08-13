@@ -515,7 +515,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        id: 'network-security-group-security-rules',
+        id: 'nsg-security-rules',
         name: 'nsg security rules',
         slug: 'nsgsr-',
         description: 'NSG Security Rules define the allowed or denied traffic for Network Security Groups (NSGs) in Azure, enabling fine-tuned control over inbound and outbound network traffic.',
