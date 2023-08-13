@@ -16,6 +16,7 @@ Consider adding:
 */
 
 export type Item = {
+  id: string;
   name: string;
   slug: string;
   description: string;
@@ -57,6 +58,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'management-group',
         name: 'management group',
         slug: 'mg-',
         description: 'Azure Management Groups provide a level of scope above subscriptions. They allow you to organize subscriptions into containers called \'management groups\' and apply your governance conditions to the management groups. All subscriptions within a management group automatically inherit the conditions applied to the management group.',
@@ -73,7 +75,8 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview',
       },
       {
-        name: 'Subscriptions',
+        id: 'subscriptions',
+        name: 'subscriptions',
         slug: 'sub-',
         description: 'Subscriptions in Azure act as a single billing unit and provide the ability to administer resources, control resource usage, and organize resources according to individual business needs.',
         length: '1-90',
@@ -89,6 +92,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade',
       },
       {
+        id: 'resource-group',
         name: 'resource group',
         slug: 'rg-',
         description: 'Azure Resource Groups are logical containers for resources deployed within an Azure subscription. This group includes those resources that you want to manage as a group. You decide how to allocate resources to resource groups based on what makes the most sense for your organization.',
@@ -108,6 +112,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups',
       },
       {
+        id: 'managed-identity',
         name: 'managed identity',
         slug: 'id-',
         description: 'Azure Managed Identities for Azure resources provides Azure services with an automatically managed identity in Azure Active Directory. You can also create user assigned identities that you manage. These identities can be used to authenticate to services that support Azure AD authentication, without needing any credentials in your code.',
@@ -124,6 +129,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ManagedIdentity%2FuserAssignedIdentities',
       },
       {
+        id: 'policy-initiative',
         name: 'policy initiative',
         slug: 'set-',
         description: 'Azure Policy Set Definitions, also known as Initiatives, simplify managing and assigning policies. They are a set of Policy Definitions that are tailored towards achieving a singular overarching goal. By grouping policies together, you can ensure they\'re properly assigned to achieve full coverage across your resources.',
@@ -140,6 +146,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview',
       },
       {
+        id: 'policy-definition',
         name: 'policy definition',
         slug: 'def-',
         description: 'Azure Policy Definitions enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy does this by running evaluations of your resources and scanning for those not compliant with the policies you have created.',
@@ -160,6 +167,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'application-gateway',
         name: 'application gateway',
         slug: 'agw-',
         description: 'Azure Application Gateway is a web traffic load balancer that enables management of traffic to web applications. It provides routing services and can make routing decisions based on additional attributes of an HTTP request.',
@@ -176,6 +184,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
+        id: 'app-security-group',
         name: 'app security group (asg)',
         slug: 'asg-',
         description: 'Application Security Groups (ASG) in Azure enable fine-grained network control over your network architecture and the ability to secure direct access to applications based on role.',
@@ -192,6 +201,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FapplicationSecurityGroups',
       },
       {
+        id: 'cdn-profile',
         name: 'cdn profile',
         slug: 'cdnp-',
         description: 'Azure CDN profiles allow you to manage the delivery of your content through Microsoft\'s global CDN network. It is designed to send audio, video, applications, images, and other files faster and more reliably to customers using servers that are closest to each user.',
@@ -208,6 +218,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
+        id: 'cdn-endpoint',
         name: 'cdn endpoint',
         slug: 'cdne-',
         description: 'Azure CDN Endpoints are the specific points of presence (PoPs) in the CDN where your content is cached. Endpoints enable faster delivery of content to users who are in close proximity to these locations.',
@@ -224,6 +235,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
+        id: 'expressroute-circuit',
         name: 'expressroute circuit',
         slug: 'erc-',
         description: 'Azure ExpressRoute is a service that enables establishing dedicated, private network connections between Azure datacenters and your on-premises infrastructure.',
@@ -240,6 +252,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
+        id: 'expressroute-connection',
         name: 'expressroute connection',
         slug: 'gc-',
         description: 'Azure ExpressRoute Connections enable private and dedicated network connections between your on-premises datacenter or network and Microsoft Azure. Through ExpressRoute, you can establish a reliable, low-latency, and high-bandwidth connection, which provides enhanced security and performance for accessing Azure resources.',
@@ -256,6 +269,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
+        id: 'dns-zone',
         name: 'dns zone',
         slug: 'dnsz-',
         description: 'Azure DNS Zone is a service that allows you to host your domain\'s DNS records on Azure, providing name resolution using Microsoft Azure infrastructure. By hosting your domains in Azure, you can manage your DNS records using the same credentials and billing and support contract as your other Azure services.',
@@ -272,6 +286,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FdnsZones',
       },
       {
+        id: 'private-dns-zone',
         name: 'private dns zone',
         slug: 'pdnsz-',
         description: 'Azure Private DNS Zone is a service that provides an ability to use your own custom domain names, rather than the Azure-provided names. It helps in name resolution for virtual machines (VMs) within a virtual network and between virtual networks.',
@@ -288,6 +303,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FprivateDnsZones',
       },
       {
+        id: 'firewall',
         name: 'firewall',
         slug: 'afw-',
         description: 'Azure Firewall is a highly available and scalable firewall service in Microsoft Azure that provides inbound protection for non-HTTP/S protocols, outbound network-level protection for all ports and protocols, and application-level protection for outbound HTTP/S.',
@@ -304,6 +320,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FazureFirewalls',
       },
       {
+        id: 'firewall-policy',
         name: 'firewall policy',
         slug: 'afwp-',
         description: 'Azure Firewall Policy is a security policy that is associated with one or more Azure Firewall instances. It provides fully qualified domain name (FQDN) filtering for outbound HTTP/S traffic and SQL server filtering for outbound TCP traffic. Threat intelligence-based filtering can also be enabled for outbound traffic.',
@@ -324,6 +341,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'bastion',
         name: 'bastion',
         slug: 'bas-',
         description: 'Azure Bastion is a fully managed network security service that provides secure and seamless Remote Desktop Protocol (RDP) and Secure Shell (SSH) access to your virtual machines directly from the Azure portal.',
@@ -340,6 +358,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FbastionHosts',
       },
       {
+        id: 'front-door',
         name: 'front door',
         slug: 'fd-',
         description: 'Azure Front Door offers a scalable and secure entry point for fast delivery of your global web applications.',
@@ -356,6 +375,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
+        id: 'front-door-firewall-policy',
         name: 'front door firewall policy',
         slug: 'fdfp-',
         description: 'Front Door Firewall Policies allow you to manage security policies associated with your Front Door instances, providing custom control on the handling of your web traffic.',
@@ -372,6 +392,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
+        id: 'load-balancer-internal',
         name: 'load balancer (internal)',
         slug: 'lbi-',
         description: 'Internal Load Balancer in Azure is used to provide load balancing services within a private network.',
@@ -388,6 +409,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
+        id: 'load-balancer-external',
         name: 'load balancer (external)',
         slug: 'lbe-',
         description: 'External Load Balancer in Azure is used to provide load balancing services for incoming Internet traffic.',
@@ -404,6 +426,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
+        id: 'load-balancer-rule',
         name: 'load balancer rule',
         slug: 'rule-',
         description: 'Load Balancer rules in Azure define the inbound traffic flow to the resources in your backend pool.',
@@ -420,6 +443,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
+        id: 'local-network-gateway',
         name: 'local network gateway',
         slug: 'lgw-',
         description: 'The local network gateway in Azure represents your on-premises network location to Azure for cross-premises connections.',
@@ -436,6 +460,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Flocalnetworkgateways',
       },
       {
+        id: 'nat-gateway',
         name: 'nat gateway',
         slug: 'ngw-',
         description: 'Azure NAT Gateway is a resource that provides outbound internet connectivity for virtual networks.',
@@ -452,6 +477,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FnatGateways',
       },
       {
+        id: 'network-interface',
         name: 'network interface (nic)',
         slug: 'nic-',
         description: 'Network interface (NIC) is an interconnection between a virtual machine (VM) and the underlying Azure virtual network (VNet).',
@@ -468,6 +494,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Fnetworkinterfaces',
       },
       {
+        id: 'network-security-group',
         name: 'network security group (nsg)',
         slug: 'nsg-',
         description: 'A network security group (NSG) in Azure contains a list of security rules that allow or deny inbound or outbound network traffic based on source or destination IP address, port, and protocol.',
@@ -488,6 +515,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'network-security-group-security-rules',
         name: 'nsg security rules',
         slug: 'nsgsr-',
         description: 'NSG Security Rules define the allowed or denied traffic for Network Security Groups (NSGs) in Azure, enabling fine-tuned control over inbound and outbound network traffic.',
@@ -504,6 +532,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FNetworkSecurityGroups',
       },
       {
+        id: 'network-watcher',
         name: 'network watcher',
         slug: 'nw-',
         description: 'Azure Network Watcher provides network performance monitoring and diagnostic services. It helps to understand, diagnose, and gain insights to your network in Azure.',
@@ -520,6 +549,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/NetworkWatcherMenuBlade/~/overview',
       },
       {
+        id: 'private-endpoint',
         name: 'private endpoint',
         slug: 'pep-',
         description: 'Azure Private Endpoint enables a private and secure connection to Azure PaaS, customer-owned, or Microsoft partner services, directly from your virtual network. The private connection uses a private IP address from your VNet, effectively bringing the service into your VNet.',
@@ -536,6 +566,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/PrivateLinkCenterBlade/~/privateendpoints',
       },
       {
+        id: 'public-ip-address',
         name: 'public ip address',
         slug: 'pip-',
         description: 'Public IP addresses in Azure allow inbound and outbound connectivity to the internet from Azure resources.',
@@ -552,6 +583,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FPublicIpAddresses',
       },
       {
+        id: 'public-ip-prefix',
         name: 'public ip prefix',
         slug: 'ippre-',
         description: 'Azure Public IP Prefix is a reserved set of static IP addresses that can be used for your public-facing services.',
@@ -568,6 +600,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FpublicIpPrefixes',
       },
       {
+        id: 'route-filter',
         name: 'route filter',
         slug: 'rf-',
         description: 'Azure Route Filters are used to control routing paths in Azure, enabling you to influence the outbound traffic path for services connected to your ExpressRoute circuit.',
@@ -584,6 +617,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteFilters',
       },
       {
+        id: 'route-table',
         name: 'route table',
         slug: 'rt-',
         description: 'Azure Route Tables allow you to control the flow of traffic within your virtual networks. They can be associated with subnets, determining where network traffic is routed for each subnet.',
@@ -600,6 +634,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteTables',
       },
       {
+        id: 'service-endpoint-policy',
         name: 'service endpoint policy',
         slug: 'se-',
         description: 'Service Endpoint Policies in Azure define which services are accessible from a subnet, providing granular network security for Azure service resources.',
@@ -616,6 +651,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FserviceEndpointPolicies',
       },
       {
+        id: 'traffic-manager-profile',
         name: 'traffic manager profile',
         slug: 'traf-',
         description: 'Azure Traffic Manager allows you to control the distribution of user traffic to your service endpoints, providing a range of traffic-routing methods and endpoint monitoring options.',
@@ -632,6 +668,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/TrafficManagers',
       },
       {
+        id: 'user-defined-route',
         name: 'user defined route (udr)',
         slug: 'udr-',
         description: 'User Defined Routes (UDRs) in Azure allow for customization of network traffic routes, providing granular control over traffic flow within your virtual network.',
@@ -652,6 +689,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'virtual-network',
         name: 'virtual network',
         slug: 'vnet-',
         description: 'Azure Virtual Network is a fundamental building block for your private network in Azure, enabling many types of Azure resources, such as Azure Virtual Machines (VM), to securely communicate with each other, the internet, and on-premises networks.',
@@ -668,6 +706,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
+        id: 'subnet',
         name: 'subnet',
         slug: 'snet-',
         description: 'Subnets in Azure represent a range within a Virtual Network that can have its own security and networking settings. Different types of Azure resources can be connected to different subnets within the same Virtual Network.',
@@ -684,6 +723,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
+        id: 'virtual-network-peering',
         name: 'virtual network peering',
         slug: 'peer-',
         description: 'Virtual Network Peering in Azure allows for seamless connectivity between Azure Virtual Networks, enabling resources in either Virtual Network to communicate with each other as if they are within the same network.',
@@ -700,6 +740,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
+        id: 'virtual-wan',
         name: 'virtual wan',
         slug: 'vwan-',
         description: 'Azure Virtual WAN is a networking service that brings many networking, security, and routing functionalities together to provide a single operational interface. It enables global transit network architecture by connecting, and configuring multiple types of networks.',
@@ -716,6 +757,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualWans',
       },
       {
+        id: 'vpn-gateway',
         name: 'vpn gateway',
         slug: 'vpng-',
         description: 'Azure VPN Gateway connects your on-premises networks to Azure through Site-to-Site VPNs in a similar way that you set up and connect to a remote branch office. It allows secure connections from on-premises networks to Azure virtual networks.',
@@ -732,6 +774,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
+        id: 'vpn-gateway-connection',
         name: 'vpn gateway connection',
         slug: 'vcn-',
         description: 'A VPN Gateway Connection in Azure is used to connect a virtual network gateway and a local network gateway, which is typically your on-premises network. It provides a secure, encrypted connection over the internet between your Azure virtual network and your on-premise network.',
@@ -748,6 +791,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
+        id: 'vpn-site',
         name: 'vpn site',
         slug: 'vst-',
         description: 'A VPN Site in Azure represents your on-premises location for a Site-to-Site VPN. It holds the VPN device information, such as the public IP address and the configuration values needed to connect with the VPN device.',
@@ -764,6 +808,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
+        id: 'virtual-network-gateway',
         name: 'virtual network gateway',
         slug: 'vgw-',
         description: 'A Virtual Network Gateway in Azure provides the capability to establish IPsec/IKE VPN tunnels between your virtual network and your on-premises hardware, or from a virtual network to a virtual network within Azure.',
@@ -780,6 +825,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
+        id: 'web-app-firewall-policy',
         name: 'web app firewall policy',
         slug: 'waf-',
         description: 'Azure Web Application Firewall (WAF) policy provides centralized protection of your web applications from common exploits and vulnerabilities. WAF on Azure Front Door protects your applications from common threats such as SQL injection and cross-site scripting.',
@@ -796,6 +842,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FFrontDoorWebApplicationFirewallPolicies',
       },
       {
+        id: 'waf-policy-rule-group',
         name: 'waf policy rule group',
         slug: 'wafrg-',
         description: 'A WAF Policy Rule Group in Azure represents a set of rules for a Web Application Firewall to act upon. The rules in a group are used to filter and control the incoming traffic to the web application.',
@@ -816,6 +863,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'app-service-environment',
         name: 'app service environment',
         slug: 'ase-',
         description: 'Azure App Service Environment is a fully isolated and dedicated environment for securely running App Service apps at high scale, including Web Apps, Mobile Apps, and APIs.',
@@ -871,6 +919,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'app-service-plan',
         name: 'app service plan',
         slug: 'asp-',
         description: 'An Azure App Service Plan defines a set of compute resources for a web app to run, including the Tier, Number of Instances, and Size of the VMs.',
@@ -887,6 +936,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FserverFarms',
       },
       {
+        id: 'app-service',
         name: 'app service',
         slug: 'app-',
         description: 'Azure App Service is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
@@ -942,6 +992,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'availability-set',
         name: 'availability set',
         slug: 'avail-',
         description: 'An Availability Set is a logical grouping capability for isolating VM resources from each other when they\'re deployed.',
@@ -958,6 +1009,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FavailabilitySets',
       },
       {
+        id: 'arc-enabled-server',
         name: 'arc enabled server',
         slug: 'arcs-',
         description: 'Azure Arc-enabled servers allow you to manage your Windows and Linux machines hosted outside of Azure, on your corporate network, or other cloud provider, similar to how you manage native Azure virtual machines.',
@@ -974,6 +1026,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_HybridCompute/AzureArcCenterBlade/~/scVmmManagementServer',
       },
       {
+        id: 'arc-enabled-kubernetes-cluster',
         name: 'arc enabled kubernetes cluster',
         slug: 'arck-',
         description: 'Azure Arc-enabled Kubernetes enables you to attach and configure Kubernetes clusters anywhere using Azure. When a Kubernetes cluster is attached to Azure Arc, it will appear in the Azure portal, where you can use familiar Azure services and management capabilities.',
@@ -1004,6 +1057,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'disk-encryption-set',
         name: 'disk encryption set',
         slug: 'des-',
         description: 'Azure Disk Encryption Sets is a resource that is used to provide disk encryption keys for Azure managed disks. It uses keys from your Azure Key Vault to encrypt and decrypt the disks of your virtual machines.',
@@ -1020,6 +1074,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FdiskEncryptionSets',
       },
       {
+        id: 'function-app',
         name: 'function app',
         slug: 'func-',
         description: 'Azure Function App is a serverless compute service that lets you run event-triggered code without having to explicitly provision or manage infrastructure.',
@@ -1036,6 +1091,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp',
       },
       {
+        id: 'shared-image-gallery',
         name: 'shared image gallery',
         slug: 'gal',
         description: 'Azure Shared Image Gallery is a service that helps you build structure and organization around your images. It provides grouping of image definitions within a \'gallery\' container where each can have multiple versions.',
@@ -1052,6 +1108,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fgalleries',
       },
       {
+        id: 'managed-disk-(os)',
         name: 'managed disk (os)',
         slug: 'osdisk-',
         description: 'Azure Managed Disks are block-level storage volumes that are managed by Azure and used with Azure Virtual Machines. Managed Disks are like a physical disk in an on-premises server but virtualized.',
@@ -1072,6 +1129,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'managed-disk-(data)',
         name: 'managed disk (data)',
         slug: 'disk-',
         description: 'Azure Managed Disks for data are block-level storage volumes that manage your data, used with Azure Virtual Machines. They operate like a physical disk in an on-premises server but are virtualized.',
@@ -1088,6 +1146,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
       },
       {
+        id: 'notification-hubs',
         name: 'notification hubs',
         slug: 'nft-',
         description: 'Azure Notification Hubs provide a scalable, tailored notification infrastructure that enables you to push notifications from any backend (in the cloud or on-premises) to any platform (iOS, Android, Windows, etc.).',
@@ -1104,6 +1163,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces%2FnotificationHubs',
       },
       {
+        id: 'notification-hubs-namespace',
         name: 'notification hubs namespace',
         slug: 'nftns-',
         description: 'Azure Notification Hubs Namespaces provide a unique scoping container, in which you can create multiple notification hubs.',
@@ -1120,6 +1180,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces',
       },
       {
+        id: 'snapshot',
         name: 'snapshot',
         slug: 'snap-',
         description: 'Azure Snapshots are read-only, full copies of managed disks that are used to create exact replicas or to restore a disk to a previous state.',
@@ -1136,6 +1197,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fsnapshots',
       },
       {
+        id: 'static-web-app',
         name: 'static web app',
         slug: 'stapp-',
         description: 'Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a GitHub repository.',
@@ -1191,6 +1253,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'virtual-machine-windows',
         name: 'virtual machine windows',
         slug: 'vmw',
         description: 'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
@@ -1207,6 +1270,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
+        id: 'virtual-machine-linux',
         name: 'virtual machine linux',
         slug: 'vml',
         description: 'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
@@ -1223,6 +1287,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
+        id: 'virtual-machine-scale-set-windows',
         name: 'virtual machine scale set windows',
         slug: 'vmss-',
         description: 'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
@@ -1239,6 +1304,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
+        id: 'virtual-machine-scale-set-linux',
         name: 'virtual machine scale set linux',
         slug: 'vmss-',
         description: 'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
@@ -1255,6 +1321,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
+        id: 'load-testing-service',
         name: 'load testing service',
         slug: 'lt-',
         description: 'Microsoft Load Testing Service is a fully managed service in Azure, designed to help developers and testers generate high-scale load and run simulations. The service supports creating tests quickly without deep knowledge of load-testing tools, or allows uploading of existing Apache JMeter scripts. It provides actionable insights into performance, scalability, and capacity, supporting continuous improvement through automated CI/CD workflows.',
@@ -1275,6 +1342,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'container-kubernetes-service',
         name: 'container kubernetes service',
         slug: 'aks-',
         description: 'Azure Kubernetes Service (AKS) is a managed container orchestration service provided by Azure, which simplifies Kubernetes management, deployment, and operations.',
@@ -1305,6 +1373,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'container-registry',
         name: 'container registry',
         slug: 'cr',
         description: 'Azure Container Registry allows you to store and manage container images across all types of Azure deployments.',
@@ -1336,6 +1405,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'container-instance',
         name: 'container instance',
         slug: 'ci',
         description: 'Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines or adopt a higher-level service.',
@@ -1352,6 +1422,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerInstance%2FcontainerGroups',
       },
       {
+        id: 'service-fabric-cluster',
         name: 'service fabric cluster',
         slug: 'sf-',
         description: 'Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.',
@@ -1368,6 +1439,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fclusters',
       },
       {
+        id: 'service-fabric-managed-cluster',
         name: 'service fabric managed cluster',
         slug: 'sfmc-',
         description: 'Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.',
@@ -1384,7 +1456,8 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fmanagedclusters',
       },
       {
-        name: 'Container App Environment',
+        id: 'container-app-environment',
+        name: 'container app environment',
         slug: 'cae-',
         description: 'A Container Apps environment is a secure boundary around groups of container apps that share the same virtual network and write logs to the same logging destination. They are fully managed where Azure handles OS upgrades, scale operations, failover procedures, and resource balancing.',
         length: '2-32',
@@ -1400,7 +1473,8 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.App%2FmanagedEnvironments',
       },
       {
-        name: 'Container App',
+        id: 'container-app',
+        name: 'container app',
         slug: 'ca-',
         description: 'Azure Container Apps is a fully managed platform for running containerized applications in the cloud. It supports both Linux and Windows containers, allowing developers to build and deploy a variety of applications without having to manage the underlying infrastructure.',
         length: '2-32',
@@ -1420,6 +1494,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'cosmos-db-account',
         name: 'cosmos db account',
         slug: 'cosmos-',
         description: 'Azure Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide.',
@@ -1498,6 +1573,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'cache-for-redis',
         name: 'cache for redis',
         slug: 'redis-',
         description: 'Azure Cache for Redis offers an in-memory data store based on software Redis. It gives you access to a secure, dedicated Redis cache, managed by Microsoft.',
@@ -1549,6 +1625,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'sql-server',
         name: 'sql server',
         slug: 'sql-',
         description: 'Azure SQL Server is a fully managed relational database service by Microsoft. It provides the broadest SQL Server engine compatibility and up-to-date security and compliance standards. Users can focus on optimizing their database management and data manipulation without the need to manage infrastructure.',
@@ -1600,6 +1677,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'sql-database',
         name: 'sql database',
         slug: 'sqldb-',
         description: 'Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement.',
@@ -1616,6 +1694,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases',
       },
       {
+        id: 'mysql-database',
         name: 'mysql database',
         slug: 'mysqldb-',
         description: 'Azure Database for MySQL provides a managed database service for app development and deployment that allows you to stand up a MySQL database in minutes and scale on the fly.',
@@ -1632,6 +1711,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DBforMySQL%2Fservers',
       },
       {
+        id: 'postgresql-database',
         name: 'postgresql database',
         slug: 'psqldb-',
         description: 'Azure Database for PostgreSQL provides a managed database service for app development and deployment that allows you to stand up a PostgreSQL database in minutes and scale on the fly.',
@@ -1648,6 +1728,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AzureArcData%2FpostgresInstances',
       },
       {
+        id: 'sql-server-stretch-database',
         name: 'sql server stretch database',
         slug: 'sqlstrdb-',
         description: 'Azure SQL Stretch Database is a service that lets you extend your SQL Server databases into the Azure cloud. This allows you to keep more of your historical data at your fingertips.',
@@ -1664,6 +1745,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases/kind/v12.0%2Cuser%2Cstretch',
       },
       {
+        id: 'sql-managed-instance',
         name: 'sql managed instance',
         slug: 'sqlmi-',
         description: 'Azure SQL Managed Instance is a fully managed SQL Server Database Engine hosted in Azure cloud which provides most of the SQL Server database engine features.',
@@ -1704,6 +1786,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'storage-account',
         name: 'storage account',
         slug: 'st',
         description: 'Azure Storage Account is a modern data storage solution that provides secure, scalable, and durable storage services. It includes Blob storage, File Storage, Queue Storage, Table Storage, and Azure Data Lake Storage.',
@@ -1813,6 +1896,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'storsimple',
         name: 'storsimple',
         slug: 'ssimp-',
         description: 'Azure StorSimple is a hybrid cloud storage solution that integrates your on-premises IT environment with the Azure storage infrastructure. It provides primary storage, archive, backup, and disaster recovery, while reducing cost and IT workload.',
@@ -1833,6 +1917,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'machine-learning-workspace',
         name: 'machine learning workspace',
         slug: 'mlw-',
         description: 'Azure Machine Learning workspace is a centralized place to work with all the artifacts you create when you use Azure Machine Learning. The workspace keeps a history of all training runs, including logs, metrics, output, and a snapshot of your scripts.',
@@ -1849,6 +1934,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearning%2Fworkspaces',
       },
       {
+        id: 'search-service',
         name: 'search service',
         slug: 'srch-',
         description: 'Azure Search Service is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what\'s relevant to user queries.',
@@ -1889,6 +1975,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'openai-service',
         name: 'openai service',
         slug: 'oai-',
         description: 'Azure OpenAI service offers natural language processing capabilities, aiding applications in tasks such as translation, text summarization, sentiment analysis, and more.',
@@ -1931,6 +2018,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'speech-service',
         name: 'speech service',
         slug: 'spch-',
         description: 'Azure Speech service provides real-time and batch speech-to-text and text-to-speech conversion capabilities, enabling applications to understand and speak naturally.',
@@ -1973,6 +2061,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'language-service',
         name: 'language service',
         slug: 'lang-',
         description: 'Azure Language service facilitates understanding and translation of human languages, enhancing applications with capabilities like sentiment analysis, entity extraction, and language identification.',
@@ -2015,6 +2104,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'translator-service',
         name: 'translator service',
         slug: 'tran-',
         description: 'Azure Translator service allows applications to translate text in real-time or batch across more than 60 languages, supporting multi-lingual user experiences.',
@@ -2057,6 +2147,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'vision-service',
         name: 'vision service',
         slug: 'vis-',
         description: 'Azure Vision service offers image-processing algorithms to smartly identify, caption, index, and moderate pictures and videos for comprehensive visual experiences.',
@@ -2099,6 +2190,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'face-service',
         name: 'face service',
         slug: 'face-',
         description: 'Azure Face service enables detecting, recognizing, and analyzing human faces in images, empowering applications to handle tasks like face verification and similar face searching.',
@@ -2141,6 +2233,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'anomaly-detector-service',
         name: 'anomaly detector service',
         slug: 'ad-',
         description: 'Azure Anomaly Detector service provides AI-based anomaly detection capabilities to identify abnormal patterns or trends in your data quickly and accurately.',
@@ -2183,6 +2276,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'content-safety-service',
         name: 'content safety service',
         slug: 'cs-',
         description: 'Azure Content Safety service is designed to identify potentially harmful or inappropriate content across images, text, and videos to ensure user safety and compliance.',
@@ -2229,6 +2323,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'personalizer-service',
         name: 'personalizer service',
         slug: 'pers-',
         description: 'Azure Personalizer service offers real-time personalization capabilities, helping to deliver personalized experiences to each user based on their specific needs and preferences.',
@@ -2271,6 +2366,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'bot-service',
         name: 'bot service',
         slug: 'bot-',
         description: 'Azure Bot Service enables rapid intelligent bot development powered by the Microsoft Bot Framework, allowing you to build, connect, test, and deploy AI-rich bots.',
@@ -2313,6 +2409,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'document-intelligence-service',
         name: 'document intelligence service',
         slug: 'doci-',
         description: 'Azure Document Intelligence service enables extraction of insights and information from unstructured documents, turning them into actionable results.',
@@ -2355,6 +2452,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'metrics-advisor-service',
         name: 'metrics advisor service',
         slug: 'ma-',
         description: 'Azure Metrics Advisor service provides an AI-powered anomaly detection and metric monitoring tool for personalized alert configuration, root cause analysis, and proactive problem remediation.',
@@ -2397,6 +2495,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'video-indexer-service',
         name: 'video indexer service',
         slug: 'vi-',
         description: 'Azure Video Indexer service extracts insights from videos using AI technologies, including emotions, sentiment, spoken and written words, people, and objects.',
@@ -2439,6 +2538,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'immersive-reader-service',
         name: 'immersive reader service',
         slug: 'ir-',
         description: 'Azure Immersive Reader service enhances reading and comprehension of text, offering features like reading aloud, translating into different languages, and focus mode.',
@@ -2481,7 +2581,8 @@ export const columns: ColumnType[] = [
         },
       },
       {
-        name: 'Microsoft Fabric',
+        id: 'microsoft-fabric',
+        name: 'microsoft fabric',
         slug: 'fab-',
         description: 'Microsoft Fabric is an all-in-one analytics solution for enterprises. It covers everything from data movement to data science, Real-Time Analytics, and business intelligence. The service offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. It is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.',
         length: '3-63',
@@ -2501,6 +2602,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'analysis-services-server',
         name: 'analysis services server',
         slug: 'as',
         description: 'Azure Analysis Services is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. It is a part of Microsoft\'s business analytics stack that lets you develop semantic data models to simplify data analysis and reporting.',
@@ -2517,6 +2619,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AnalysisServices%2Fservers',
       },
       {
+        id: 'databricks-workspace',
         name: 'databricks workspace',
         slug: 'dbw-',
         description: 'Azure Databricks is an Apache Spark-based analytics platform optimized for the Microsoft Azure cloud services platform. It provides a workspace environment where you can create Apache Spark clusters, write notebooks, and build workflows.',
@@ -2547,6 +2650,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'stream-analytics',
         name: 'stream analytics',
         slug: 'asa-',
         description: 'Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.',
@@ -2563,6 +2667,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.StreamAnalytics%2FStreamingJobs',
       },
       {
+        id: 'data-explorer-cluster',
         name: 'data explorer cluster',
         slug: 'dec',
         description: 'Azure Data Explorer (ADX) is a fast, fully managed data analytics service for real-time analysis on large volumes of data streaming from applications, websites, IoT devices, and more. You can use Azure Data Explorer to collect, store, and analyze diverse data to improve products, enhance customer experiences, monitor devices, and boost operations.',
@@ -2603,6 +2708,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'data-explorer-cluster-database',
         name: 'data explorer cluster database',
         slug: 'dedb-',
         description: 'A database in Azure Data Explorer (ADX) is a logical container for data. Each database belongs to a cluster and contains a set of tables where each table is a collection of ordered columns.',
@@ -2619,6 +2725,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Kusto%2Fclusters',
       },
       {
+        id: 'data-factory',
         name: 'data factory',
         slug: 'adf-',
         description: 'Azure Data Factory is a cloud-based data integration service that allows you to create data-driven workflows for orchestrating and automating data movement and data transformation.',
@@ -2665,6 +2772,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'data-lake-store-account',
         name: 'data lake store account',
         slug: 'dls',
         description: 'Azure Data Lake Store is an enterprise-wide hyper-scale repository for big data analytic workloads. It enables you to capture data of any size, type, and ingestion speed in one single place for operational and exploratory analytics.',
@@ -2681,6 +2789,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeStore%2Faccounts',
       },
       {
+        id: 'data-lake-analytics-account',
         name: 'data lake analytics account',
         slug: 'dla',
         description: 'Azure Data Lake Analytics is an on-demand analytics job service that simplifies big data. Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insights.',
@@ -2697,6 +2806,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeAnalytics%2Faccounts',
       },
       {
+        id: 'event-hub-namespace',
         name: 'event hub namespace',
         slug: 'evhns-',
         description: 'Azure Event Hubs is a big data streaming platform and event ingestion service. The Event Hubs namespace provides a unique scoping container, in which you create one or more event hubs.',
@@ -2748,6 +2858,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'event-hub',
         name: 'event hub',
         slug: 'evh-',
         description: 'An Event Hub is a unique entity within an Event Hubs namespace that provides a target for applications to send event data. It can receive and process millions of events per second, so you can process and analyze the massive amounts of data produced by your connected devices and applications.',
@@ -2768,6 +2879,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'event-grid',
         name: 'event grid',
         slug: 'evgd-',
         description: 'Azure Event Grid is a service that manages all the events your application needs, from a single place. It allows for uniform event consumption using a publish-subscribe model.',
@@ -2808,6 +2920,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'event-grid-subscription',
         name: 'event grid subscription',
         slug: 'egst-',
         description: 'Event Grid subscriptions represent the relationship between an event source and an endpoint. They define the events you want to track, and where to send the events.',
@@ -2824,6 +2937,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/overview',
       },
       {
+        id: 'event-grid-topic',
         name: 'event grid topic',
         slug: 'evgt-',
         description: 'Event Grid Topics provide a user-defined endpoint that you post your event data to. Subscribers decide which topics they want to subscribe to.',
@@ -2840,6 +2954,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/system_topics',
       },
       {
+        id: 'hdinsight-hadoop-cluster',
         name: 'hdinsight - hadoop cluster',
         slug: 'hadoop-',
         description: 'Azure HDInsight Hadoop cluster is a cloud distribution of Hadoop components. It provides a software framework designed for processing, analyzing and deriving insights from data.',
@@ -2869,6 +2984,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'hdinsight-hbase-cluster',
         name: 'hdinsight - hbase cluster',
         slug: 'hbase-',
         description: 'Azure HDInsight HBase cluster is a NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semi-structured data.',
@@ -2898,6 +3014,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'hdinsight-kafka-cluster',
         name: 'hdinsight - kafka cluster',
         slug: 'kafka-',
         description: 'Azure HDInsight Kafka cluster is a managed platform that makes it easy to process streams of real-time data. It offers an effective platform to ingest data from IoT devices and real-time applications.',
@@ -2927,6 +3044,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'hdinsight-spark-cluster',
         name: 'hdinsight - spark cluster',
         slug: 'spark-',
         description: 'Azure HDInsight Spark cluster is an open-source, parallel-processing framework that supports in-memory processing to boost the performance of big-data analytic applications.',
@@ -2956,6 +3074,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'hdinsight-storm-cluster',
         name: 'hdinsight - storm cluster',
         slug: 'storm-',
         description: 'Azure HDInsight Storm cluster is a distributed real-time computation system for processing large volumes of high-velocity data. It\'s reliable, and you can use it with any programming language.',
@@ -2985,6 +3104,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'hdinsight-ml-services-cluster',
         name: 'hdinsight - ml services cluster',
         slug: 'mls-',
         description: 'Azure HDInsight ML Services cluster integrates R Server with Spark and the Apache Hadoop framework, providing an ideal environment for your machine learning workloads.',
@@ -3014,6 +3134,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'iot-hub',
         name: 'iot hub',
         slug: 'iot-',
         description: 'Azure IoT Hub is a managed service that acts as a central message hub for bi-directional communication between your IoT application and the devices it manages.',
@@ -3070,6 +3191,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'iot-device-provisioning-services',
         name: 'iot device provisioning services',
         slug: 'provs-',
         description: 'Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub that enables zero-touch, just-in-time provisioning to the right IoT hub without requiring human intervention.',
@@ -3121,6 +3243,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'provisioning-services-certificate',
         name: 'provisioning services certificate',
         slug: 'pcert-',
         description: 'Certificates in the IoT Hub Device Provisioning Service enhance security in device provisioning by enabling provisioning services to verify the identity of devices.',
@@ -3137,6 +3260,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
       },
       {
+        id: 'power-bi-embedded',
         name: 'power bi embedded',
         slug: 'pbi-',
         description: 'Power BI Embedded is a Microsoft Azure service that lets developers embed visuals, reports, and dashboards into an application. This embedding is done through a capacity-based, hourly metered model. It provides data insights and analytics capabilities without the need for building the features from scratch.',
@@ -3153,6 +3277,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.PowerBIDedicated%2Fcapacities',
       },
       {
+        id: 'power-bi-workspace',
         name: 'power bi workspace',
         slug: 'pbiw-',
         description: 'Power BI is a suite of business analytics tools by Microsoft that deliver insights throughout your organization. It connects to hundreds of data sources, simplifies data prep and drives ad hoc analysis.',
@@ -3169,6 +3294,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://app.powerbi.com/',
       },
       {
+        id: 'time-series-insights-environment',
         name: 'time series insights environment',
         slug: 'tsi-',
         description: 'Azure Time Series Insights is a fully managed analytics, storage, and visualization service for managing IoT-scale time-series data in the cloud. It provides a way to store, visualize, and query large amounts of time series data.',
@@ -3185,6 +3311,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.TimeSeriesInsights%2Fenvironments',
       },
       {
+        id: 'synapse-analytics-workspace',
         name: 'synapse analytics workspace',
         slug: 'synw-',
         description: 'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
@@ -3220,6 +3347,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'synapse-analytics-sql-dedicated-pool',
         name: 'synapse analytics sql dedicated pool',
         slug: 'syndp',
         description: 'Azure Synapse SQL Dedicated Pool (formerly SQL Data Warehouse) is a distributed system designed to perform analytics on large data. It supports massive parallel processing (MPP), which makes it suitable for running high-performance analytics.',
@@ -3236,6 +3364,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
+        id: 'synapse-analytics-spark-pool',
         name: 'synapse analytics spark pool',
         slug: 'synsp',
         description: 'Spark pools in Azure Synapse Analytics are used for big data processing. It provides a computation cluster that allows you to analyze large amounts of data using Spark jobs.',
@@ -3252,6 +3381,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
+        id: 'digital-twins-instance',
         name: 'digital twins instance',
         slug: 'dt-',
         description: 'Azure Digital Twins is a developer platform for next-generation IoT solutions that lets you create, run, and manage digital representations of your business environment, securely and efficiently in the cloud.',
@@ -3268,6 +3398,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances',
       },
       {
+        id: 'batch-account',
         name: 'batch account',
         slug: 'ba-',
         description: 'Azure Batch is a cloud-based job scheduling service that parallelizes and distributes the processing of large volumes of data across many computers. Ideal for high-performance computing (HPC) applications, it\'s designed to provide scalable and efficient computation with no server management.',
@@ -3332,6 +3463,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'virtual-desktop-host-pool',
         name: 'virtual desktop host pool',
         slug: 'vdpool-',
         description: 'Azure Virtual Desktop Host Pool is a collection of VMs in Azure Virtual Desktop environment. It hosts remote apps and desktops that users can access from anywhere.',
@@ -3348,6 +3480,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FHostPools',
       },
       {
+        id: 'virtual-desktop-app-group',
         name: 'virtual desktop app group',
         slug: 'vdag-',
         description: 'Azure Virtual Desktop Application Group is a logical grouping of applications installed on a host pool\'s session hosts. Users are granted access to an application group to use the apps.',
@@ -3364,6 +3497,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FApplicationGroups',
       },
       {
+        id: 'virtual-desktop-workspace',
         name: 'virtual desktop workspace',
         slug: 'vdws-',
         description: 'Azure Virtual Desktop Workspace is a logical grouping of application groups in a host pool. Users are presented with resources from all the application groups in a workspace.',
@@ -3415,6 +3549,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'app-configuration-store',
         name: 'app configuration store',
         slug: 'appcs-',
         description: 'Azure App Configuration provides a service to centrally manage application settings and feature flags. Modern programs, especially programs running in a cloud, generally have many components that are distributed in nature.',
@@ -3455,6 +3590,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'signalr',
         name: 'signalr',
         slug: 'sigr-',
         description: 'Azure SignalR Service is an Azure managed service that adds real-time functionality to applications. SignalR Service is fully-managed, freeing you to focus on your application instead of hosting and scaling a SignalR server.',
@@ -3495,6 +3631,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'maps-account',
         name: 'maps account',
         slug: 'map-',
         description: 'Azure Maps Account provides access to Azure Maps services and geospatial capabilities. It includes a range of APIs providing mapping, search, routing, traffic, time zones, geolocation, geofencing, and other geospatial capabilities, enabling the development of location-aware applications and IoT solutions.',
@@ -3515,6 +3652,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'api-management',
         name: 'api management',
         slug: 'apim-',
         description: 'Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.',
@@ -3544,6 +3682,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'integration-account',
         name: 'integration account',
         slug: 'ia-',
         description: 'Azure Integration Account is a component of Logic Apps service, providing a secure and scalable way to store and manage resources such as schemas, maps, partners, and agreements for enterprise integrations.',
@@ -3560,6 +3699,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2FintegrationAccounts',
       },
       {
+        id: 'logic-apps',
         name: 'logic apps',
         slug: 'logic-',
         description: 'Azure Logic Apps is a cloud-based service that enables users to schedule, automate, and orchestrate tasks, business processes, and workflows when you need to integrate apps, data, systems, and services across enterprises or organizations.',
@@ -3576,6 +3716,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2Fworkflows',
       },
       {
+        id: 'service-bus-namespace',
         name: 'service bus namespace',
         slug: 'sbns-',
         description: 'Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics. It provides a reliable and secure platform for asynchronous transfer of data and state.',
@@ -3627,6 +3768,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'service-bus-queue',
         name: 'service bus queue',
         slug: 'sbq-',
         description: 'Service Bus Queue supports a set of cloud-based, message-oriented middleware technologies including reliable message queuing and durable publish/subscribe messaging.',
@@ -3643,6 +3785,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
+        id: 'service-bus-topic',
         name: 'service bus topic',
         slug: 'sbt-',
         description: 'Service Bus Topic supports a publish/subscribe messaging communication model. It provides much more complex messaging solutions by allowing multiple, concurrent subscribers to independently retrieve published messages.',
@@ -3659,6 +3802,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
+        id: 'database-migration-service',
         name: 'database migration service',
         slug: 'dms-',
         description: 'Azure Database Migration Service (DMS) is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.',
@@ -3675,6 +3819,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices',
       },
       {
+        id: 'database-migration-project',
         name: 'database migration project',
         slug: 'migr-',
         description: 'Azure Migration Projects provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.',
@@ -3691,6 +3836,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices%2Fprojects',
       },
       {
+        id: 'recovery-services-vault',
         name: 'recovery services vault',
         slug: 'rsv-',
         description: 'Azure Recovery Services vault is a unified platform to manage backup and site recovery, providing efficient replication, failover and recovery of on-premises or Azure virtual machines and physical servers.',
@@ -3741,6 +3887,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        id: 'automation-account',
         name: 'automation account',
         slug: 'aa-',
         description: 'Azure Automation Account provides a way to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud and enterprise environment. It saves time and increases the reliability of regular administrative tasks.',
@@ -3795,6 +3942,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'app-insights',
         name: 'app insights',
         slug: 'appi-',
         description: 'Azure Application Insights is a feature of Azure Monitor and provides application performance management (APM) services for developers and IT professionals. It helps to detect issues, solve problems, and continuously improve web applications.',
@@ -3811,6 +3959,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents',
       },
       {
+        id: 'monitor-action-group',
         name: 'monitor action group',
         slug: 'ag-',
         description: 'Azure Monitor Action Groups provide a collection of notification preferences defined by the user. Azure Monitor and Service Health alerts use action groups to notify users that an alert has been triggered.',
@@ -3827,6 +3976,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Monitoring_Alerts/ActionGroupsBlade/resourceGroupNames~/%5B%5D',
       },
       {
+        id: 'purview-instances',
         name: 'purview instances',
         slug: 'pview-',
         description: 'Azure Purview is a unified data governance service that helps organizations achieve a complete understanding of their data. Purview helps you catalog, understand, and manage data across your enterprise.',
@@ -3843,6 +3993,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts',
       },
       {
+        id: 'blueprint',
         name: 'blueprint',
         slug: 'bp-',
         description: 'Azure Blueprints enables cloud architects and central information technology groups to define a repeatable set of Azure resources that implements and adheres to an organization\'s standards, patterns, and requirements.',
@@ -3859,6 +4010,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
+        id: 'blueprint-assignment',
         name: 'blueprint assignment',
         slug: 'bpa-',
         description: 'Blueprint Assignment in Azure is the process of assigning a blueprint to a subscription, allowing the blueprint to create, update, or delete resources to align with the blueprint definition.',
@@ -3875,6 +4027,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
+        id: 'key-vault',
         name: 'key vault',
         slug: 'kv-',
         description: 'Azure Key Vault is a tool for securely storing and accessing secrets. A secret could be a credit card number, bank account details, or a connection string for a database.',
@@ -3928,6 +4081,7 @@ export const columns: ColumnType[] = [
         },
       },
       {
+        id: 'log-analytics-workspace',
         name: 'log analytics workspace',
         slug: 'log-',
         description: 'Azure Log Analytics Workspace is a unique environment for Azure Monitor log data. Each workspace has its own data repository and configuration, and data sources and solutions are configured to store their data in a workspace.',
