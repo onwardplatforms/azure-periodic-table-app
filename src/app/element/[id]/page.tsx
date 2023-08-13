@@ -35,10 +35,8 @@ export default function Test({ params }: { params: { id: string } }) {
     ...activeElement,
     code: codeSnippet ? codeSnippet : '',
   };
-  console.log(elementWithCodeSnippet);
 
   if (!activeElement) {
-    console.log('no active element found');
     return null;
   }
 

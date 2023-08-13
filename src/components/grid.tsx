@@ -64,8 +64,6 @@ const Cell: React.FC<CellProps> = ({
     if (activeCategory === item.category && isMobile) {
       if (!ref.current) return;
 
-      console.log(ref.current, ' is scrolling into view');
-
       ref.current.scrollIntoView({
         behavior: 'auto',
       });
