@@ -17,8 +17,8 @@ HEADERS = {
 with open('../src/app/data.ts', 'r') as f:
     tsx_content = f.read()
 
-# Use regex to extract terraformUrl and name values
-pattern = re.compile(r'name: \'(.*?)\',\s*slug: \'(.*?)\',.*?terraformUrl: \'(.*?)\'', re.DOTALL)
+# Use regex to extract terraformUrl and id values
+pattern = re.compile(r'id: \'(.*?)\',.*?\s*slug: \'(.*?)\',.*?terraformUrl: \'(.*?)\'', re.DOTALL)
 matches = pattern.findall(tsx_content)
 
 def decode_escapes(s):
@@ -142,8 +142,8 @@ if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
 
-for name, slug, url in matches:
-    # print(f"Processing: Name: {name}, Slug: {slug}, URL: {url}")  # Debug line
+for id, slug, url in matches:
+    # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
     # Define substitutions outside the loop
     substitutions = {
         "name": f'"{slug}${{local.naming_suffix}}"',
@@ -153,7 +153,7 @@ for name, slug, url in matches:
 
     resource = extract_resource_from_terraform_url(url)
     if resource:
-        # if name == "managed identity":
+        # if id == "managed-identity":
         github_url = get_github_url(resource)
         content = scrape_github_url(github_url)
         if content:
@@ -176,10 +176,10 @@ for name, slug, url in matches:
             content = format_terraform_code(content)
             
             if not content:
-                print(f"No content for {name}, skipping...")
+                print(f"No content for {id}, skipping...")
                 continue
 
-            file_name = name.replace(' ', '-').lower() + '.tf'
+            file_name = id.replace(' ', '-').lower() + '.tf'
             full_path = os.path.join(output_directory, file_name)
 
             # Check if file already exists and contents are the same
@@ -187,7 +187,7 @@ for name, slug, url in matches:
                 with open(full_path, 'r') as f:
                     existing_content = f.read()
                 if existing_content == content:
-                    print(f"No changes for {name}, skipping...")
+                    print(f"No changes for {id}, skipping...")
                     continue
 
             print(f"Saving to {full_path}")  # Debug line

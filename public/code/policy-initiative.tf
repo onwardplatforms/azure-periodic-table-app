@@ -1,8 +1,8 @@
 resource "azurerm_policy_set_definition" "main" {
-  name = "set-${local.naming_suffix}"
+  name         = "set-${local.naming_suffix}"
   policy_type  = "Custom"
   display_name = "Test Policy Set"
-  
+
   parameters = <<PARAMETERS
   {
     "allowedLocations": {
@@ -15,7 +15,7 @@ resource "azurerm_policy_set_definition" "main" {
     }
   }
   PARAMETERS
-  
+
   policy_definition_reference {
     policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/e765b5de-1225-4ba3-bd56-1ac6695af988"
     parameter_values     = <<VALUE

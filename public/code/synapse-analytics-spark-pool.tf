@@ -16,16 +16,16 @@ resource "azurerm_synapse_spark_pool" "main" {
 
   library_requirement {
     content  = <<EOF
-appnope==0.1.0
-beautifulsoup4==4.6.3
-EOF
+    appnope==0.1.0
+    beautifulsoup4==4.6.3
+    EOF
     filename = "requirements.txt"
   }
 
   spark_config {
     content  = <<EOF
-spark.shuffle.spill                true
-EOF
+    spark.shuffle.spill                true
+    EOF
     filename = "config.txt"
   }
 

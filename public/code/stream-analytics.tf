@@ -13,9 +13,9 @@ resource "azurerm_stream_analytics_job" "main" {
   tags = var.tags
 
   transformation_query = <<QUERY
-    SELECT *
-    INTO [YourOutputAlias]
-    FROM [YourInputAlias]
-QUERY
+  SELECT *
+  INTO [YourOutputAlias]
+  FROM [YourInputAlias]
+  QUERY
 
 }

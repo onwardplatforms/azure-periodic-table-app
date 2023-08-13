@@ -1,17 +1,17 @@
 resource "azurerm_policy_definition" "policy" {
-  name = "def-${local.naming_suffix}"
+  name         = "def-${local.naming_suffix}"
   policy_type  = "Custom"
   mode         = "Indexed"
   display_name = "acceptance test policy definition"
-  
+
   metadata = <<METADATA
   {
     "category": "General"
   }
   
   METADATA
-  
-  
+
+
   policy_rule = <<POLICY_RULE
   {
     "if": {
@@ -25,8 +25,8 @@ resource "azurerm_policy_definition" "policy" {
     }
   }
   POLICY_RULE
-  
-  
+
+
   parameters = <<PARAMETERS
   {
     "allowedLocations": {
@@ -39,5 +39,5 @@ resource "azurerm_policy_definition" "policy" {
     }
   }
   PARAMETERS
-  
+
 }
