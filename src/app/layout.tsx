@@ -10,6 +10,7 @@ import TableWrapper from '@/components/table-wrapper';
 
 declare global {
   interface Window {
+    // @ts-ignore
     gtag: any;
   }
 }

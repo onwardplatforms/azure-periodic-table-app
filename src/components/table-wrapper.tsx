@@ -14,7 +14,7 @@ import { Label } from '@/components/ui/label';
 import useMobile from '@/custom-hooks/use-mobile';
 import { useRouter } from 'next/navigation';
 
-export default function TableWrapper({ children }: { children: any }) {
+export default function TableWrapper({ children }: { children: JSX.Element }) {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
   const [open, setOpen] = useState(false);
   const [textSearch, setTextSearch] = useState('');
@@ -27,7 +27,7 @@ export default function TableWrapper({ children }: { children: any }) {
   // when there's one result left after user searches for an element, set that element as active element only if they hit enter
   // to listen for keystroke it needs to be a usEffect
   useEffect(() => {
-    function handleSearchEnter(e: any) {
+    function handleSearchEnter(e: KeyboardEvent) {
       if (e.key === 'Enter') {
         // filter elements by text search
         const filteredElements = columns

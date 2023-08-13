@@ -15,7 +15,7 @@ interface CellProps {
   activeCategory: Categories | null;
   setActiveCategory: (category: Categories | null) => void;
   select: () => void;
-  setActiveElement: (element: any) => void;
+  setActiveElement: (element: Item) => void;
   categoryData: CategoryData;
   textSearch: string;
 }
@@ -136,7 +136,7 @@ interface ColumnProps {
   activeCategory: Categories | null;
   setActiveCategory: (category: Categories | null) => void;
   select: () => void;
-  setActiveElement: (element: any) => void;
+  setActiveElement: (element: Item) => void;
   categoryData: CategoryData;
   textSearch: string;
   zoomLevel: 0 | 1 | 2;

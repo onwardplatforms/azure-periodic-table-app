@@ -33,14 +33,17 @@ export default function Sidebar({
 }) {
   const [copied, setCopied] = useState(false);
   const isMobile = useMobile();
-  const hasPrivateEndpointData = (element: any) => {
+  const hasPrivateEndpointData = (element: Item) => {
     if (!element?.dnsConfiguration) return false;
 
     const { commercial, government, china } = element.dnsConfiguration;
+
     return (
-      commercial?.subresourceNames?.length > 0 ||
-      government?.subresourceNames?.length > 0 ||
-      china?.subresourceNames?.length > 0
+      (commercial?.subresourceNames?.length &&
+        commercial?.subresourceNames?.length > 0) ||
+      (government?.subresourceNames?.length &&
+        government?.subresourceNames?.length > 0) ||
+      (china?.subresourceNames?.length && china?.subresourceNames?.length > 0)
     );
   };
 
