@@ -7,6 +7,7 @@ import type { Item } from '@/app/data';
 import { useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
+import Link from 'next/link';
 
 interface CellProps {
   item: Item;
@@ -87,42 +88,46 @@ const Cell: React.FC<CellProps> = ({
   }
 
   return (
-    <article
-      ref={ref} // Pass the ref to the div
-      onClick={() => {
-        if (isDisabled) return;
-        handleGoogleTag(item);
-        setActiveElement(item);
-        select();
-      }}
-      className={`2xl:w-16 2xl:h-16 h-14 w-14  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
-      aria-describedby={`${item.slug}-desc`}
-    >
-      <div className="flex flex-col  relative h-full w-full">
-        <div className="flex w-full justify-between items-center">
-          {item.icon ? (
-            <figure>
-              <Image
-                alt={`icon for ${item.name}`}
-                width={10}
-                height={10}
-                className=""
-                src={`${prefix}${item.icon}`}
-              />
-              <figcaption className="hidden">{`Icon for ${item.name}`}</figcaption>
-            </figure>
-          ) : null}
-          <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
+    <Link className="block hover:z-10" href={`/element/${item.id}`}>
+      <article
+        ref={ref} // Pass the ref to the div
+        onClick={() => {
+          if (isDisabled) return;
+          handleGoogleTag(item);
+          setActiveElement(item);
+          select();
+        }}
+        className={`2xl:w-16 2xl:h-16 h-14 w-14  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+        aria-describedby={`${item.slug}-desc`}
+      >
+        <div className="flex flex-col  relative h-full w-full">
+          <div className="flex w-full justify-between items-center">
+            {item.icon ? (
+              <figure>
+                <Image
+                  alt={`icon for ${item.name}`}
+                  width={10}
+                  height={10}
+                  className=""
+                  src={`${prefix}${item.icon}`}
+                />
+                <figcaption className="hidden">{`Icon for ${item.name}`}</figcaption>
+              </figure>
+            ) : null}
+            <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
+          </div>
+          <h2 className="justify-start w-full font-bold text-[.65rem]">
+            {item.slug}
+          </h2>
+          <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
+            <span>{item.name}</span>
+          </p>
         </div>
-        <h2 className="justify-start w-full font-bold text-xs">{item.slug}</h2>
-        <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
-          <span>{item.name}</span>
-        </p>
-      </div>
-      <div id={`${item.slug}`} className="hidden">
-        {item.description}
-      </div>
-    </article>
+        <div id={`${item.slug}`} className="hidden">
+          {item.description}
+        </div>
+      </article>
+    </Link>
   );
 };
 
