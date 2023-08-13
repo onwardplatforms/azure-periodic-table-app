@@ -1,10 +1,10 @@
-import { columns } from '@/app/data';
+import { Item, columns } from '@/app/data';
 import Sidebar from '@/components/sidebar';
 import fs from 'fs';
 import path from 'path';
 
 // get url param
-export default function Test({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
   const filePath = path.join(
     __dirname,
     `../../../../../public/code/${params.id}.tf`
@@ -22,23 +22,18 @@ export default function Test({ params }: { params: { id: string } }) {
 
   const paramsId = params.id;
 
-  // find the item in the columns array that matches the url param
   const activeElement = columns
-    .map((group) =>
-      group.items.filter((item) =>
-        item.id.toLowerCase().includes(paramsId.toLowerCase())
-      )
-    )
-    .flat()[0];
-
-  const elementWithCodeSnippet = {
-    ...activeElement,
-    code: codeSnippet ? codeSnippet : '',
-  };
+    .flatMap((column) => column.items)
+    .find((item) => item.id === paramsId);
 
   if (!activeElement) {
     return null;
   }
+
+  const elementWithCodeSnippet: Item = {
+    ...activeElement,
+    code: codeSnippet,
+  };
 
   return <Sidebar activeElement={elementWithCodeSnippet} open={true} />;
 }

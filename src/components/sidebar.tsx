@@ -23,8 +23,6 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
 export default function Sidebar({
-  setOpen,
-  open,
   activeElement,
 }: {
   setOpen?: Function;
@@ -32,6 +30,7 @@ export default function Sidebar({
   activeElement: Item | null;
 }) {
   const [copied, setCopied] = useState(false);
+  const [open, setOpen] = useState(true);
   const isMobile = useMobile();
   const hasPrivateEndpointData = (element: Item) => {
     if (!element?.dnsConfiguration) return false;
@@ -67,7 +66,16 @@ export default function Sidebar({
   if (!activeElement) return null;
 
   return (
-    <Sheet open={isActive} onOpenChange={() => navigate.replace('/')}>
+    <Sheet
+      open={open}
+      onOpenChange={() => {
+        setOpen(false);
+        // This is to show the animation
+        setTimeout(() => {
+          navigate.replace('/');
+        }, 300);
+      }}
+    >
       <SheetContent className="sm:max-w-[720px] overflow-y-scroll">
         <SheetHeader>
           <div className="flex justify-start items-center">

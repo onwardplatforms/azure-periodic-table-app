@@ -1,3 +1,3 @@
-export default function Test({ children }: { children: JSX.Element }) {
+export default function Page({ children }: { children: React.ReactNode }) {
   return children;
 }

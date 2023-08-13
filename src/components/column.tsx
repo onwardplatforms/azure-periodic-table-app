@@ -7,7 +7,36 @@ import type { Item } from '@/app/data';
 import { useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
-import Link from 'next/link';
+import ConditionalLink from '@/lib/ConditionalLink';
+
+export const Column: React.FC<ColumnProps> = ({
+  items,
+  activeCategory,
+  setActiveCategory,
+  select,
+  setActiveElement,
+  categoryData,
+  textSearch,
+  zoomLevel,
+}) => {
+  return (
+    <div className={`flex flex-col w-fit h-full relative`}>
+      {items.map((item, i) => (
+        <Cell
+          textSearch={textSearch}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          key={i}
+          item={item}
+          select={select}
+          setActiveElement={setActiveElement}
+          categoryData={categoryData}
+          zoomLevel={zoomLevel}
+        />
+      ))}
+    </div>
+  );
+};
 
 interface CellProps {
   item: Item;
@@ -86,16 +115,25 @@ const Cell: React.FC<CellProps> = ({
   }
 
   return (
-    <Link className="block hover:z-10" href={`/element/${item.id}`}>
+    <ConditionalLink
+      className={`block hover:z-10 ${
+        isDisabled ? 'cursor-auto' : 'cursor-pointer'
+      }`}
+      showLink={!isDisabled}
+      href={`/resource/${item.id}`}
+      shallow
+    >
       <article
         ref={ref} // Pass the ref to the div
-        onClick={() => {
-          if (isDisabled) return;
-          handleGoogleTag(item);
-          setActiveElement(item);
-          select();
-        }}
-        className={`2xl:w-16 2xl:h-16 h-14 w-14  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+        // onClick={() => {
+        //   if (isDisabled) return;
+        //   handleGoogleTag(item);
+        //   setActiveElement(item);
+        //   select();
+        // }}
+        className={`2xl:w-16 2xl:h-16 h-14 w-14 ${
+          isDisabled ? 'cursor-auto' : 'cursor-pointer'
+        }  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
         aria-describedby={`${item.slug}-desc`}
       >
         <div className="flex flex-col  relative h-full w-full">
@@ -118,14 +156,16 @@ const Cell: React.FC<CellProps> = ({
             {item.slug}
           </h2>
           <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
-            <span>{item.name}</span>
+            <span className="text-left break-words w-full mb-4">
+              {item.name}
+            </span>
           </p>
         </div>
         <div id={`${item.slug}`} className="hidden">
           {item.description}
         </div>
       </article>
-    </Link>
+    </ConditionalLink>
   );
 };
 
@@ -139,32 +179,3 @@ interface ColumnProps {
   textSearch: string;
   zoomLevel: 0 | 1 | 2;
 }
-
-export const Column: React.FC<ColumnProps> = ({
-  items,
-  activeCategory,
-  setActiveCategory,
-  select,
-  setActiveElement,
-  categoryData,
-  textSearch,
-  zoomLevel,
-}) => {
-  return (
-    <div className={`flex flex-col w-fit h-full relative`}>
-      {items.map((item, i) => (
-        <Cell
-          textSearch={textSearch}
-          activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
-          key={i}
-          item={item}
-          select={select}
-          setActiveElement={setActiveElement}
-          categoryData={categoryData}
-          zoomLevel={zoomLevel}
-        />
-      ))}
-    </div>
-  );
-};

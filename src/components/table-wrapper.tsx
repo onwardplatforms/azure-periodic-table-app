@@ -42,7 +42,7 @@ export default function TableWrapper({ children }: { children: JSX.Element }) {
 
         if (filteredElements.length === 1) {
           // go to that element in the url
-          navigate.push(`/element/${filteredElements[0].id}`);
+          navigate.push(`/resource/${filteredElements[0].id}`);
         }
       }
     }
