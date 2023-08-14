@@ -68,4 +68,3 @@ jobs:
           ${{ env.CHANGED_FILES }}
         branch: automated-code-snippet-update
         base: main
-        delete-branch: true
