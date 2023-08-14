@@ -49,31 +49,10 @@ def substitute_values(content, slug, substitutions):
         content = pattern.sub(replacement, content)
     return content
 
-# def extract_resources_and_data(content, resource_type):
-#     """
-#     Extract the block for a specific resource type from the Terraform content and
-#     retain blocks containing "data" or "locals" references.
-#     """
-#     patterns = [
-#         rf'^locals(\s+{{[\s\S]*?^}})',  # Locals block pattern
-#         rf'^data\s+\".*?\"\s+\".*?\"(\s+{{[^{{}}]*}})',  # Data block pattern
-#         rf'^resource\s+\"{resource_type}\"\s+\".*?\"\s+{{[\s\S]*?^}}'  # Specific resource pattern
-#     ]
-    
-#     blocks = []
-#     for pattern in patterns:
-#         for match in re.finditer(pattern, content, re.MULTILINE):
-#             blocks.append(match.group(0))
-    
-#     return '\n\n'.join(blocks)  # Separate blocks with two newlines for better readability
-
 def extract_resources_and_data(content, resource_type):
     """
-    Refined function to:
-    1. Match the desired resource.
-    2. Conditionally check if the resource contains `data.` or `local.`. 
-       Only if the resource contains one of these will it do an additional match for those patterns.
-    3. The final result is always formatted as data block, local block, then resource.
+    Extract the block for a specific resource type from the Terraform content and
+    retain blocks containing "data" or "locals" references.
     """
     
     # Patterns to capture blocks
