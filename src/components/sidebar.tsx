@@ -252,6 +252,18 @@ export default function Sidebar({
                       <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
                     </a>
                   )}
+                  {activeElement?.portalUrl && (
+                    <a
+                      target="_blank"
+                      href={`https://shell.azure.com/?cloudshell=true}`}
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>
