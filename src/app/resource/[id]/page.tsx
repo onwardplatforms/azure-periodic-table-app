@@ -17,9 +17,8 @@ export default function Page({ params }: { params: { id: string } }) {
     // this file may or may not be here, so we need to handle the error
 
     codeSnippet = fs.readFileSync(filePath, 'utf8');
-    console.log(codeSnippet);
   } catch (err) {
-    console.log('nope');
+    console.log(err);
     // Handle the error appropriately, e.g., return an error component or message.
   }
 

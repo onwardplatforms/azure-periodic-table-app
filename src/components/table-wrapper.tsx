@@ -53,7 +53,11 @@ export default function TableWrapper({ children }: { children: JSX.Element }) {
   }, [textSearch, navigate]);
 
   return (
-    <main className="relative flex-col min-h-screen items-center justify-center p-8 ">
+    <main
+      className={`relative flex-col min-h-screen items-center justify-center ${
+        isFullScreen ? 'p-0' : 'p-8'
+      }`}
+    >
       <div className="static lg:relative top-0 left-0 w-full lg:flex flex-col items-center justify-center">
         {isFullScreen ? null : (
           <>
@@ -80,7 +84,7 @@ export default function TableWrapper({ children }: { children: JSX.Element }) {
         <main
           className={
             isFullScreen
-              ? 'flex flex-col justify-center items-center'
+              ? 'flex flex-col justify-center items-center w-full'
               : 'border-border rounded-md w-full'
           }
         >
@@ -102,7 +106,7 @@ export default function TableWrapper({ children }: { children: JSX.Element }) {
             textSearch={textSearch}
             setActiveElement={setActiveElement}
             setOpen={setOpen}
-            zoomLevel={isFullScreen ? 1 : 0}
+            zoomLevel={isFullScreen ? 2 : 0}
           />
         </main>
       </div>

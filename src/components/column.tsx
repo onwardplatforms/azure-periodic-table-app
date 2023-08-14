@@ -132,6 +132,8 @@ const Cell: React.FC<CellProps> = ({
         //   select();
         // }}
         className={`2xl:w-16 2xl:h-16 h-14 w-14 ${
+          zoomLevel === 2 ? 'h-16 w-16' : ''
+        } ${
           isDisabled ? 'cursor-auto' : 'cursor-pointer'
         }  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
         aria-describedby={`${item.slug}-desc`}
@@ -152,10 +154,18 @@ const Cell: React.FC<CellProps> = ({
             ) : null}
             <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
           </div>
-          <h2 className="justify-start w-full font-bold text-[.65rem]">
+          <h2
+            className={`justify-start w-full font-bold ${
+              zoomLevel === 2 ? 'text-xs' : 'text-[.65rem]'
+            }`}
+          >
             {item.slug}
           </h2>
-          <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
+          <p
+            className={`justify-center items-center w-full ${
+              zoomLevel === 2 ? 'text-[8px]' : 'text-[0.4rem]'
+            }  h-full  overflow-hidden`}
+          >
             <span className="text-left break-words w-full mb-4">
               {item.name}
             </span>
