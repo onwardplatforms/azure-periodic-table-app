@@ -43,7 +43,7 @@ jobs:
       if: steps.git-diff.outputs.changed == 'true'
       run: |
         git config user.name "GitHub Action Bot"
-        git config user.email "justin.oconnor@onwardplatforms.com"
+        git config user.email "github.bot@onwardplatforms.com"
         git add -A
         git commit -m "Automated update of code snippets"
         git push
