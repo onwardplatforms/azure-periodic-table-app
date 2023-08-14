@@ -11,6 +11,8 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { categoryData } from './periodic-table';
+import { Item } from '@/app/data';
+import { Categories } from '@/app/constants';
 
 export default function Topbar({
   setTextSearch,
@@ -26,7 +28,7 @@ export default function Topbar({
   isFullScreen: boolean;
   setOpen: Function;
   open: boolean;
-  activeCategory: any;
+  activeCategory: Categories | null;
   setActiveCategory: Function;
 }) {
   return (
@@ -42,7 +44,7 @@ export default function Topbar({
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button
-                onClick={() => setOpen((prev: any) => !prev)}
+                onClick={() => setOpen((prev: boolean) => !prev)}
                 variant={'secondary'}
               >
                 <FilterIcon className="h-4 w-4" />
@@ -59,7 +61,7 @@ export default function Topbar({
                   >
                     <Button
                       onClick={() => {
-                        setActiveCategory((prev: any) =>
+                        setActiveCategory((prev: string) =>
                           prev === item.name ? null : item.name
                         );
                         setOpen(false);

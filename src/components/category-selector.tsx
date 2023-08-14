@@ -28,7 +28,7 @@ export const CategorySelector = ({
               isActive ? 'brightness-100' : 'brightness-75'
             }  hover:brightness-90`}
             onClick={() =>
-              setActiveCategory((prev: any) =>
+              setActiveCategory((prev: string) =>
                 prev === item.name ? null : item.name
               )
             }

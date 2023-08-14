@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import CodeSnippet from './code-snippet';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
@@ -9,7 +10,7 @@ import useMobile from '@/custom-hooks/use-mobile';
 import { Label } from './ui/label';
 import { CopyBox } from './ui/copy-box';
 import { Icons } from './ui/icons';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import {
   Card,
   CardContent,
@@ -18,25 +19,32 @@ import {
   CardTitle,
 } from './ui/card';
 
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 export default function Sidebar({
-  setOpen,
-  open,
   activeElement,
 }: {
-  setOpen: Function;
+  setOpen?: Function;
   open: boolean;
   activeElement: Item | null;
 }) {
   const [copied, setCopied] = useState(false);
+  const [open, setOpen] = useState(true);
   const isMobile = useMobile();
-  const hasPrivateEndpointData = (element: any) => {
+  const hasPrivateEndpointData = (element: Item) => {
     if (!element?.dnsConfiguration) return false;
 
     const { commercial, government, china } = element.dnsConfiguration;
-    return (commercial?.subresourceNames?.length > 0) ||
-      (government?.subresourceNames?.length > 0) ||
-      (china?.subresourceNames?.length > 0);
-  }
+
+    return (
+      (commercial?.subresourceNames?.length &&
+        commercial?.subresourceNames?.length > 0) ||
+      (government?.subresourceNames?.length &&
+        government?.subresourceNames?.length > 0) ||
+      (china?.subresourceNames?.length && china?.subresourceNames?.length > 0)
+    );
+  };
 
   // after 2 seconds have copied be false if active
   useEffect(() => {
@@ -45,10 +53,29 @@ export default function Sidebar({
     }
   }, [copied]);
 
+  const path = usePathname();
+
+  const navigate = useRouter();
+
+  const isActive = activeElement
+    ? path.includes(activeElement?.id)
+      ? true
+      : false
+    : false;
+
   if (!activeElement) return null;
 
   return (
-    <Sheet onOpenChange={() => setOpen((prev: boolean) => !prev)} open={open}>
+    <Sheet
+      open={open}
+      onOpenChange={() => {
+        setOpen(false);
+        // This is to show the animation
+        setTimeout(() => {
+          navigate.replace('/');
+        }, 300);
+      }}
+    >
       <SheetContent className="sm:max-w-[720px] overflow-y-scroll">
         <SheetHeader>
           <div className="flex justify-start items-center">
@@ -64,7 +91,7 @@ export default function Sidebar({
         <SheetTitle className="mb-4">
           <div className="flex flex-col justify-center items-start mt-6 mb-2">
             <div className="flex">
-              <span className="font-bold text-xl">{activeElement.name}</span>
+              <h1 className="font-bold text-xl">{activeElement.name}</h1>
             </div>
             <div className="font-light">
               <CopyBox
@@ -74,9 +101,9 @@ export default function Sidebar({
           </div>
         </SheetTitle>
         <div className="mb-4">
-          <span className="text-left break-words w-full mb-4">
+          <p className="text-left break-words w-full mb-4">
             {activeElement?.description}
-          </span>
+          </p>
         </div>
         <div className="flex flex-col justify-center items-start my-6">
           <div className="flex justify-center items-center">
@@ -95,10 +122,11 @@ export default function Sidebar({
               )}
             </span>
             <div
-              className={`lg:mx-0 w-6 h-6 rounded my-1 ${categoryData.find(
-                (item) => item.name === activeElement.category
-              )?.color
-                }`}
+              className={`lg:mx-0 w-6 h-6 rounded my-1 ${
+                categoryData.find(
+                  (item) => item.name === activeElement.category
+                )?.color
+              }`}
             />
             <span className="ml-2">{activeElement.category}</span>
           </div>
@@ -190,13 +218,15 @@ export default function Sidebar({
                   </div>
                 </div>
                 {(activeElement?.code ?? '') && (
-                <div className="mt-6">
-                  <Label>Terraform starter:</Label>
-                </div>
+                  <>
+                    <div className="mt-6">
+                      <Label>Terraform starter:</Label>
+                    </div>
+                    <div className="mb-4">
+                      <CodeSnippet codeString={activeElement.code} />
+                    </div>
+                  </>
                 )}
-                <div className="mb-4">
-                  <CodeSnippet codeString={activeElement?.code ?? ''} />
-                </div>
               </CardContent>
             </Card>
           </div>
@@ -250,26 +280,32 @@ export default function Sidebar({
                 <CardContent>
                   <Tabs defaultValue="commercial">
                     <TabsList>
-                      {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
+                      {(activeElement?.dnsConfiguration?.commercial
+                        ?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="commercial">Commercial</TabsTrigger>
                       )}
-                      {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
+                      {(activeElement?.dnsConfiguration?.government
+                        ?.subresourceNames?.length ?? 0) > 0 && (
                         <TabsTrigger value="government">Government</TabsTrigger>
                       )}
-                      {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
+                      {(activeElement?.dnsConfiguration?.china?.subresourceNames
+                        ?.length ?? 0) > 0 && (
                         <TabsTrigger value="china">China</TabsTrigger>
                       )}
                     </TabsList>
 
-                    {(activeElement?.dnsConfiguration?.commercial?.subresourceNames?.length ?? 0) > 0 && (
+                    {(activeElement?.dnsConfiguration?.commercial
+                      ?.subresourceNames?.length ?? 0) > 0 && (
                       <TabsContent value="commercial">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.commercial?.subresourceNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.commercial?.subresourceNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -277,9 +313,11 @@ export default function Sidebar({
                           <Label>Private DNS Zone Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.commercial?.privateDnsZoneNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.commercial?.privateDnsZoneNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -287,23 +325,28 @@ export default function Sidebar({
                           <Label>Public DNS Zone Forwarders</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.commercial?.publicDnsForwarderNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.commercial?.publicDnsForwarderNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
                       </TabsContent>
                     )}
-                    {(activeElement?.dnsConfiguration?.government?.subresourceNames?.length ?? 0) > 0 && (
+                    {(activeElement?.dnsConfiguration?.government
+                      ?.subresourceNames?.length ?? 0) > 0 && (
                       <TabsContent value="government">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.government?.subresourceNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.government?.subresourceNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -311,9 +354,11 @@ export default function Sidebar({
                           <Label>Private DNS Zone Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.government?.privateDnsZoneNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.government?.privateDnsZoneNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -321,23 +366,28 @@ export default function Sidebar({
                           <Label>Public DNS Zone Forwarders</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.government?.publicDnsForwarderNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.government?.publicDnsForwarderNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
                       </TabsContent>
                     )}
-                    {(activeElement?.dnsConfiguration?.china?.subresourceNames?.length ?? 0) > 0 && (
+                    {(activeElement?.dnsConfiguration?.china?.subresourceNames
+                      ?.length ?? 0) > 0 && (
                       <TabsContent value="china">
                         <div className="mt-6">
                           <Label>Sub-Resource Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.china?.subresourceNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.china?.subresourceNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -345,9 +395,11 @@ export default function Sidebar({
                           <Label>Private DNS Zone Names</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.china?.privateDnsZoneNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.china?.privateDnsZoneNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
@@ -355,9 +407,11 @@ export default function Sidebar({
                           <Label>Public DNS Zone Forwarders</Label>
                           <div>
                             <span className="flex flex-wrap">
-                              {activeElement?.dnsConfiguration?.china?.publicDnsForwarderNames?.map((name, index) => (
-                                <CopyBox key={index} text={name} />
-                              ))}
+                              {activeElement?.dnsConfiguration?.china?.publicDnsForwarderNames?.map(
+                                (name, index) => (
+                                  <CopyBox key={index} text={name} />
+                                )
+                              )}
                             </span>
                           </div>
                         </div>
