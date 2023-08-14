@@ -57,14 +57,5 @@ jobs:
         git push --force --set-upstream origin automated-code-snippet-update
 
     - name: Create pull request
-      if: steps.git-diff.outputs.changed == 'true'
-      uses: peter-evans/create-pull-request@v5
-      with:
-        title: "Automated update of code snippets"
-        body: |
-          This PR updates the code snippets in the `public/code` directory.
-          
-          Files changed:
-          ${{ env.CHANGED_FILES }}
-        branch: automated-code-snippet-update
-        base: main
+      run: |
+        gh pr create --base main --head automated-code-snippet-update
