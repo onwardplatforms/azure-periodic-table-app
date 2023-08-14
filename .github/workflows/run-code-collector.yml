@@ -3,6 +3,7 @@ name: Update Code Snippets
 on:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+  pull_request:
   
   workflow_dispatch:
 
@@ -42,7 +43,7 @@ jobs:
     - name: List changed files
       id: list-changes
       run: |
-        CHANGED_FILES=$(git diff --name-only HEAD)
+        CHANGED_FILES=$(git diff --name-only HEAD | tr '\n' ' ')
         echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
 
     - name: Commit and push
@@ -67,4 +68,3 @@ jobs:
           ${{ env.CHANGED_FILES }}
         branch: automated-code-snippet-update
         base: main
-        delete-branch: true
