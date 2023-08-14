@@ -43,7 +43,7 @@ jobs:
     - name: List changed files
       id: list-changes
       run: |
-        CHANGED_FILES=$(git diff --name-only HEAD)
+        CHANGED_FILES=$(git diff --name-only HEAD | tr '\n' ' ')
         echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
 
     - name: Commit and push
