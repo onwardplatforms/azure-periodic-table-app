@@ -1,10 +1,3 @@
-data "azurerm_client_config" "current" {}
-
-resource "azurerm_resource_group" "main" {
-  name     = "des-${local.naming_suffix}"
-  location = var.location
-}
-
 resource "azurerm_disk_encryption_set" "main" {
   name                = "des-${local.naming_suffix}"
   resource_group_name = azurerm_resource_group.main.name

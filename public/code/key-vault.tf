@@ -1,10 +1,5 @@
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_resource_group" "main" {
-  name     = "kv-${local.naming_suffix}"
-  location = var.location
-}
-
 resource "azurerm_key_vault" "main" {
   name                        = "kv-${local.naming_suffix}"
   location                    = azurerm_resource_group.main.location

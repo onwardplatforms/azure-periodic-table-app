@@ -49,25 +49,34 @@ def substitute_values(content, slug, substitutions):
         content = pattern.sub(replacement, content)
     return content
 
-
-
 def extract_resources_and_data(content, resource_type):
     """
     Extract the block for a specific resource type from the Terraform content and
     retain blocks containing "data" or "locals" references.
     """
-    patterns = [
-        rf'locals\s+{{[\s\S]*?^}}',  # Locals block pattern
-        rf'data\s+".*?"\s+".*?"\s+{{[\s\S]*?^}}',  # Data block pattern
-        rf'resource\s+"{resource_type}"\s+".*?"\s+{{[\s\S]*?^}}'  # Specific resource pattern
-    ]
     
-    blocks = []
-    for pattern in patterns:
-        for match in re.finditer(pattern, content, re.MULTILINE):
-            blocks.append(match.group(0))
+    # Patterns to capture blocks
+    locals_pattern = rf'^locals\s*{{[\s\S]*?^}}'
+    data_pattern = rf'^data\s+\".*?\"\s+\".*?\"(\s+{{[^{{}}]*}})'
+    resource_pattern = rf'^resource\s+"{resource_type}"\s+".*?"\s*{{[\s\S]*?^}}'
     
-    return '\n\n'.join(blocks)  # Separate blocks with two newlines for better readability
+    # Capture the desired resource
+    resource_blocks = [match.group(0) for match in re.finditer(resource_pattern, content, re.MULTILINE)]
+    
+    # If the resource contains references to data or locals, capture those blocks
+    data_blocks = set()  # Using set to avoid duplicate blocks
+    locals_blocks = set()
+    
+    for resource_block in resource_blocks:
+        if 'data.' in resource_block:
+            data_blocks.update([match.group(0) for match in re.finditer(data_pattern, content, re.MULTILINE)])
+        if 'local.' in resource_block:
+            locals_blocks.update([match.group(0) for match in re.finditer(locals_pattern, content, re.MULTILINE)])
+    
+    # Combine the blocks in the desired order: data, locals, resource
+    combined_blocks = list(data_blocks) + list(locals_blocks) + resource_blocks
+    
+    return '\n\n'.join(combined_blocks)  # Separate blocks with two newlines for better readability
 
 def extract_resource_from_terraform_url(url):
     """

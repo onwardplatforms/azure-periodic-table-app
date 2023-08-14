@@ -1108,7 +1108,7 @@ export const columns: ColumnType[] = [
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fgalleries',
       },
       {
-        id: 'managed-disk-(os)',
+        id: 'managed-disk-os',
         name: 'managed disk (os)',
         slug: 'osdisk-',
         description: 'Azure Managed Disks are block-level storage volumes that are managed by Azure and used with Azure Virtual Machines. Managed Disks are like a physical disk in an on-premises server but virtualized.',
@@ -1129,7 +1129,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        id: 'managed-disk-(data)',
+        id: 'managed-disk-data',
         name: 'managed disk (data)',
         slug: 'disk-',
         description: 'Azure Managed Disks for data are block-level storage volumes that manage your data, used with Azure Virtual Machines. They operate like a physical disk in an on-premises server but are virtualized.',
