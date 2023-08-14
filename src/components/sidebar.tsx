@@ -91,7 +91,7 @@ export default function Sidebar({
         <SheetTitle className="mb-4">
           <div className="flex flex-col justify-center items-start mt-6 mb-2">
             <div className="flex">
-              <span className="font-bold text-xl">{activeElement.name}</span>
+              <h1 className="font-bold text-xl">{activeElement.name}</h1>
             </div>
             <div className="font-light">
               <CopyBox
@@ -101,9 +101,9 @@ export default function Sidebar({
           </div>
         </SheetTitle>
         <div className="mb-4">
-          <span className="text-left break-words w-full mb-4">
+          <p className="text-left break-words w-full mb-4">
             {activeElement?.description}
-          </span>
+          </p>
         </div>
         <div className="flex flex-col justify-center items-start my-6">
           <div className="flex justify-center items-center">
