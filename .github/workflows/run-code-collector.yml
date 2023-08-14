@@ -53,7 +53,7 @@ jobs:
         git checkout -b automated-code-snippet-update
         git add -A
         git commit -m "Automated update of code snippets"
-        git push --set-upstream origin automated-code-snippet-update
+        git push --force --set-upstream origin automated-code-snippet-update
 
     - name: Create pull request
       if: steps.git-diff.outputs.changed == 'true'
@@ -65,5 +65,6 @@ jobs:
           
           Files changed:
           ${{ env.CHANGED_FILES }}
-        branch: "automated-code-snippet-update"
-        base: "main"
+        branch: automated-code-snippet-update
+        base: main
+        delete-branch: true
