@@ -173,57 +173,56 @@ if not os.path.exists(output_directory):
 
 
 for id, slug, url in matches:
-    if slug == 'kv-':
-        # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
-        # Define substitutions outside the loop
-        substitutions = {
-            "name": f'"{slug}${{local.naming_suffix}}"',
-            "location": "var.location",
-            "tags": "var.tags",
-        }
+    # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
+    # Define substitutions outside the loop
+    substitutions = {
+        "name": f'"{slug}${{local.naming_suffix}}"',
+        "location": "var.location",
+        "tags": "var.tags",
+    }
 
-        resource = extract_resource_from_terraform_url(url)
-        if resource:
-            # if id == "managed-identity":
-            github_url = get_github_url(resource)
-            content = scrape_github_url(github_url)
-            if content:
-                # Decode escape sequences
-                content = decode_escapes(content)
-                
-                # Substitute name and location values
-                content = substitute_values(content, slug, substitutions)
-                
-                # Extract specific resource block
-                content = extract_resources_and_data(content, f"azurerm_{resource}")
-                if not content:
-                    print("Specific resource block not found!")  # Debug line
-                    continue  # If the specific resource block is not found, skip saving the file
+    resource = extract_resource_from_terraform_url(url)
+    if resource:
+        # if id == "managed-identity":
+        github_url = get_github_url(resource)
+        content = scrape_github_url(github_url)
+        if content:
+            # Decode escape sequences
+            content = decode_escapes(content)
+            
+            # Substitute name and location values
+            content = substitute_values(content, slug, substitutions)
+            
+            # Extract specific resource block
+            content = extract_resources_and_data(content, f"azurerm_{resource}")
+            if not content:
+                print("Specific resource block not found!")  # Debug line
+                continue  # If the specific resource block is not found, skip saving the file
 
-                # Replace all instances of "example" and .example
-                content = content.replace('"example"', '"main"').replace('.example', '.main')
+            # Replace all instances of "example" and .example
+            content = content.replace('"example"', '"main"').replace('.example', '.main')
 
-                # Format the Terraform code
-                content = format_terraform_code(content)
-                
-                if not content:
-                    print(f"No content for {id}, skipping...")
+            # Format the Terraform code
+            content = format_terraform_code(content)
+            
+            if not content:
+                print(f"No content for {id}, skipping...")
+                continue
+
+            file_name = id.replace(' ', '-').lower() + '.tf'
+            full_path = os.path.join(output_directory, file_name)
+
+            # Check if file already exists and contents are the same
+            if os.path.exists(full_path):
+                with open(full_path, 'r') as f:
+                    existing_content = f.read()
+                if existing_content == content:
+                    print(f"No changes for {id}, skipping...")
                     continue
 
-                file_name = id.replace(' ', '-').lower() + '.tf'
-                full_path = os.path.join(output_directory, file_name)
-
-                # Check if file already exists and contents are the same
-                if os.path.exists(full_path):
-                    with open(full_path, 'r') as f:
-                        existing_content = f.read()
-                    if existing_content == content:
-                        print(f"No changes for {id}, skipping...")
-                        continue
-
-                print(f"Saving to {full_path}")  # Debug line
-                with open(full_path, 'w') as f:
-                    f.write(content)
+            print(f"Saving to {full_path}")  # Debug line
+            with open(full_path, 'w') as f:
+                f.write(content)
 
 print("Files saved successfully!")
 
