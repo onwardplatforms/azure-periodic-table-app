@@ -49,25 +49,55 @@ def substitute_values(content, slug, substitutions):
         content = pattern.sub(replacement, content)
     return content
 
-
+# def extract_resources_and_data(content, resource_type):
+#     """
+#     Extract the block for a specific resource type from the Terraform content and
+#     retain blocks containing "data" or "locals" references.
+#     """
+#     patterns = [
+#         rf'^locals(\s+{{[\s\S]*?^}})',  # Locals block pattern
+#         rf'^data\s+\".*?\"\s+\".*?\"(\s+{{[^{{}}]*}})',  # Data block pattern
+#         rf'^resource\s+\"{resource_type}\"\s+\".*?\"\s+{{[\s\S]*?^}}'  # Specific resource pattern
+#     ]
+    
+#     blocks = []
+#     for pattern in patterns:
+#         for match in re.finditer(pattern, content, re.MULTILINE):
+#             blocks.append(match.group(0))
+    
+#     return '\n\n'.join(blocks)  # Separate blocks with two newlines for better readability
 
 def extract_resources_and_data(content, resource_type):
     """
-    Extract the block for a specific resource type from the Terraform content and
-    retain blocks containing "data" or "locals" references.
+    Refined function to:
+    1. Match the desired resource.
+    2. Conditionally check if the resource contains `data.` or `local.`. 
+       Only if the resource contains one of these will it do an additional match for those patterns.
+    3. The final result is always formatted as data block, local block, then resource.
     """
-    patterns = [
-        rf'locals\s+{{[\s\S]*?^}}',  # Locals block pattern
-        rf'data\s+".*?"\s+".*?"\s+{{[\s\S]*?^}}',  # Data block pattern
-        rf'resource\s+"{resource_type}"\s+".*?"\s+{{[\s\S]*?^}}'  # Specific resource pattern
-    ]
     
-    blocks = []
-    for pattern in patterns:
-        for match in re.finditer(pattern, content, re.MULTILINE):
-            blocks.append(match.group(0))
+    # Patterns to capture blocks
+    locals_pattern = rf'^locals\s*{{[\s\S]*?^}}'
+    data_pattern = rf'^data\s+\".*?\"\s+\".*?\"(\s+{{[^{{}}]*}})'
+    resource_pattern = rf'^resource\s+"{resource_type}"\s+".*?"\s*{{[\s\S]*?^}}'
     
-    return '\n\n'.join(blocks)  # Separate blocks with two newlines for better readability
+    # Capture the desired resource
+    resource_blocks = [match.group(0) for match in re.finditer(resource_pattern, content, re.MULTILINE)]
+    
+    # If the resource contains references to data or locals, capture those blocks
+    data_blocks = set()  # Using set to avoid duplicate blocks
+    locals_blocks = set()
+    
+    for resource_block in resource_blocks:
+        if 'data.' in resource_block:
+            data_blocks.update([match.group(0) for match in re.finditer(data_pattern, content, re.MULTILINE)])
+        if 'local.' in resource_block:
+            locals_blocks.update([match.group(0) for match in re.finditer(locals_pattern, content, re.MULTILINE)])
+    
+    # Combine the blocks in the desired order: data, locals, resource
+    combined_blocks = list(data_blocks) + list(locals_blocks) + resource_blocks
+    
+    return '\n\n'.join(combined_blocks)  # Separate blocks with two newlines for better readability
 
 def extract_resource_from_terraform_url(url):
     """
@@ -143,56 +173,57 @@ if not os.path.exists(output_directory):
 
 
 for id, slug, url in matches:
-    # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
-    # Define substitutions outside the loop
-    substitutions = {
-        "name": f'"{slug}${{local.naming_suffix}}"',
-        "location": "var.location",
-        "tags": "var.tags",
-    }
+    if slug == 'kv-':
+        # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
+        # Define substitutions outside the loop
+        substitutions = {
+            "name": f'"{slug}${{local.naming_suffix}}"',
+            "location": "var.location",
+            "tags": "var.tags",
+        }
 
-    resource = extract_resource_from_terraform_url(url)
-    if resource:
-        # if id == "managed-identity":
-        github_url = get_github_url(resource)
-        content = scrape_github_url(github_url)
-        if content:
-            # Decode escape sequences
-            content = decode_escapes(content)
-            
-            # Substitute name and location values
-            content = substitute_values(content, slug, substitutions)
-            
-            # Extract specific resource block
-            content = extract_resources_and_data(content, f"azurerm_{resource}")
-            if not content:
-                print("Specific resource block not found!")  # Debug line
-                continue  # If the specific resource block is not found, skip saving the file
+        resource = extract_resource_from_terraform_url(url)
+        if resource:
+            # if id == "managed-identity":
+            github_url = get_github_url(resource)
+            content = scrape_github_url(github_url)
+            if content:
+                # Decode escape sequences
+                content = decode_escapes(content)
+                
+                # Substitute name and location values
+                content = substitute_values(content, slug, substitutions)
+                
+                # Extract specific resource block
+                content = extract_resources_and_data(content, f"azurerm_{resource}")
+                if not content:
+                    print("Specific resource block not found!")  # Debug line
+                    continue  # If the specific resource block is not found, skip saving the file
 
-            # Replace all instances of "example" and .example
-            content = content.replace('"example"', '"main"').replace('.example', '.main')
+                # Replace all instances of "example" and .example
+                content = content.replace('"example"', '"main"').replace('.example', '.main')
 
-            # Format the Terraform code
-            content = format_terraform_code(content)
-            
-            if not content:
-                print(f"No content for {id}, skipping...")
-                continue
-
-            file_name = id.replace(' ', '-').lower() + '.tf'
-            full_path = os.path.join(output_directory, file_name)
-
-            # Check if file already exists and contents are the same
-            if os.path.exists(full_path):
-                with open(full_path, 'r') as f:
-                    existing_content = f.read()
-                if existing_content == content:
-                    print(f"No changes for {id}, skipping...")
+                # Format the Terraform code
+                content = format_terraform_code(content)
+                
+                if not content:
+                    print(f"No content for {id}, skipping...")
                     continue
 
-            print(f"Saving to {full_path}")  # Debug line
-            with open(full_path, 'w') as f:
-                f.write(content)
+                file_name = id.replace(' ', '-').lower() + '.tf'
+                full_path = os.path.join(output_directory, file_name)
+
+                # Check if file already exists and contents are the same
+                if os.path.exists(full_path):
+                    with open(full_path, 'r') as f:
+                        existing_content = f.read()
+                    if existing_content == content:
+                        print(f"No changes for {id}, skipping...")
+                        continue
+
+                print(f"Saving to {full_path}")  # Debug line
+                with open(full_path, 'w') as f:
+                    f.write(content)
 
 print("Files saved successfully!")
 
