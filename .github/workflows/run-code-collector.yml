@@ -39,19 +39,32 @@ jobs:
           echo "changed=true" >> $GITHUB_OUTPUT
         fi
 
+    - name: List changed files
+      id: list-changes
+      run: |
+        CHANGED_FILES=$(git diff --name-only HEAD)
+        echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
+
     - name: Commit and Push
       if: steps.git-diff.outputs.changed == 'true'
       run: |
         git config user.name "GitHub Action Bot"
         git config user.email "github.bot@onwardplatforms.com"
+        git checkout -b automated-code-snippet-update
         git add -A
         git commit -m "Automated update of code snippets"
-        git push
+        git push --set-upstream origin automated-code-snippet-update
 
     - name: Create Pull Request
       if: steps.git-diff.outputs.changed == 'true'
       uses: peter-evans/create-pull-request@v3
       with:
         title: "Automated update of code snippets"
-        body: "This PR updates the code snippets in the `public/code` directory."
+        body: |
+          This PR updates the code snippets in the `public/code` directory.
+          
+          Files changed:
+          ```
+          ${{ env.CHANGED_FILES }}
+          ```
         branch: "automated-code-snippet-update"
