@@ -121,7 +121,7 @@ const Cell: React.FC<CellProps> = ({
       }`}
       showLink={!isDisabled}
       href={`/resource/${item.id}`}
-      shallow
+      shallow={true}
     >
       <article
         ref={ref} // Pass the ref to the div

@@ -1,7 +1,6 @@
 /* src/components/category-selector.tsx */
 
 import { Categories } from '@/app/constants';
-import { Item } from '@/app/data';
 
 export type CategoryData = {
   name: Categories;

@@ -5,10 +5,7 @@ import path from 'path';
 
 // get url param
 export default function Page({ params }: { params: { id: string } }) {
-  const filePath = path.join(
-    __dirname,
-    `../../../../../public/code/${params.id}.tf`
-  );
+  const filePath = `/code/${params.id}.tf`;
   let codeSnippet = '';
 
   try {
