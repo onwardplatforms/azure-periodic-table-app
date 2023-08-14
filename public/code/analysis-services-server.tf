@@ -7,7 +7,7 @@ resource "azurerm_analysis_services_server" "server" {
   enable_power_bi_service = true
 
   ipv4_firewall_rule {
-    name        = "myRule1"
+    name        = "myRule"
     range_start = "210.117.252.0"
     range_end   = "210.117.252.255"
   }
