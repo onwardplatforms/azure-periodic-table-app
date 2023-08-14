@@ -58,6 +58,6 @@ jobs:
 
     - name: Create pull request
       run: |
-        gh pr create --base main --head automated-code-snippet-update --title "Automated update of code snippets" --body ${{ env.CHANGED_FILES }}
+        gh pr create --base main --head automated-code-snippet-update --title "Automated update of code snippets" --body "${{ env.CHANGED_FILES }}"
       env:
         GH_TOKEN: ${{ github.token }}
