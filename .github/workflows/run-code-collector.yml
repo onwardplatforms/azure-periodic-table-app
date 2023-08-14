@@ -3,6 +3,7 @@ name: Update Code Snippets
 on:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+  
   workflow_dispatch:
 
 jobs:
@@ -32,7 +33,11 @@ jobs:
       id: git-diff
       run: |
         git diff --exit-code || echo "public/code has changed"
-        echo ::set-output name=changed::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+        if git diff-index --quiet HEAD --; then 
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else 
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
 
     - name: Commit and Push
       if: steps.git-diff.outputs.changed == 'true'
