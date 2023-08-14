@@ -1,0 +1,52 @@
+name: Update Code Snippets
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs every Sunday at midnight
+  workflow_dispatch:
+
+jobs:
+  update-snippets:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Execute code-collector.py
+      run: python3 code-collector.py
+
+    - name: Check for changes
+      id: git-diff
+      run: |
+        git diff --exit-code || echo "public/code has changed"
+        echo ::set-output name=changed::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+
+    - name: Commit and Push
+      if: steps.git-diff.outputs.changed == 'true'
+      run: |
+        git config user.name "GitHub Action Bot"
+        git config user.email "justin.oconnor@onwardplatforms.com"
+        git add -A
+        git commit -m "Automated update of code snippets"
+        git push
+
+    - name: Create Pull Request
+      if: steps.git-diff.outputs.changed == 'true'
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: "Automated update of code snippets"
+        body: "This PR updates the code snippets in the `public/code` directory."
+        branch: "automated-code-snippet-update"
