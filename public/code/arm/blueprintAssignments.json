@@ -1,0 +1,25 @@
+{
+  "type": "Microsoft.Blueprint/blueprintAssignments",
+  "apiVersion": "2018-11-01-preview",
+  "name": "string",
+  "location": "string",
+  "scope": "string",
+  "identity": {
+    "principalId": "string",
+    "tenantId": "string",
+    "type": "string",
+    "userAssignedIdentities": {}
+  },
+  "properties": {
+    "blueprintId": "string",
+    "description": "string",
+    "displayName": "string",
+    "locks": {
+      "excludedPrincipals": [ "string" ],
+      "mode": "string"
+    },
+    "parameters": {},
+    "resourceGroups": {},
+    "scope": "string"
+  }
+}

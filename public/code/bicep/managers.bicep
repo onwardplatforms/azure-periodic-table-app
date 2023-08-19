@@ -1,0 +1,18 @@
+resource symbolicname 'Microsoft.StorSimple/managers@2017-06-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  etag: 'string'
+  properties: {
+    cisIntrinsicSettings: {
+      type: 'string'
+    }
+    provisioningState: 'string'
+    sku: {
+      name: 'Standard'
+    }
+  }
+}

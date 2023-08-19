@@ -1,0 +1,19 @@
+resource symbolicname 'Microsoft.Purview/accounts@2021-12-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  identity: {
+    type: 'string'
+    userAssignedIdentities: {}
+  }
+  properties: {
+    cloudConnectors: {}
+    managedEventHubState: 'string'
+    managedResourceGroupName: 'string'
+    managedResourcesPublicNetworkAccess: 'string'
+    publicNetworkAccess: 'string'
+  }
+}

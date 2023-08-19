@@ -1,0 +1,14 @@
+{
+  "type": "Microsoft.Management/managementGroups",
+  "apiVersion": "2021-04-01",
+  "name": "string",
+  "scope": "/",
+  "properties": {
+    "details": {
+      "parent": {
+        "id": "string"
+      }
+    },
+    "displayName": "string"
+  }
+}

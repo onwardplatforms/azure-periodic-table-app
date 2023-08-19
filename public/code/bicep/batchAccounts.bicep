@@ -1,0 +1,56 @@
+resource symbolicname 'Microsoft.Batch/batchAccounts@2022-10-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  identity: {
+    type: 'string'
+    userAssignedIdentities: {}
+  }
+  properties: {
+    allowedAuthenticationModes: [
+      'string'
+    ]
+    autoStorage: {
+      authenticationMode: 'string'
+      nodeIdentityReference: {
+        resourceId: 'string'
+      }
+      storageAccountId: 'string'
+    }
+    encryption: {
+      keySource: 'string'
+      keyVaultProperties: {
+        keyIdentifier: 'string'
+      }
+    }
+    keyVaultReference: {
+      id: 'string'
+      url: 'string'
+    }
+    networkProfile: {
+      accountAccess: {
+        defaultAction: 'string'
+        ipRules: [
+          {
+            action: 'Allow'
+            value: 'string'
+          }
+        ]
+      }
+      nodeManagementAccess: {
+        defaultAction: 'string'
+        ipRules: [
+          {
+            action: 'Allow'
+            value: 'string'
+          }
+        ]
+      }
+    }
+    poolAllocationMode: 'string'
+    publicNetworkAccess: 'string'
+  }
+}

@@ -1,0 +1,34 @@
+resource symbolicname 'Microsoft.OperationalInsights/workspaces@2022-10-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  etag: 'string'
+  identity: {
+    type: 'string'
+    userAssignedIdentities: {}
+  }
+  properties: {
+    defaultDataCollectionRuleResourceId: 'string'
+    features: {
+      clusterResourceId: 'string'
+      disableLocalAuth: bool
+      enableDataExport: bool
+      enableLogAccessUsingOnlyResourcePermissions: bool
+      immediatePurgeDataOn30Days: bool
+    }
+    forceCmkForQuery: bool
+    publicNetworkAccessForIngestion: 'string'
+    publicNetworkAccessForQuery: 'string'
+    retentionInDays: int
+    sku: {
+      capacityReservationLevel: int
+      name: 'string'
+    }
+    workspaceCapping: {
+      dailyQuotaGb: int
+    }
+  }
+}
