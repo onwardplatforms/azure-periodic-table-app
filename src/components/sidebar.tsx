@@ -107,20 +107,6 @@ export default function Sidebar({
         </div>
         <div className="flex flex-col justify-center items-start my-6">
           <div className="flex justify-center items-center">
-            <span className="mr-6">
-              {activeElement?.learnUrl && (
-                <a
-                  target="_blank"
-                  href={activeElement?.learnUrl}
-                  className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
-                >
-                  <div className="mr-2">
-                    <Icons.Microsoft width={24} height={24} />
-                  </div>
-                  <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
-                </a>
-              )}
-            </span>
             <div
               className={`lg:mx-0 w-6 h-6 rounded my-1 ${
                 categoryData.find(
@@ -131,7 +117,49 @@ export default function Sidebar({
             <span className="ml-2">{activeElement.category}</span>
           </div>
         </div>
-        <Card className="w-[100%]">
+        <div className="my-6 text-left">
+          <div className="my-6 text-left">
+          <Card className="w-[100%]">
+          <CardHeader>
+            <CardTitle>Reference</CardTitle>
+            </CardHeader>
+            <CardHeader>
+         <CardTitle>General</CardTitle>
+         <CardDescription>
+           Review official documentation.
+         </CardDescription>
+            <div className="text-left">
+              <div className="flex justify-start items-center flex-wrap">
+          
+                {activeElement?.learnUrl && (
+                  <a
+                    target="_blank"
+                    href={activeElement?.learnUrl}
+                    className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                  >
+                    <div className="mr-2">
+                      <Icons.Microsoft width={24} height={24} />
+                    </div>
+                    <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
+                  </a>
+                )}
+          
+                {activeElement?.pricingReferenceUrl && (
+                  <a
+                    target="_blank"
+                    href={activeElement?.pricingReferenceUrl}
+                    className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                  >
+                    <div className="mr-2" style={{ fontSize: '24px', height: '24px' }}>
+                      ＄
+                    </div>
+                    <span>{isMobile ? 'Pricing' : 'Pricing'}</span>
+                  </a>
+                )}
+                
+              </div>
+            </div>
+          </CardHeader>
           <CardHeader>
             <CardTitle>Naming</CardTitle>
             <CardDescription>
@@ -164,48 +192,9 @@ export default function Sidebar({
               </div>
             </div>
           </CardContent>
-        </Card>
-        <div className="my-6 text-left">
-            <Card className="w-[100%]">
-              <CardHeader>
-                <CardTitle>Utilities</CardTitle>
-                <CardDescription>
-                  Utilities to support with app deployment or configuration.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-start items-center flex-wrap">
-                  {activeElement?.portalUrl && (
-                    <a
-                      target="_blank"
-                      href={activeElement?.portalUrl}
-                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                    >
-                      <div className="mr-2">
-                        <Icons.Azure width={24} height={24} />
-                      </div>
-                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
-                    </a>
-                  )}
-                  <a
-                      target="_blank"
-                      href='https://shell.azure.com'
-                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                    >
-                      <div className="mr-2">
-                        <Icons.Azure width={24} height={24} />
-                      </div>
-                      <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
-                    </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        <div className="my-6 text-left">
-          <div className="my-6 text-left">
-          <Card className="w-[100%]">
+
           <CardHeader>
-            <CardTitle>Code Reference</CardTitle>
+          <CardTitle>Code</CardTitle>
             <CardDescription>
               Review official infrastructure as code template documentation
             </CardDescription>
@@ -255,6 +244,53 @@ export default function Sidebar({
             </CardContent>
           </Card>
           <br></br>
+          <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>Utilities</CardTitle>
+                <CardDescription>
+                  Utilities to support with app deployment or configuration.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-start items-center flex-wrap">
+                  {activeElement?.portalUrl && (
+                    <a
+                      target="_blank"
+                      href={activeElement?.portalUrl}
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
+                    </a>
+                  )}
+                  <a
+                      target="_blank"
+                      href='https://shell.azure.com'
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
+                    </a>
+                    <a
+                    target="_blank"
+                    href='https://azure.microsoft.com/en-us/pricing/calculator/'
+                    className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    style={{ height: '42px' }} 
+                    >
+                    <div className="mr-2" style={{ fontSize: '24px' }}>
+                      ＄
+                    </div>
+                    <span>{isMobile ? 'Calculator' : 'Pricing Calculator'}</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
           <Card className="w-[100%]">
           <CardHeader>
             <CardTitle>Code</CardTitle>
