@@ -169,6 +169,58 @@ export default function Sidebar({
           <div className="my-6 text-left">
           <Card className="w-[100%]">
           <CardHeader>
+            <CardTitle>Reference</CardTitle>
+            <CardDescription>
+              Review official documentation
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="text-left">
+                    <div className="flex justify-start items-center flex-wrap">
+                      {activeElement?.terraformUrl && (
+                        <a
+                          target="_blank"
+                          href={activeElement?.terraformUrl}
+                          className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                        >
+                          <div className="mr-2">
+                            <Icons.Terraform width={24} height={24} />
+                          </div>
+                          <span>{isMobile ? 'Terraform' : 'Terraform'}</span>
+                        </a>
+                      )}
+
+                      {activeElement?.resource && activeElement?.entity && (
+                        <>
+                          <a
+                            target="_blank"
+                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-bicep`}
+                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                          >
+                            <div className="mr-2">
+                              <Icons.Microsoft width={24} height={24} />
+                            </div>
+                            <span>{isMobile ? 'Bicep' : 'Bicep'}</span>
+                          </a>
+                          <a
+                            target="_blank"
+                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-arm-template`}
+                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                          >
+                            <div className="mr-2">
+                              <Icons.Microsoft width={24} height={24} />
+                            </div>
+                            <span>{isMobile ? 'ARM' : 'ARM Template'}</span>
+                          </a>
+                        </>
+                      )}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          <br></br>
+          <Card className="w-[100%]">
+          <CardHeader>
             <CardTitle>Code</CardTitle>
             <CardDescription>
               Deploy your infrastructure as code using your preferred tooling.
