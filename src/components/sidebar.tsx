@@ -205,9 +205,9 @@ export default function Sidebar({
           <div className="my-6 text-left">
           <Card className="w-[100%]">
           <CardHeader>
-            <CardTitle>IaC Reference</CardTitle>
+            <CardTitle>Code Reference</CardTitle>
             <CardDescription>
-              Review official IaC documentation
+              Review official infrastructure as code template documentation
             </CardDescription>
           </CardHeader>
           <CardContent>
