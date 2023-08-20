@@ -166,12 +166,48 @@ export default function Sidebar({
           </CardContent>
         </Card>
         <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>Utilities</CardTitle>
+                <CardDescription>
+                  Utilities to support with app deployment or configuration.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-start items-center flex-wrap">
+                  {activeElement?.portalUrl && (
+                    <a
+                      target="_blank"
+                      href={activeElement?.portalUrl}
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
+                    </a>
+                  )}
+                  <a
+                      target="_blank"
+                      href='https://shell.azure.com'
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
+                    </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        <div className="my-6 text-left">
           <div className="my-6 text-left">
           <Card className="w-[100%]">
           <CardHeader>
-            <CardTitle>Reference</CardTitle>
+            <CardTitle>IaC Reference</CardTitle>
             <CardDescription>
-              Review official documentation
+              Review official IaC documentation
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -218,32 +254,7 @@ export default function Sidebar({
               </div>
             </CardContent>
           </Card>
-          <div className="my-6 text-left">
-            <Card className="w-[100%]">
-              <CardHeader>
-                <CardTitle>Utilities</CardTitle>
-                <CardDescription>
-                  Utilities to support with app deployment or configuration.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-start items-center flex-wrap">
-                  {activeElement?.portalUrl && (
-                    <a
-                      target="_blank"
-                      href={activeElement?.portalUrl}
-                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                    >
-                      <div className="mr-2">
-                        <Icons.Azure width={24} height={24} />
-                      </div>
-                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
-                    </a>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          <br></br>
           <Card className="w-[100%]">
           <CardHeader>
             <CardTitle>Code</CardTitle>
