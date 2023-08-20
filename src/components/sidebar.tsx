@@ -252,7 +252,7 @@ export default function Sidebar({
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs defaultValue="terraform">
+            <Tabs>
               <TabsList>
               <TabsTrigger value="terraform"><Icons.Terraform width={24} height={24} />&nbsp;Terraform</TabsTrigger>
                 <TabsTrigger value="bicep"><Icons.Azure width={24} height={24} />&nbsp;Bicep</TabsTrigger>
