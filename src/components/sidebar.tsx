@@ -218,12 +218,37 @@ export default function Sidebar({
               </div>
             </CardContent>
           </Card>
-          <br></br>
+          <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>Utilities</CardTitle>
+                <CardDescription>
+                  Utilities to support with app deployment or configuration.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="flex justify-start items-center flex-wrap">
+                  {activeElement?.portalUrl && (
+                    <a
+                      target="_blank"
+                      href={activeElement?.portalUrl}
+                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                    >
+                      <div className="mr-2">
+                        <Icons.Azure width={24} height={24} />
+                      </div>
+                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
+                    </a>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
           <Card className="w-[100%]">
           <CardHeader>
             <CardTitle>Code</CardTitle>
             <CardDescription>
-              Deploy your infrastructure as code using your preferred tooling.
+              Deploy your infrastructure as code using your  preferred tooling.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -261,32 +286,7 @@ export default function Sidebar({
           </CardContent>
         </Card>
           </div>
-          <div className="my-6 text-left">
-            <Card className="w-[100%]">
-              <CardHeader>
-                <CardTitle>Utilities</CardTitle>
-                <CardDescription>
-                  Utilities to support with app deployment or configuration.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex justify-start items-center flex-wrap">
-                  {activeElement?.portalUrl && (
-                    <a
-                      target="_blank"
-                      href={activeElement?.portalUrl}
-                      className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                    >
-                      <div className="mr-2">
-                        <Icons.Azure width={24} height={24} />
-                      </div>
-                      <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
-                    </a>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          
           {hasPrivateEndpointData(activeElement) && (
             <div className="my-6 text-left">
               <Card className="w-[100%]">
