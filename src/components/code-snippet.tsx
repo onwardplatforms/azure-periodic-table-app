@@ -12,6 +12,7 @@ export const CodeSnippet = ({
     # ...
   }
 }`,
+  language = "hcl", // Default to HCL, but can be overridden
 }) => {
   const [isCopied, setIsCopied] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
@@ -30,7 +31,7 @@ export const CodeSnippet = ({
       onMouseLeave={() => setIsHovering(false)}
     >
       <SyntaxHighlighter
-        language="hcl"
+        language={language} // Use the language prop here
         style={oneDark}
         customStyle={{ fontSize: 14 }}
       >

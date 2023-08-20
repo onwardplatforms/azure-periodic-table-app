@@ -1,0 +1,8 @@
+{
+  "type": "Microsoft.DataLakeAnalytics/accounts/dataLakeStoreAccounts",
+  "apiVersion": "2019-11-01-preview",
+  "name": "string",
+  "properties": {
+    "suffix": "string"
+  }
+}

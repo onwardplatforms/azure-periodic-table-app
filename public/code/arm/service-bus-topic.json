@@ -1,0 +1,18 @@
+{
+  "type": "Microsoft.ServiceBus/namespaces/topics",
+  "apiVersion": "2022-10-01-preview",
+  "name": "string",
+  "properties": {
+    "autoDeleteOnIdle": "string",
+    "defaultMessageTimeToLive": "string",
+    "duplicateDetectionHistoryTimeWindow": "string",
+    "enableBatchedOperations": "bool",
+    "enableExpress": "bool",
+    "enablePartitioning": "bool",
+    "maxMessageSizeInKilobytes": "int",
+    "maxSizeInMegabytes": "int",
+    "requiresDuplicateDetection": "bool",
+    "status": "string",
+    "supportOrdering": "bool"
+  }
+}
