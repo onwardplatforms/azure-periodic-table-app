@@ -116,7 +116,7 @@ export default function Sidebar({
                     className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
                   >
                     <div className="mr-2">
-                      <Icons.Microsoft width={24} height={24} />
+                      <Icons.Microsoft width={16} height={16} />
                     </div>
                     <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
                   </a>
@@ -182,7 +182,7 @@ export default function Sidebar({
                       className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                     >
                       <div className="mr-2">
-                        <Icons.Azure width={24} height={24} />
+                        <Icons.Azure width={16} height={16} />
                       </div>
                       <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
                     </a>
@@ -193,9 +193,19 @@ export default function Sidebar({
                     className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                   >
                     <div className="mr-2">
-                      <Icons.Azure width={24} height={24} />
+                      <Icons.Azure width={16} height={16} />
                     </div>
                     <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
+                  </a>
+                  <a
+                    target="_blank"
+                    href='https://azure.microsoft.com/en-us/pricing/calculator/'
+                    className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                  >
+                    <div className="mr-2">
+                      <Icons.Microsoft width={16} height={16} />
+                    </div>
+                    <span>{isMobile ? 'Pricing' : 'Pricing Calculator'}</span>
                   </a>
                 </div>
               </CardContent>
@@ -220,7 +230,7 @@ export default function Sidebar({
                           className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                         >
                           <div className="mr-2">
-                            <Icons.Terraform width={24} height={24} />
+                            <Icons.Terraform width={16} height={16} />
                           </div>
                           <span>{isMobile ? 'Terraform' : 'Terraform'}</span>
                         </a>
@@ -234,7 +244,7 @@ export default function Sidebar({
                             className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                           >
                             <div className="mr-2">
-                              <Icons.Microsoft width={24} height={24} />
+                              <Icons.Microsoft width={16} height={16} />
                             </div>
                             <span>{isMobile ? 'Bicep' : 'Bicep'}</span>
                           </a>
@@ -244,7 +254,7 @@ export default function Sidebar({
                             className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                           >
                             <div className="mr-2">
-                              <Icons.Microsoft width={24} height={24} />
+                              <Icons.Microsoft width={16} height={16} />
                             </div>
                             <span>{isMobile ? 'ARM' : 'ARM Template'}</span>
                           </a>
@@ -263,33 +273,24 @@ export default function Sidebar({
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Tabs>
+                  <Tabs defaultValue="terraform">
                     <TabsList>
-                      <TabsTrigger value="terraform"><Icons.Terraform width={24} height={24} />&nbsp;Terraform</TabsTrigger>
-                      <TabsTrigger value="bicep"><Icons.Azure width={24} height={24} />&nbsp;Bicep</TabsTrigger>
-                      <TabsTrigger value="arm"><Icons.Azure width={24} height={24} />&nbsp;ARM Template</TabsTrigger>
+                      <TabsTrigger value="terraform">Terraform</TabsTrigger>
+                      <TabsTrigger value="bicep">Bicep</TabsTrigger>
+                      <TabsTrigger value="arm">ARM Template</TabsTrigger>
                     </TabsList>
                     <TabsContent value="terraform">
                       <div className="mt-6">
-                        <Label>Terraform starter:</Label>
-                      </div>
-                      <div className="mb-4">
                         <CodeSnippet codeString={activeElement.terraformCode} language="hcl" />
                       </div>
                     </TabsContent>
                     <TabsContent value="bicep">
                       <div className="mt-6">
-                        <Label>Bicep starter:</Label>
-                      </div>
-                      <div className="mb-4">
                         <CodeSnippet codeString={activeElement.bicepCode} language="bicep" />
                       </div>
                     </TabsContent>
                     <TabsContent value="arm">
                       <div className="mt-6">
-                        <Label>ARM Template starter:</Label>
-                      </div>
-                      <div className="mb-4">
                         <CodeSnippet codeString={activeElement.armCode} language="json" />
                       </div>
                     </TabsContent>
