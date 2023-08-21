@@ -1,0 +1,42 @@
+resource symbolicname 'Microsoft.AnalysisServices/servers@2017-08-01' = {
+  name: 'string'
+  location: 'string'
+  tags: {
+    tagName1: 'tagValue1'
+    tagName2: 'tagValue2'
+  }
+  sku: {
+    capacity: int
+    name: 'string'
+    tier: 'string'
+  }
+  properties: {
+    asAdministrators: {
+      members: [
+        'string'
+      ]
+    }
+    backupBlobContainerUri: 'string'
+    gatewayDetails: {
+      gatewayResourceId: 'string'
+    }
+    ipV4FirewallSettings: {
+      enablePowerBIService: bool
+      firewallRules: [
+        {
+          firewallRuleName: 'string'
+          rangeEnd: 'string'
+          rangeStart: 'string'
+        }
+      ]
+    }
+    managedMode: int
+    querypoolConnectionMode: 'string'
+    serverMonitorMode: int
+    sku: {
+      capacity: int
+      name: 'string'
+      tier: 'string'
+    }
+  }
+}

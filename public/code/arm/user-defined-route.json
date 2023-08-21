@@ -1,0 +1,11 @@
+{
+  "type": "Microsoft.Network/routeTables/routes",
+  "apiVersion": "2023-04-01",
+  "name": "string",
+  "properties": {
+    "addressPrefix": "string",
+    "hasBgpOverride": "bool",
+    "nextHopIpAddress": "string",
+    "nextHopType": "string"
+  }
+}

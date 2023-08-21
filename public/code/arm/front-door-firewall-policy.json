@@ -1,0 +1,89 @@
+{
+  "type": "Microsoft.Network/FrontDoorWebApplicationFirewallPolicies",
+  "apiVersion": "2022-05-01",
+  "name": "string",
+  "location": "string",
+  "tags": {
+    "tagName1": "tagValue1",
+    "tagName2": "tagValue2"
+  },
+  "sku": {
+    "name": "string"
+  },
+  "etag": "string",
+  "properties": {
+    "customRules": {
+      "rules": [
+        {
+          "action": "string",
+          "enabledState": "string",
+          "matchConditions": [
+            {
+              "matchValue": [ "string" ],
+              "matchVariable": "string",
+              "negateCondition": "bool",
+              "operator": "string",
+              "selector": "string",
+              "transforms": [ "string" ]
+            }
+          ],
+          "name": "string",
+          "priority": "int",
+          "rateLimitDurationInMinutes": "int",
+          "rateLimitThreshold": "int",
+          "ruleType": "string"
+        }
+      ]
+    },
+    "managedRules": {
+      "managedRuleSets": [
+        {
+          "exclusions": [
+            {
+              "matchVariable": "string",
+              "selector": "string",
+              "selectorMatchOperator": "string"
+            }
+          ],
+          "ruleGroupOverrides": [
+            {
+              "exclusions": [
+                {
+                  "matchVariable": "string",
+                  "selector": "string",
+                  "selectorMatchOperator": "string"
+                }
+              ],
+              "ruleGroupName": "string",
+              "rules": [
+                {
+                  "action": "string",
+                  "enabledState": "string",
+                  "exclusions": [
+                    {
+                      "matchVariable": "string",
+                      "selector": "string",
+                      "selectorMatchOperator": "string"
+                    }
+                  ],
+                  "ruleId": "string"
+                }
+              ]
+            }
+          ],
+          "ruleSetAction": "string",
+          "ruleSetType": "string",
+          "ruleSetVersion": "string"
+        }
+      ]
+    },
+    "policySettings": {
+      "customBlockResponseBody": "string",
+      "customBlockResponseStatusCode": "int",
+      "enabledState": "string",
+      "mode": "string",
+      "redirectUrl": "string",
+      "requestBodyCheck": "string"
+    }
+  }
+}

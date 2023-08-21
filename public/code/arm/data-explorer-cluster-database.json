@@ -1,0 +1,8 @@
+{
+  "type": "Microsoft.Kusto/clusters/databases",
+  "apiVersion": "2023-05-02",
+  "name": "string",
+  "location": "string",
+  "kind": "string",
+  // For remaining properties, see clusters/databases objects
+}

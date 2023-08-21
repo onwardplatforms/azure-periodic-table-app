@@ -1,0 +1,5 @@
+{
+  "type": "Microsoft.EventGrid/domains/topics",
+  "apiVersion": "2023-06-01-preview",
+  "name": "string"
+}

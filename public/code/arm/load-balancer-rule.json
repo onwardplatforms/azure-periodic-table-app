@@ -1,0 +1,21 @@
+{
+  "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+  "apiVersion": "2023-04-01",
+  "name": "string",
+  "properties": {
+    "backendAddressPool": {
+      "id": "string"
+    },
+    "backendPort": "int",
+    "enableFloatingIP": "bool",
+    "enableTcpReset": "bool",
+    "frontendIPConfiguration": {
+      "id": "string"
+    },
+    "frontendPort": "int",
+    "frontendPortRangeEnd": "int",
+    "frontendPortRangeStart": "int",
+    "idleTimeoutInMinutes": "int",
+    "protocol": "string"
+  }
+}

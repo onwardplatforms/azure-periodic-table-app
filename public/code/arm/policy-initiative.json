@@ -1,0 +1,30 @@
+{
+  "type": "Microsoft.Authorization/policySetDefinitions",
+  "apiVersion": "2021-06-01",
+  "name": "string",
+  "scope": "string",
+  "properties": {
+    "description": "string",
+    "displayName": "string",
+    "metadata": {},
+    "parameters": {},
+    "policyDefinitionGroups": [
+      {
+        "additionalMetadataId": "string",
+        "category": "string",
+        "description": "string",
+        "displayName": "string",
+        "name": "string"
+      }
+    ],
+    "policyDefinitions": [
+      {
+        "groupNames": [ "string" ],
+        "parameters": {},
+        "policyDefinitionId": "string",
+        "policyDefinitionReferenceId": "string"
+      }
+    ],
+    "policyType": "string"
+  }
+}

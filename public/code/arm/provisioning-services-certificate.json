@@ -1,0 +1,9 @@
+{
+  "type": "Microsoft.Devices/provisioningServices/certificates",
+  "apiVersion": "2022-12-12",
+  "name": "string",
+  "properties": {
+    "certificate": {},
+    "isVerified": "bool"
+  }
+}

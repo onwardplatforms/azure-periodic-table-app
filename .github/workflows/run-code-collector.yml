@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
   pull_request:
+    branches:
+      - main
+    paths:
+      - 'python/**'
   
   workflow_dispatch:
 
@@ -27,8 +31,8 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Execute code-collector.py
-      run: python3 code-collector.py
+    - name: Execute terraform-collector.py
+      run: python3 terraform-collector.py
 
     - name: Check for changes
       id: git-diff
