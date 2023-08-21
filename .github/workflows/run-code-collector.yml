@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '0 0 * * 0'  # Runs every Sunday at midnight
   pull_request:
+    branches:
+      - main
+    paths:
+      - 'python/**'
   
   workflow_dispatch:
 
