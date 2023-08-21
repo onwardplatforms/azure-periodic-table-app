@@ -96,4 +96,6 @@ resource "azurerm_frontdoor_firewall_policy" "main" {
     type    = "Microsoft_BotManagerRuleSet"
     version = "1.0"
   }
+
+  tags = var.tags
 }

@@ -40,4 +40,6 @@ resource "azurerm_hdinsight_hbase_cluster" "main" {
       password = "AccTestvdSC4daf986!"
     }
   }
+
+  tags = var.tags
 }

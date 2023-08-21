@@ -38,4 +38,6 @@ resource "azurerm_frontdoor" "main" {
     name      = "exampleFrontendEndpoint1"
     host_name = "example-FrontDoor.azurefd.net"
   }
+
+  tags = var.tags
 }

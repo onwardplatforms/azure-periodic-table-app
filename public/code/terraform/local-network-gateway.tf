@@ -4,4 +4,6 @@ resource "azurerm_local_network_gateway" "home" {
   location            = azurerm_resource_group.main.location
   gateway_address     = "12.13.14.15"
   address_space       = ["10.0.0.0/16"]
+
+  tags = var.tags
 }

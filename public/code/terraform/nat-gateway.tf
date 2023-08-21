@@ -5,4 +5,6 @@ resource "azurerm_nat_gateway" "main" {
   sku_name                = "Standard"
   idle_timeout_in_minutes = 10
   zones                   = ["1"]
+
+  tags = var.tags
 }

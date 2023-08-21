@@ -8,4 +8,6 @@ resource "azurerm_iothub_dps" "main" {
     name     = "S1"
     capacity = "1"
   }
+
+  tags = var.tags
 }

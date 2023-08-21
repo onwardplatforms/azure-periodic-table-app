@@ -29,4 +29,6 @@ resource "azurerm_windows_virtual_machine_scale_set" "main" {
       subnet_id = azurerm_subnet.internal.id
     }
   }
+
+  tags = var.tags
 }

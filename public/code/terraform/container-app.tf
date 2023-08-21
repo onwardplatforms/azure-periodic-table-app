@@ -12,4 +12,6 @@ resource "azurerm_container_app" "main" {
       memory = "0.5Gi"
     }
   }
+
+  tags = var.tags
 }
