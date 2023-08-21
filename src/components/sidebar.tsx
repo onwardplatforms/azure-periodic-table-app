@@ -92,7 +92,7 @@ export default function Sidebar({
           <SheetTitle className="mb-4">
             <div className="flex flex-col justify-center items-start mt-6 mb-2">
               <div className="flex">
-                <h1 className="font-bold text-xl">{activeElement.name}</h1>
+                <h1 className="font-bold text-2xl">{activeElement.name}</h1>
               </div>
               <div className="font-light">
                 <CopyBox
@@ -108,7 +108,7 @@ export default function Sidebar({
           </div>
           <div className="flex flex-col justify-center items-start my-6">
             <div className="flex justify-center items-center">
-              <span className="mr-6">
+              <span className="mr-4">
                 {activeElement?.learnUrl && (
                   <a
                     target="_blank"
@@ -119,6 +119,20 @@ export default function Sidebar({
                       <Icons.Microsoft width={16} height={16} />
                     </div>
                     <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
+                  </a>
+                )}
+              </span>
+              <span className="mr-4">
+                {activeElement?.pricingReferenceUrl && (
+                  <a
+                    target="_blank"
+                    href={activeElement?.pricingReferenceUrl}
+                    className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+                  >
+                    <div className="mr-2">
+                      <Icons.Microsoft width={16} height={16} />
+                    </div>
+                    <span>{isMobile ? 'Cost' : 'Resource Cost'}</span>
                   </a>
                 )}
               </span>
@@ -157,7 +171,7 @@ export default function Sidebar({
                       <span>{activeElement?.restrictions}</span>
                     </div>
                   </div>
-                  <div className="mb-4">
+                  <div>
                     <Label>Scope</Label>
                     <div>
                       <span>{activeElement?.scope}</span>
@@ -188,7 +202,7 @@ export default function Sidebar({
                         <a
                           target="_blank"
                           href={activeElement?.terraformUrl}
-                          className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                          className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-3"
                         >
                           <div className="mr-2">
                             <Icons.Terraform width={16} height={16} />
