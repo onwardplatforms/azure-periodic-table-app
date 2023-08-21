@@ -131,40 +131,122 @@ export default function Sidebar({
               <span className="ml-2">{activeElement.category}</span>
             </div>
           </div>
-          <Card className="w-[100%]">
-            <CardHeader>
-              <CardTitle>Naming</CardTitle>
-              <CardDescription>
-                The conventions, rules, and restrictions for naming this service.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div>
-                <div className="mb-4">
-                  <Label>Resource Name Shorthand</Label>
-                  <CopyBox text={activeElement.slug} />
-                </div>
-                <div className="mb-4">
-                  <Label>Length</Label>
-                  <div>
-                    <span>{activeElement?.length}</span>
+          <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>Naming</CardTitle>
+                <CardDescription>
+                  The conventions, rules, and restrictions for naming this service.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
+                  <div className="mb-4">
+                    <Label>Naming Convention</Label>
+                    <CopyBox text={activeElement.slug} />
+                  </div>
+                  <div className="mb-4">
+                    <Label>Length</Label>
+                    <div>
+                      <span>{activeElement?.length}</span>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <Label>Valid Characters</Label>
+                    <div>
+                      <span>{activeElement?.restrictions}</span>
+                    </div>
+                  </div>
+                  <div className="mb-4">
+                    <Label>Scope</Label>
+                    <div>
+                      <span>{activeElement?.scope}</span>
+                    </div>
                   </div>
                 </div>
-                <div className="mb-4">
-                  <Label>Valid Characters</Label>
-                  <div>
-                    <span>{activeElement?.restrictions}</span>
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <Label>Scope</Label>
-                  <div>
-                    <span>{activeElement?.scope}</span>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>Code</CardTitle>
+                <CardDescription>
+                  Deploy your infrastructure as code using your  preferred tooling.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Tabs defaultValue="terraform">
+                  <TabsList>
+                    <TabsTrigger value="terraform">Terraform</TabsTrigger>
+                    <TabsTrigger value="bicep">Bicep</TabsTrigger>
+                    <TabsTrigger value="arm">ARM Template</TabsTrigger>
+                  </TabsList>
+                  <TabsContent className="mt-4" value="terraform">
+                    <div className="flex justify-start items-center flex-wrap">
+                      {activeElement?.terraformUrl && (
+                        <a
+                          target="_blank"
+                          href={activeElement?.terraformUrl}
+                          className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                        >
+                          <div className="mr-2">
+                            <Icons.Terraform width={16} height={16} />
+                          </div>
+                          <span>Official Documentation</span>
+                        </a>
+                      )}
+                    </div>
+                    <div>
+                      <CodeSnippet codeString={activeElement.terraformCode} language="hcl" />
+                    </div>
+                  </TabsContent>
+                  <TabsContent className="mt-4" value="bicep">
+                    <div className="flex justify-start items-center flex-wrap">
+                      {activeElement?.resource && activeElement?.entity && (
+                        <>
+                          <a
+                            target="_blank"
+                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-bicep`}
+                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                          >
+                            <div className="mr-2">
+                              <Icons.Microsoft width={16} height={16} />
+                            </div>
+                            <span>Official Documentation</span>
+                          </a>
+                        </>
+                      )}
+                    </div>
+                    <div>
+                      <CodeSnippet codeString={activeElement.bicepCode} language="bicep" />
+                    </div>
+                  </TabsContent>
+                  <TabsContent className="mt-4" value="arm">
+                    <div className="flex justify-start items-center flex-wrap">
+                      {activeElement?.resource && activeElement?.entity && (
+                        <>
+                          <a
+                            target="_blank"
+                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-arm-template`}
+                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                          >
+                            <div className="mr-2">
+                              <Icons.Microsoft width={16} height={16} />
+                            </div>
+                            <span>Official Documentation</span>
+                          </a>
+                        </>
+                      )}
+                    </div>
+                    <div>
+                      <CodeSnippet codeString={activeElement.armCode} language="json" />
+                    </div>
+                  </TabsContent>
+                </Tabs>
+              </CardContent>
+            </Card>
+          </div>
           <div className="my-6 text-left">
             <Card className="w-[100%]">
               <CardHeader>
@@ -212,93 +294,6 @@ export default function Sidebar({
             </Card>
           </div>
           <div className="my-6 text-left">
-            <div className="my-6 text-left">
-              <Card className="w-[100%]">
-                <CardHeader>
-                  <CardTitle>Code Reference</CardTitle>
-                  <CardDescription>
-                    Review official infrastructure as code template documentation
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="text-left">
-                    <div className="flex justify-start items-center flex-wrap">
-                      {activeElement?.terraformUrl && (
-                        <a
-                          target="_blank"
-                          href={activeElement?.terraformUrl}
-                          className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                        >
-                          <div className="mr-2">
-                            <Icons.Terraform width={16} height={16} />
-                          </div>
-                          <span>{isMobile ? 'Terraform' : 'Terraform'}</span>
-                        </a>
-                      )}
-
-                      {activeElement?.resource && activeElement?.entity && (
-                        <>
-                          <a
-                            target="_blank"
-                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-bicep`}
-                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                          >
-                            <div className="mr-2">
-                              <Icons.Microsoft width={16} height={16} />
-                            </div>
-                            <span>{isMobile ? 'Bicep' : 'Bicep'}</span>
-                          </a>
-                          <a
-                            target="_blank"
-                            href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-arm-template`}
-                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
-                          >
-                            <div className="mr-2">
-                              <Icons.Microsoft width={16} height={16} />
-                            </div>
-                            <span>{isMobile ? 'ARM' : 'ARM Template'}</span>
-                          </a>
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <br></br>
-              <Card className="w-[100%]">
-                <CardHeader>
-                  <CardTitle>Code</CardTitle>
-                  <CardDescription>
-                    Deploy your infrastructure as code using your  preferred tooling.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Tabs defaultValue="terraform">
-                    <TabsList>
-                      <TabsTrigger value="terraform">Terraform</TabsTrigger>
-                      <TabsTrigger value="bicep">Bicep</TabsTrigger>
-                      <TabsTrigger value="arm">ARM Template</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="terraform">
-                      <div className="mt-6">
-                        <CodeSnippet codeString={activeElement.terraformCode} language="hcl" />
-                      </div>
-                    </TabsContent>
-                    <TabsContent value="bicep">
-                      <div className="mt-6">
-                        <CodeSnippet codeString={activeElement.bicepCode} language="bicep" />
-                      </div>
-                    </TabsContent>
-                    <TabsContent value="arm">
-                      <div className="mt-6">
-                        <CodeSnippet codeString={activeElement.armCode} language="json" />
-                      </div>
-                    </TabsContent>
-                  </Tabs>
-                </CardContent>
-              </Card>
-            </div>
-
             {hasPrivateEndpointData(activeElement) && (
               <div className="my-6 text-left">
                 <Card className="w-[100%]">
@@ -455,7 +450,7 @@ export default function Sidebar({
             )}
           </div>
         </SheetContent>
-      </Sheet>
+      </Sheet >
     </>
   );
 }
