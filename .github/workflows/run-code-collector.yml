@@ -51,7 +51,7 @@ jobs:
         echo "CHANGED_FILES=$CHANGED_FILES" >> $GITHUB_ENV
 
     - name: Commit and push
-      if: steps.git-diff.outputs.changed == 'true'
+      if: steps.git-diff.outputs.changed == 'true' && github.event_name != 'pull_request'
       run: |
         git config user.name "GitHub Action Bot"
         git config user.email "github.bot@onwardplatforms.com"
@@ -61,7 +61,12 @@ jobs:
         git push --force --set-upstream origin automated-code-snippet-update
 
     - name: Create pull request
+      if: github.event_name != 'pull_request'
       run: |
-        gh pr create --base main --head automated-code-snippet-update --title "Automated update of code snippets" --body "${{ env.CHANGED_FILES }}"
+        # Check if a PR already exists
+        if ! gh pr list --base main --head automated-code-snippet-update > /dev/null 2>&1; then
+          # Create a new PR
+          gh pr create --base main --head automated-code-snippet-update --title "Automated update of code snippets" --body "${{ env.CHANGED_FILES }}"
+        fi
       env:
         GH_TOKEN: ${{ github.token }}
