@@ -94,18 +94,24 @@ export default function Sidebar({
               <div className="flex">
                 <h1 className="font-bold text-2xl">{activeElement.name}</h1>
               </div>
-              <div className="font-light">
+              {/* <div className="font-light">
                 <CopyBox
                   text={`${activeElement?.resource}/${activeElement?.entity}`}
                 />
-              </div>
+              </div> */}
             </div>
           </SheetTitle>
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <p className="text-left break-words w-full mb-4">
               {activeElement?.description}
             </p>
           </div>
+          <div
+            className={`flex flex-col justify-center items-start py-1 px-2 lg:mx-0 w-fit rounded my-1 ${categoryData.find(
+              (item) => item.name === activeElement.category
+            )?.color
+              }`}
+          >{activeElement.category}</div>
           <div className="flex flex-col justify-center items-start my-6">
             <div className="flex justify-center items-center">
               <span className="mr-4">
@@ -136,14 +142,79 @@ export default function Sidebar({
                   </a>
                 )}
               </span>
-              <div
-                className={`lg:mx-0 w-6 h-6 rounded my-1 ${categoryData.find(
-                  (item) => item.name === activeElement.category
-                )?.color
-                  }`}
-              />
-              <span className="ml-2">{activeElement.category}</span>
             </div>
+          </div> */}
+          <div className="my-6 text-left">
+            <Card className="w-[100%]">
+              <CardHeader>
+                <CardTitle>General</CardTitle>
+                <CardDescription>
+                  General information about the service.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
+                  <div className="mb-4">
+                    <Label>Description</Label>
+                    <div>
+                      {activeElement.description}
+                    </div>
+                  </div>
+                  <div>
+                    <Label>Namespace and Entity</Label>
+                    <div className="font-light">
+                      <CopyBox
+                        text={`${activeElement?.resource}/${activeElement?.entity}`}
+                      />
+                    </div>
+                  </div>
+                  <div className="my-4">
+                    <Label>Category</Label>
+                    <div
+                      className={`flex flex-col justify-center items-start py-1 px-2 lg:mx-0 w-fit rounded my-2 ${categoryData.find(
+                        (item) => item.name === activeElement.category
+                      )?.color
+                        }`}
+                    >{activeElement.category}</div>
+                  </div>
+                  <div>
+                    <Label>References</Label>
+                    <div className="flex justify-start items-center flex-wrap my-2">
+                      <div className="flex justify-center items-center">
+                        <span className="mr-4">
+                          {activeElement?.learnUrl && (
+                            <a
+                              target="_blank"
+                              href={activeElement?.learnUrl}
+                              className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+                            >
+                              <div className="mr-2">
+                                <Icons.Microsoft width={16} height={16} />
+                              </div>
+                              <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
+                            </a>
+                          )}
+                        </span>
+                        <span className="mr-4">
+                          {activeElement?.pricingReferenceUrl && (
+                            <a
+                              target="_blank"
+                              href={activeElement?.pricingReferenceUrl}
+                              className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+                            >
+                              <div className="mr-2">
+                                <Icons.Microsoft width={16} height={16} />
+                              </div>
+                              <span>{isMobile ? 'Cost' : 'Resource Cost'}</span>
+                            </a>
+                          )}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
           <div className="my-6 text-left">
             <Card className="w-[100%]">
