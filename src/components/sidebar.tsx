@@ -187,9 +187,16 @@ export default function Sidebar({
                       <span>{isMobile ? 'Portal' : 'Azure Portal'}</span>
                     </a>
                   )}
+<<<<<<< HEAD
                   <a
                       target="_blank"
                       href='https://shell.azure.com'
+=======
+                  {activeElement?.portalUrl && (
+                    <a
+                      target="_blank"
+                      href={`https://shell.azure.com/?cloudshell=true}`}
+>>>>>>> origin
                       className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                     >
                       <div className="mr-2">
@@ -197,6 +204,10 @@ export default function Sidebar({
                       </div>
                       <span>{isMobile ? 'Shell' : 'Cloud Shell'}</span>
                     </a>
+<<<<<<< HEAD
+=======
+                  )}
+>>>>>>> origin
                 </div>
               </CardContent>
             </Card>
