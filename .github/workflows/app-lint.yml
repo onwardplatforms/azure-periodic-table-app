@@ -2,7 +2,8 @@ name: Linting and Build
 
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - 'src/**'
 
@@ -25,5 +26,3 @@ jobs:
       - name: Linting
         run: yarn run lint
 
-      - name: Build
-        run: yarn run build

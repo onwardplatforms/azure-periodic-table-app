@@ -32,6 +32,7 @@ export type Item = {
   terraformCode: string;
   bicepCode: string;
   armCode: string;
+  pricingReferenceUrl: string;
   portalUrl: string;
   dnsConfiguration?: {
     commercial?: {
@@ -76,6 +77,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ManagementGroups/ManagementGroupBrowseBlade/~/MGBrowse_overview',
       },
       {
@@ -95,6 +97,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBlade',
       },
       {
@@ -117,6 +120,7 @@ export const columns: ColumnType[] = [
           }`,
         bicepCode: '',
         armCode: '',
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceGroups',
       },
       {
@@ -136,6 +140,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ManagedIdentity%2FuserAssignedIdentities',
       },
       {
@@ -155,6 +160,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview',
       },
       {
@@ -174,6 +180,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-policy/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/PolicyMenuBlade/~/Overview',
       },
     ],
@@ -197,6 +204,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/application-gateway',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
@@ -216,6 +224,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FapplicationSecurityGroups',
       },
       {
@@ -235,6 +244,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cdn',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -254,6 +264,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cdn',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -273,6 +284,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/expressroute',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
@@ -292,6 +304,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/expressroute',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FexpressRouteCircuits',
       },
       {
@@ -311,6 +324,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/dns',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FdnsZones',
       },
       {
@@ -330,6 +344,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/dns',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FprivateDnsZones',
       },
       {
@@ -349,6 +364,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-firewall/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FazureFirewalls',
       },
       {
@@ -368,6 +384,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-firewall/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FfirewallPolicies',
       },
     ],
@@ -391,6 +408,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-bastion',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FbastionHosts',
       },
       {
@@ -410,6 +428,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/frontdoor',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -429,6 +448,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/frontdoor',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.cdn%2Fprofiles',
       },
       {
@@ -448,6 +468,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/load-balancer/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -467,6 +488,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/load-balancer/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -486,6 +508,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/load-balancer/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/loadBalancers',
       },
       {
@@ -505,6 +528,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Flocalnetworkgateways',
       },
       {
@@ -524,6 +548,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FnatGateways',
       },
       {
@@ -543,6 +568,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2Fnetworkinterfaces',
       },
       {
@@ -562,6 +588,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FNetworkSecurityGroups',
       },
     ],
@@ -585,6 +612,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FNetworkSecurityGroups',
       },
       {
@@ -604,6 +632,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/network-watcher/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/NetworkWatcherMenuBlade/~/overview',
       },
       {
@@ -623,6 +652,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/PrivateLinkCenterBlade/~/privateendpoints',
       },
       {
@@ -642,6 +672,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/ip-addresses/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FPublicIpAddresses',
       },
       {
@@ -661,6 +692,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/ip-addresses/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FpublicIpPrefixes',
       },
       {
@@ -680,6 +712,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteFilters',
       },
       {
@@ -699,6 +732,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteTables',
       },
       {
@@ -718,6 +752,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FserviceEndpointPolicies',
       },
       {
@@ -737,6 +772,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/traffic-manager/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/TrafficManagers',
       },
       {
@@ -756,6 +792,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FrouteTables',
       },
     ],
@@ -779,6 +816,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-network/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -798,6 +836,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-network/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -817,6 +856,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-network/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworks',
       },
       {
@@ -836,6 +876,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-wan/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualWans',
       },
       {
@@ -855,6 +896,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Network/LoadBalancingHubMenuBlade/~/applicationgateways',
       },
       {
@@ -874,6 +916,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -893,6 +936,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -912,6 +956,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways',
       },
       {
@@ -931,6 +976,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/web-application-firewall/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FFrontDoorWebApplicationFirewallPolicies',
       },
       {
@@ -950,6 +996,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/web-application-firewall/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FFrontDoorWebApplicationFirewallPolicies',
       },
     ],
@@ -973,6 +1020,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/app-service/windows/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FHostingEnvironments',
         dnsConfiguration: {
           commercial: {
@@ -1031,6 +1079,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/app-service/windows/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FserverFarms',
       },
       {
@@ -1050,6 +1099,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/app-service/windows/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites',
         dnsConfiguration: {
           commercial: {
@@ -1108,6 +1158,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FavailabilitySets',
       },
       {
@@ -1127,6 +1178,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-arc/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_HybridCompute/AzureArcCenterBlade/~/scVmmManagementServer',
       },
       {
@@ -1146,6 +1198,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-arc/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_HybridCompute/AzureArcCenterBlade/~/kubernetesclusters',
         dnsConfiguration: {
           commercial: {
@@ -1179,6 +1232,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FdiskEncryptionSets',
       },
       {
@@ -1198,6 +1252,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/functions/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites/kind/functionapp',
       },
       {
@@ -1217,6 +1272,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: '',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fgalleries',
       },
       {
@@ -1236,6 +1292,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/managed-disks/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
       },
     ],
@@ -1259,6 +1316,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/managed-disks/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fdisks',
       },
       {
@@ -1278,6 +1336,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/notification-hubs/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces%2FnotificationHubs',
       },
       {
@@ -1297,6 +1356,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/notification-hubs/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.NotificationHubs%2Fnamespaces',
       },
       {
@@ -1316,6 +1376,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/managed-disks/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2Fsnapshots',
       },
       {
@@ -1335,6 +1396,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/app-service/static/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2FStaticSites',
         dnsConfiguration: {
           commercial: {
@@ -1393,6 +1455,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-machines/windows/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
@@ -1412,6 +1475,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Compute%2FVirtualMachines',
       },
       {
@@ -1431,6 +1495,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/windows/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
@@ -1450,6 +1515,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-machine-scale-sets/linux/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets',
       },
       {
@@ -1469,6 +1535,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/load-testing/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.LoadTestService%2FLoadTests',
       },
     ],
@@ -1492,6 +1559,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/kubernetes-service/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerService%2FmanagedClusters',
         dnsConfiguration: {
           commercial: {
@@ -1525,6 +1593,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/container-registry/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerRegistry%2Fregistries',
         dnsConfiguration: {
           commercial: {
@@ -1559,6 +1628,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/container-registry/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ContainerInstance%2FcontainerGroups',
       },
       {
@@ -1578,6 +1648,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-fabric/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fclusters',
       },
       {
@@ -1597,6 +1668,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-fabric/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceFabric%2Fmanagedclusters',
       },
       {
@@ -1616,6 +1688,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/container-apps/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.App%2FmanagedEnvironments',
       },
       {
@@ -1635,6 +1708,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/container-apps/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.App%2FcontainerApps',
       },
     ],
@@ -1658,6 +1732,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cosmos-db/autoscale-provisioned/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DocumentDb%2FdatabaseAccounts',
         dnsConfiguration: {
           commercial: {
@@ -1739,6 +1814,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cache/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Cache%2FRedis',
         dnsConfiguration: {
           commercial: {
@@ -1793,6 +1869,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers',
         dnsConfiguration: {
           commercial: {
@@ -1847,6 +1924,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-sql-database/single/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases',
       },
       {
@@ -1866,6 +1944,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/mysql/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DBforMySQL%2Fservers',
       },
       {
@@ -1885,6 +1964,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/postgresql/server/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AzureArcData%2FpostgresInstances',
       },
       {
@@ -1904,6 +1984,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/sql-server-stretch-database/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2Fservers%2Fdatabases/kind/v12.0%2Cuser%2Cstretch',
       },
       {
@@ -1923,6 +2004,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-sql-managed-instance/single/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Sql%2FmanagedInstances',
         dnsConfiguration: {
           commercial: {
@@ -1966,6 +2048,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/storage/blobs/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Storage%2FStorageAccounts',
         dnsConfiguration: {
           commercial: {
@@ -2078,6 +2161,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://learn.microsoft.com/en-us/azure/storsimple/',
         portalUrl: '',
       },
     ],
@@ -2101,6 +2185,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/machine-learning/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.MachineLearning%2Fworkspaces',
       },
       {
@@ -2120,6 +2205,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/search/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/CognitiveSearch',
         dnsConfiguration: {
           commercial: {
@@ -2163,6 +2249,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/OpenAI',
         dnsConfiguration: {
           commercial: {
@@ -2208,6 +2295,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/SpeechServices',
         dnsConfiguration: {
           commercial: {
@@ -2253,6 +2341,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/language-service/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextAnalytics',
         dnsConfiguration: {
           commercial: {
@@ -2298,6 +2387,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/translator/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/TextTranslation',
         dnsConfiguration: {
           commercial: {
@@ -2343,6 +2433,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/computer-vision/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ComputerVision',
         dnsConfiguration: {
           commercial: {
@@ -2388,6 +2479,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/face-api/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/Face',
         dnsConfiguration: {
           commercial: {
@@ -2433,6 +2525,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/anomaly-detector/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/AnomalyDetector',
         dnsConfiguration: {
           commercial: {
@@ -2478,6 +2571,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/content-safety/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ContentSafety',
         dnsConfiguration: {
           commercial: {
@@ -2527,6 +2621,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/personalizer/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/Personalizer',
         dnsConfiguration: {
           commercial: {
@@ -2572,6 +2667,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/bot-services/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/AppliedAIHub/~/BotServices',
         dnsConfiguration: {
           commercial: {
@@ -2617,6 +2713,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/form-recognizer/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/FormRecognizer',
         dnsConfiguration: {
           commercial: {
@@ -2662,6 +2759,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/metrics-advisor/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/MetricsAdvisor',
         dnsConfiguration: {
           commercial: {
@@ -2707,6 +2805,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/video-indexer/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.VideoIndexer%2Faccounts',
         dnsConfiguration: {
           commercial: {
@@ -2752,6 +2851,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/immersive-reader/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/ImmersiveReader',
         dnsConfiguration: {
           commercial: {
@@ -2797,6 +2897,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-fabric/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Fabric%2Fcapacities',
       },
     ],
@@ -2820,6 +2921,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/analysis-services/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AnalysisServices%2Fservers',
       },
       {
@@ -2839,6 +2941,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/databricks/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Databricks%2Fworkspaces',
         dnsConfiguration: {
           commercial: {
@@ -2872,6 +2975,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/stream-analytics/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.StreamAnalytics%2FStreamingJobs',
       },
       {
@@ -2891,6 +2995,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/data-explorer/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Kusto%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -2934,6 +3039,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/data-explorer/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Kusto%2Fclusters',
       },
       {
@@ -2953,6 +3059,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/data-factory/data-pipeline/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataFactory%2FdataFactories',
         dnsConfiguration: {
           commercial: {
@@ -3002,6 +3109,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/storage/data-lake/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeStore%2Faccounts',
       },
       {
@@ -3021,6 +3129,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/data-lake-analytics/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataLakeAnalytics%2Faccounts',
       },
       {
@@ -3040,6 +3149,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/event-hubs/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces',
         dnsConfiguration: {
           commercial: {
@@ -3094,6 +3204,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/event-hubs/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.EventHub%2Fnamespaces',
       },
     ],
@@ -3117,6 +3228,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/event-grid/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/overview',
         dnsConfiguration: {
           commercial: {
@@ -3160,6 +3272,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/event-grid/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/overview',
       },
       {
@@ -3179,6 +3292,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/event-grid/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_EventGrid/EventGridCentralMenuBlade/~/system_topics',
       },
       {
@@ -3198,6 +3312,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3230,6 +3345,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3262,6 +3378,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3294,6 +3411,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3326,6 +3444,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3358,6 +3477,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/hdinsight/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.HDInsight%2Fclusters',
         dnsConfiguration: {
           commercial: {
@@ -3390,6 +3510,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/iot-hub/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
         dnsConfiguration: {
           commercial: {
@@ -3449,6 +3570,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/iot-hub/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
         dnsConfiguration: {
           commercial: {
@@ -3503,6 +3625,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/iot-hub/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Devices%2FIotHubs',
       },
       {
@@ -3522,6 +3645,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/power-bi-embedded/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.PowerBIDedicated%2Fcapacities',
       },
       {
@@ -3541,6 +3665,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/power-bi-embedded/',
         portalUrl: 'https://app.powerbi.com/',
       },
       {
@@ -3560,6 +3685,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/time-series-insights/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.TimeSeriesInsights%2Fenvironments',
       },
       {
@@ -3579,6 +3705,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
         dnsConfiguration: {
           commercial: {
@@ -3617,6 +3744,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
@@ -3636,6 +3764,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/synapse-analytics/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Synapse%2Fworkspaces',
       },
       {
@@ -3655,6 +3784,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/digital-twins/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances',
       },
       {
@@ -3674,6 +3804,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/batch/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Batch%2FbatchAccounts',
         dnsConfiguration: {
           commercial: {
@@ -3741,6 +3872,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-desktop/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FHostPools',
       },
       {
@@ -3760,6 +3892,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-desktop/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DesktopVirtualization%2FApplicationGroups',
       },
       {
@@ -3779,6 +3912,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/virtual-desktop/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_WVD/WvdManagerMenuBlade/~/overview',
         dnsConfiguration: {
           commercial: {
@@ -3833,6 +3967,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/app-configuration/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.AppConfiguration%2FconfigurationStores',
         dnsConfiguration: {
           commercial: {
@@ -3876,6 +4011,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/signalr-service/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.SignalRService%2FSignalR',
         dnsConfiguration: {
           commercial: {
@@ -3919,6 +4055,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/azure-maps/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Maps%2Faccounts',
       },
     ],
@@ -3942,6 +4079,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/api-management/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ApiManagement%2Fservice',
         dnsConfiguration: {
           commercial: {
@@ -3974,6 +4112,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/logic-apps/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2FintegrationAccounts',
       },
       {
@@ -3993,6 +4132,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/logic-apps/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Logic%2Fworkflows',
       },
       {
@@ -4012,6 +4152,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-bus/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
         dnsConfiguration: {
           commercial: {
@@ -4066,6 +4207,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-bus/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
@@ -4085,6 +4227,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/service-bus/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.ServiceBus%2Fnamespaces',
       },
       {
@@ -4104,6 +4247,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/database-migration/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices',
       },
       {
@@ -4123,6 +4267,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/database-migration/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.DataMigration%2Fservices%2Fprojects',
       },
       {
@@ -4142,6 +4287,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/site-recovery/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.RecoveryServices%2Fvaults',
         dnsConfiguration: {
           commercial: {
@@ -4195,6 +4341,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/automation/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Automation%2FAutomationAccounts',
         dnsConfiguration: {
           commercial: {
@@ -4252,6 +4399,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/monitor/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/microsoft.insights%2Fcomponents',
       },
       {
@@ -4271,6 +4419,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/monitor/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Monitoring_Alerts/ActionGroupsBlade/resourceGroupNames~/%5B%5D',
       },
       {
@@ -4290,6 +4439,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/purview/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Purview%2FAccounts',
       },
       {
@@ -4309,6 +4459,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/blueprints/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
@@ -4328,6 +4479,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/blueprints/',
         portalUrl: 'https://portal.azure.com/#view/Microsoft_Azure_Policy/BlueprintsMenuBlade/~/GetStarted',
       },
       {
@@ -4347,6 +4499,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/key-vault/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.KeyVault%2Fvaults',
         dnsConfiguration: {
           commercial: {
@@ -4403,6 +4556,7 @@ export const columns: ColumnType[] = [
         terraformCode: ``,
         bicepCode: ``,
         armCode: ``,
+        pricingReferenceUrl: 'https://azure.microsoft.com/en-us/pricing/details/monitor/',
         portalUrl: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.OperationalInsights%2Fworkspaces',
       },
     ],
