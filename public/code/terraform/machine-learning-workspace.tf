@@ -9,4 +9,6 @@ resource "azurerm_machine_learning_workspace" "main" {
   identity {
     type = "SystemAssigned"
   }
+
+  tags = var.tags
 }

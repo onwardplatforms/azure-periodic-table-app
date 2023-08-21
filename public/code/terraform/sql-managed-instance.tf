@@ -14,4 +14,6 @@ resource "azurerm_sql_managed_instance" "main" {
     azurerm_subnet_network_security_group_association.main,
     azurerm_subnet_route_table_association.main,
   ]
+
+  tags = var.tags
 }

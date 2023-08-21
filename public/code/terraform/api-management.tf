@@ -6,4 +6,6 @@ resource "azurerm_api_management" "main" {
   publisher_email     = "company@terraform.io"
 
   sku_name = "Developer_1"
+
+  tags = var.tags
 }

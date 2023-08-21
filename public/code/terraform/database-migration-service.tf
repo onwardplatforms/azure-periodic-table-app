@@ -4,4 +4,6 @@ resource "azurerm_database_migration_service" "main" {
   resource_group_name = azurerm_resource_group.main.name
   subnet_id           = azurerm_subnet.main.id
   sku_name            = "Standard_1vCores"
+
+  tags = var.tags
 }

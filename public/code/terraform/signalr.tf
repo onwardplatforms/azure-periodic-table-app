@@ -24,4 +24,6 @@ resource "azurerm_signalr_service" "main" {
     hub_pattern      = ["hub1"]
     url_template     = "http://foo.com"
   }
+
+  tags = var.tags
 }
