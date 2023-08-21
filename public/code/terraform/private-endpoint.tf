@@ -9,4 +9,6 @@ resource "azurerm_private_endpoint" "main" {
     private_connection_resource_id = azurerm_private_link_service.main.id
     is_manual_connection           = false
   }
+
+  tags = var.tags
 }

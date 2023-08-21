@@ -18,4 +18,6 @@ resource "azurerm_virtual_desktop_application_group" "desktopapp" {
   host_pool_id  = azurerm_virtual_desktop_host_pool.personalautomatic.id
   friendly_name = "TestAppGroup"
   description   = "Acceptance Test: An application group"
+
+  tags = var.tags
 }

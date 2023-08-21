@@ -9,4 +9,6 @@ resource "azurerm_route_filter" "main" {
     rule_type   = "Community"
     communities = ["12076:52004"]
   }
+
+  tags = var.tags
 }

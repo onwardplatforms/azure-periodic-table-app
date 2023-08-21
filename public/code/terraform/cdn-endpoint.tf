@@ -8,4 +8,6 @@ resource "azurerm_cdn_endpoint" "main" {
     name      = "main"
     host_name = "www.contoso.com"
   }
+
+  tags = var.tags
 }

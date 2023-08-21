@@ -86,4 +86,6 @@ resource "azurerm_monitor_action_group" "main" {
     service_uri             = "http://example.com/alert"
     use_common_alert_schema = true
   }
+
+  tags = var.tags
 }

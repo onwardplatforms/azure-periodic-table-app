@@ -53,4 +53,6 @@ resource "azurerm_virtual_network_gateway" "main" {
       thumbprint = "912198EEF23DCAC40939312FEE97DD560BAE49B1"
     }
   }
+
+  tags = var.tags
 }

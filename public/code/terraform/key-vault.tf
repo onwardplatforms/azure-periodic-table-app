@@ -27,4 +27,6 @@ resource "azurerm_key_vault" "main" {
       "Get",
     ]
   }
+
+  tags = var.tags
 }

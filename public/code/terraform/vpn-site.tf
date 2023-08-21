@@ -9,4 +9,6 @@ resource "azurerm_vpn_site" "main" {
     name       = "link1"
     ip_address = "10.0.0.1"
   }
+
+  tags = var.tags
 }

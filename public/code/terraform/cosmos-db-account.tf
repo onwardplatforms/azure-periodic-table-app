@@ -38,4 +38,6 @@ resource "azurerm_cosmosdb_account" "db" {
     location          = "westus"
     failover_priority = 0
   }
+
+  tags = var.tags
 }
