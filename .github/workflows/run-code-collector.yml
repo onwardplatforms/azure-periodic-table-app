@@ -34,6 +34,12 @@ jobs:
     - name: Execute terraform-collector.py
       run: python3 terraform-collector.py
 
+    - name: Execute bicep-collector.py
+      run: python3 bicep-collector.py
+
+    - name: Execute arm-collector.py
+      run: python3 arm-collector.py
+
     - name: Check for changes
       id: git-diff
       run: |
