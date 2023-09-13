@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card';
+import { ChatBox } from './chatbox';
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
@@ -246,56 +247,7 @@ ALWAYS return valid markdown.
                   </div>
                   <div className="my-4">
                     <Label>Chat</Label>
-                    <div className="flex flex-col space-y-4 my-2">
-                      <div className="flex space-x-2">
-                        <input
-                          type="text"
-                          value={userInput}
-                          onChange={(e) => setUserInput(e.target.value)}
-                          onKeyPress={handleKeyPress}  // Handle Enter key
-                          className="border rounded p-2 flex-grow w-[100%]"
-                        />
-                        <button
-                          onClick={handleChatSubmit}
-                          className="bg-blue-500 text-white p-2 rounded"
-                        >
-                          Send
-                        </button>
-                      </div>
-                      <div className="chat-history">
-                        {isLoading ? (
-                          <LoadingSkeleton />
-                        ) : (
-                          lastBotMessage && (
-                            <div className={lastBotMessage.role}>
-                              <ReactMarkdown
-                                components={{
-                                  ul: ({ node, ...props }) => <ul {...props} className="list-disc list-inside" />,
-                                  li: ({ node, ...props }) => <li {...props} className="list-disc list-inside" />,
-                                  a: ({ node, ...props }) => <a {...props} className="text-blue-500 hover:underline" />,
-                                  pre: ({ node, ...props }) => <pre {...props} className="overflow-auto" />,
-                                  code: ({ node, inline, className, children, ...props }) => {
-                                    const match = /language-(\w+)/.exec(className || '');
-                                    return !inline && match ? (
-                                      <SyntaxHighlighter style={oneDark} language={match[1]}>
-                                        {String(children).replace(/\n$/, '')}
-                                      </SyntaxHighlighter>
-                                    ) : (
-                                      <code className={`p-1 bg-gray-800 text-white px-2 rounded-md ${className}`} {...props}>
-                                        {children}
-                                      </code>
-                                    );
-                                  },
-                                  p: ({ node, children, ...props }) => <p {...props} >{children}</p> // Add your desired margin-bottom here
-                                }}
-                              >
-                                {lastBotMessage.content}
-                              </ReactMarkdown>
-                            </div>
-                          )
-                        )}
-                      </div>
-                    </div>
+                    <ChatBox prompt={prompt} />
                   </div>
                 </div>
               </CardContent>
