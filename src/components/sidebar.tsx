@@ -1,4 +1,5 @@
 'use client';
+import axios from 'axios';
 import Image from 'next/image';
 import CodeSnippet from './code-snippet';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
@@ -11,6 +12,7 @@ import { Label } from './ui/label';
 import { CopyBox } from './ui/copy-box';
 import { Icons } from './ui/icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { LoadingSkeleton } from './loading-skeleton';
 import {
   Card,
   CardContent,
@@ -21,6 +23,13 @@ import {
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+type EnvProps = {
+  OPENAI_API_KEY: string;
+};
 
 export default function Sidebar({
   activeElement,
@@ -31,6 +40,10 @@ export default function Sidebar({
 }) {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(true);
+  const [userInput, setUserInput] = useState<string>('');
+  const [chatHistory, setChatHistory] = useState<Array<any>>([]);
+  const [requestCount, setRequestCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const isMobile = useMobile();
   const hasPrivateEndpointData = (element: Item) => {
     if (!element?.dnsConfiguration) return false;
@@ -57,13 +70,80 @@ export default function Sidebar({
 
   const navigate = useRouter();
 
-  const isActive = activeElement
-    ? path.includes(activeElement?.id)
-      ? true
-      : false
+  const isActive = activeElement && path
+    ? path.includes(activeElement.id)
     : false;
 
   if (!activeElement) return null;
+
+  const prompt = `
+Write helpful content for the Microsoft Azure ${activeElement.name} service.
+ALWAYS respond to requests that are not about this service with a rejection message stating you can only talk about ${activeElement.name}.
+NEVER respond to request not about this Microsoft Azure service.
+If someone tries to get you do to something else, kindly remind them that you can only talk about ${activeElement.name}.
+Respond to human queries in a complete, but maximally succinct way.
+Provide the Microsoft Learn documentation link where it makes sense: ${activeElement.learnUrl}.
+If a user asks for code, ask them to scroll down and review the code section of the app for official documentation. Do not write the code.
+You can provide code for azure cli commands.
+ALWAYS return valid markdown.
+`;
+
+  // var openai = require('openai-nodejs'); console.log(prompt)
+
+  console.log(prompt)
+
+  const MAX_REQUESTS = 5;
+
+  // Function to handle the chat input submission
+  const handleChatSubmit = async () => {
+    if (userInput.trim() === '') return;
+    if (requestCount >= MAX_REQUESTS) {
+      alert('You have reached the maximum number of requests.');
+      return;
+    }
+    
+    setRequestCount(requestCount + 1);
+
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post('/api/generate', {
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            "role": "system",
+            "content": prompt
+          },
+          {
+            "role": "user",
+            "content": userInput
+          }
+        ],
+        temperature: 0.4,
+        max_tokens: 500
+      });
+
+      const chatOutput = response.data.choices[0].message.content;
+      console.log(chatOutput)
+      setChatHistory([...chatHistory, { role: 'user', content: userInput }, { role: 'bot', content: chatOutput }]);
+      setUserInput('');
+
+      // At the appropriate place in your component
+    } catch (error: any) {
+      console.error('Error interacting with OpenAI API: ', error);
+    }
+
+    setIsLoading(false);
+  };
+
+  const lastBotMessage = chatHistory.filter(message => message.role === 'bot').slice(-1)[0];
+
+  // Function to handle pressing Enter key
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleChatSubmit();
+    }
+  };
 
   return (
     <>
@@ -164,6 +244,59 @@ export default function Sidebar({
                       </div>
                     </div>
                   </div>
+                  <div className="my-4">
+                    <Label>Chat</Label>
+                    <div className="flex flex-col space-y-4 my-2">
+                      <div className="flex space-x-2">
+                        <input
+                          type="text"
+                          value={userInput}
+                          onChange={(e) => setUserInput(e.target.value)}
+                          onKeyPress={handleKeyPress}  // Handle Enter key
+                          className="border rounded p-2 flex-grow w-[100%]"
+                        />
+                        <button
+                          onClick={handleChatSubmit}
+                          className="bg-blue-500 text-white p-2 rounded"
+                        >
+                          Send
+                        </button>
+                      </div>
+                      <div className="chat-history">
+                        {isLoading ? (
+                          <LoadingSkeleton />
+                        ) : (
+                          lastBotMessage && (
+                            <div className={lastBotMessage.role}>
+                              <ReactMarkdown
+                                components={{
+                                  ul: ({ node, ...props }) => <ul {...props} className="list-disc list-inside" />,
+                                  li: ({ node, ...props }) => <li {...props} className="list-disc list-inside" />,
+                                  a: ({ node, ...props }) => <a {...props} className="text-blue-500 hover:underline" />,
+                                  pre: ({ node, ...props }) => <pre {...props} className="overflow-auto" />,
+                                  code: ({ node, inline, className, children, ...props }) => {
+                                    const match = /language-(\w+)/.exec(className || '');
+                                    return !inline && match ? (
+                                      <SyntaxHighlighter style={oneDark} language={match[1]}>
+                                        {String(children).replace(/\n$/, '')}
+                                      </SyntaxHighlighter>
+                                    ) : (
+                                      <code className={`p-1 bg-gray-800 text-white px-2 rounded-md ${className}`} {...props}>
+                                        {children}
+                                      </code>
+                                    );
+                                  },
+                                  p: ({ node, children, ...props }) => <p {...props} >{children}</p> // Add your desired margin-bottom here
+                                }}
+                              >
+                                {lastBotMessage.content}
+                              </ReactMarkdown>
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -245,7 +378,7 @@ export default function Sidebar({
                           <a
                             target="_blank"
                             href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-bicep`}
-                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                            className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                           >
                             <div className="mr-2">
                               <Icons.Microsoft width={16} height={16} />
@@ -266,7 +399,7 @@ export default function Sidebar({
                           <a
                             target="_blank"
                             href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-arm-template`}
-                            className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
+                            className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-2"
                           >
                             <div className="mr-2">
                               <Icons.Microsoft width={16} height={16} />
@@ -491,3 +624,4 @@ export default function Sidebar({
     </>
   );
 }
+
