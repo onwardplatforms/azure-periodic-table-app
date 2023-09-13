@@ -40,8 +40,11 @@ export default function Sidebar({
 }) {
   const [copied, setCopied] = useState(false);
   const [open, setOpen] = useState(true);
-  const isMobile = useMobile();
+  const [userInput, setUserInput] = useState<string>('');
+  const [chatHistory, setChatHistory] = useState<Array<any>>([]);
+  const [requestCount, setRequestCount] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const isMobile = useMobile();
   const hasPrivateEndpointData = (element: Item) => {
     if (!element?.dnsConfiguration) return false;
 
@@ -89,11 +92,6 @@ ALWAYS return valid markdown.
 
   console.log(prompt)
 
-  // Chat state
-  const [userInput, setUserInput] = useState<string>('');
-  const [chatHistory, setChatHistory] = useState<Array<any>>([]);
-
-  const [requestCount, setRequestCount] = useState(0);
   const MAX_REQUESTS = 5;
 
   // Function to handle the chat input submission

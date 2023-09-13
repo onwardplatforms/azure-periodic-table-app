@@ -1,7 +1,7 @@
 import axios from 'axios';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const handleRequest = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     const response = await axios.post('https://api.openai.com/v1/chat/completions', req.body, {
       headers: {
@@ -15,3 +15,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.status(401).json({ error: 'Request failed' });
   }
 };
+
+export default handleRequest;
