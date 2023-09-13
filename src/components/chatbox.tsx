@@ -80,7 +80,7 @@ export const ChatBox: React.FC<ChatBoxProps> = ({ prompt }) => {
                     <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
             </div>
-            <div className="chat-history">
+            <div className="chat-history my-2">
                 {isLoading ? (
                     <LoadingSkeleton />
                 ) : (
