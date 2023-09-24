@@ -1,7 +1,8 @@
 resource "azurerm_iothub" "main" {
-  name                = "iot-${local.naming_suffix}"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  name                         = "iot-${local.naming_suffix}"
+  resource_group_name          = azurerm_resource_group.main.name
+  location                     = azurerm_resource_group.main.location
+  local_authentication_enabled = false
 
   sku {
     name     = "S1"
