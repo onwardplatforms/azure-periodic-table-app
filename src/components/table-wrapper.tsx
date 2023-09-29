@@ -3,7 +3,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Item, columns } from '../app/data';
+import { Item, columns } from '../app/azure';
 import PeriodicTable from '@/components/periodic-table';
 import Topbar from '@/components/topbar';
 import { Categories } from '../app/constants';

@@ -1,13 +1,14 @@
-import { Item, columns } from '@/app/data';
+import { Item, columns } from '@/app/azure';
 import Sidebar from '@/components/sidebar';
 import fs from 'fs';
 import path from 'path';
 
 // get url param
 export default function Page({ params }: { params: { id: string } }) {
-  const terraformFilePath = path.join(process.cwd(), 'public', 'code', 'terraform', `${params.id}.tf`);
-  const bicepFilePath = path.join(process.cwd(), 'public', 'code', 'bicep', `${params.id}.bicep`);
-  const armFilePath = path.join(process.cwd(), 'public', 'code', 'arm', `${params.id}.json`);
+  const cloud = 'azure'
+  const terraformFilePath = path.join(process.cwd(), 'public', cloud, 'code', 'terraform', `${params.id}.tf`);
+  const bicepFilePath = path.join(process.cwd(), 'public', cloud, 'code', 'bicep', `${params.id}.bicep`);
+  const armFilePath = path.join(process.cwd(), 'public', cloud, 'code', 'arm', `${params.id}.json`);
 
   let terraformCodeSnippet = '';
   let bicepCodeSnippet = '';
