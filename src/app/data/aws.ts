@@ -12,15 +12,15 @@ export type Item = {
   learnUrl: string;
   terraformUrl: string;
   restrictions: string;
-  resource: string;
-  entity: string;
-  scope: string;
   icon: string;
   terraformCode: string;
-  bicepCode: string;
-  armCode: string;
-  pricingReferenceUrl: string;
-  portalUrl: string;
+  resource?: string;
+  entity?: string;
+  scope?: string;
+  bicepCode?: string;
+  armCode?: string;
+  pricingReferenceUrl?: string;
+  portalUrl?: string;
   dnsConfiguration?: {
     commercial?: {
       subresourceNames: string[];
