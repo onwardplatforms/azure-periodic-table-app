@@ -4,7 +4,7 @@ import Image from 'next/image';
 import CodeSnippet from './code-snippet';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
 import { useEffect, useState } from 'react';
-import type { Item } from '@/app/azure';
+import type { Item } from '@/app/data/azure';
 import { categoryData } from './periodic-table';
 import { prefix } from '@/prefix';
 import useMobile from '@/custom-hooks/use-mobile';

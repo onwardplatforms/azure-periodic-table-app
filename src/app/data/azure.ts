@@ -1,6 +1,6 @@
 /* src/app/azure.ts */
 
-import { Categories } from './constants';
+import { Categories } from '../constants';
 
 /*
 Review databases and add items:

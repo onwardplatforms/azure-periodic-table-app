@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { Column } from './column';
 import { CategorySelector, type CategoryData } from './category-selector';
-import { Item, columns } from '@/app/azure';
+import { Item, columns } from '@/app/data/azure';
 import { Categories } from '@/app/constants';
 import { colorConfig } from '@/config';
 

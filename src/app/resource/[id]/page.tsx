@@ -1,4 +1,4 @@
-import { Item, columns } from '@/app/azure';
+import { Item, columns } from '@/app/data/azure';
 import Sidebar from '@/components/sidebar';
 import fs from 'fs';
 import path from 'path';

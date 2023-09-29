@@ -3,7 +3,7 @@
 import type { Categories } from '@/app/constants';
 import type { CategoryData } from './category-selector';
 import Image from 'next/image';
-import type { Item } from '@/app/azure';
+import type { Item } from '@/app/data/azure';
 import { useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
