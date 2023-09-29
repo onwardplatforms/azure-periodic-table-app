@@ -1,6 +1,6 @@
 /* src/app/aws.ts */
 
-import { Categories } from './constants';
+import { Categories } from '../constants';
 
 export type Item = {
   id: string;
