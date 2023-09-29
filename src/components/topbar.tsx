@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
 import { categoryData } from './periodic-table';
-import { Item } from '@/app/data';
+import { Item } from '@/app/data/azure';
 import { Categories } from '@/app/constants';
 
 export default function Topbar({

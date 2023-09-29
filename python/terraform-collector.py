@@ -158,88 +158,106 @@ def format_terraform_code(code: str, indentation='  '):
     # Join the lines back together and return the result
     return '\n'.join(lines)
 
-# Step 1: Parse the TSX file and extract all terraformUrl values.
-
-with open('../src/app/data.ts', 'r') as f:
-    tsx_content = f.read()
-
-# Use regex to extract terraformUrl and id values
-pattern = re.compile(r'id: \'(.*?)\',.*?\s*slug: \'(.*?)\',.*?terraformUrl: \'(.*?)\'', re.DOTALL)
-matches = pattern.findall(tsx_content)
-
-# Step 2: For each terraformUrl, get the GitHub URL and fetch the content.
-
-output_directory = "../public/code/terraform"
-if not os.path.exists(output_directory):
-    os.makedirs(output_directory)
-
-
-for id, slug, url in matches:
-    # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
-    # Define substitutions outside the loop
-    substitutions = {
-        "name": f'"{slug}${{local.naming_suffix}}"',
-        "location": "var.location",
-        "tags": "var.tags",
+cloud_platforms = [
+    {
+        'name': 'azure',
+        'provider': 'azurerm',
+    },
+    {
+        'name': 'aws',
+        'provider': 'aws',
+    },
+    {
+        'name': 'google',
+        'provider': 'google',
     }
+]
 
-    resource = extract_resource_from_terraform_url(url)
-    if resource:
-        github_url = get_github_url(resource)
-        article_content = scrape_terraform_documentation(github_url)
+for cloud in cloud_platforms:
+    # Step 1: Parse the TSX file and extract all terraformUrl values.
+    cloud_name = cloud['name']
+    cloud_provider = cloud['provider']
 
-        if article_content:
-            # Get the example code
-            content = get_documentation_code(article_content)
+    with open(f'../src/app/{cloud_name}.ts', 'r') as f:
+        tsx_content = f.read()
 
-            if content:
-                # Check if tags are supported and append them if needed
-                content = append_tags_if_supported(article_content, content)
+    # Use regex to extract terraformUrl and id values
+    pattern = re.compile(r'id: \'(.*?)\',.*?\s*slug: \'(.*?)\',.*?terraformUrl: \'(.*?)\'', re.DOTALL)
+    matches = pattern.findall(tsx_content)
 
-                # Decode escape sequences
-                content = decode_escapes(content)
-                
-                # Substitute name and location values
-                content = substitute_values(content, slug, substitutions)
-                
-                # Extract specific resource block
-                content = extract_resources_and_data(content, f"azurerm_{resource}")
+    # Step 2: For each terraformUrl, get the GitHub URL and fetch the content.
 
-                if not content:
-                    print("Specific resource block not found!")  # Debug line
-                    continue  # If the specific resource block is not found, skip saving the file
+    output_directory = f"../public/{cloud_name}/code/terraform"
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
 
-                # Replace all instances of "example" and .example
-                content = content.replace('"example"', '"main"').replace('.example', '.main')
 
-                # Format the Terraform code
-                content = format_terraform_code(content)
-                
-                if not content:
-                    print(f"No content for {id}, skipping...")
-                    continue
+    for id, slug, url in matches:
+        # print(f"Processing: ID: {id}, Slug: {slug}, URL: {url}")  # Debug line
+        # Define substitutions outside the loop
+        substitutions = {
+            "name": f'"{slug}${{local.naming_suffix}}"',
+            "location": "var.location",
+            "tags": "var.tags",
+        }
 
-                file_name = id.replace(' ', '-').lower() + '.tf'
-                full_path = os.path.join(output_directory, file_name)
+        resource = extract_resource_from_terraform_url(url)
+        if resource:
+            github_url = get_github_url(resource)
+            article_content = scrape_terraform_documentation(github_url)
 
-                # Check if file already exists and contents are the same
-                if os.path.exists(full_path):
-                    with open(full_path, 'r') as f:
-                        existing_content = f.read()
-                    if existing_content == content:
-                        print(f"No changes for {id}, skipping...")
+            if article_content:
+                # Get the example code
+                content = get_documentation_code(article_content)
+
+                if content:
+                    # Check if tags are supported and append them if needed
+                    content = append_tags_if_supported(article_content, content)
+
+                    # Decode escape sequences
+                    content = decode_escapes(content)
+                    
+                    # Substitute name and location values
+                    content = substitute_values(content, slug, substitutions)
+                    
+                    # Extract specific resource block
+                    content = extract_resources_and_data(content, f"{cloud_provider}_{resource}")
+
+                    if not content:
+                        print("Specific resource block not found!")  # Debug line
+                        continue  # If the specific resource block is not found, skip saving the file
+
+                    # Replace all instances of "example" and .example
+                    content = content.replace('"example"', '"main"').replace('.example', '.main')
+
+                    # Format the Terraform code
+                    content = format_terraform_code(content)
+                    
+                    if not content:
+                        print(f"No content for {id}, skipping...")
                         continue
 
-                print(f"Saving to {full_path}")  # Debug line
-                with open(full_path, 'w') as f:
-                    f.write(content)
+                    file_name = id.replace(' ', '-').lower() + '.tf'
+                    full_path = os.path.join(output_directory, file_name)
 
-print("Files saved successfully!")
+                    # Check if file already exists and contents are the same
+                    if os.path.exists(full_path):
+                        with open(full_path, 'r') as f:
+                            existing_content = f.read()
+                        if existing_content == content:
+                            print(f"No changes for {id}, skipping...")
+                            continue
 
-# Run terraform fmt on all written files
-try:
-    print("Running terraform fmt...")
-    subprocess.run(["terraform", "fmt"], cwd=output_directory, check=True)
-    print("Terraform fmt completed successfully!")
-except subprocess.CalledProcessError:
-    print("Error running terraform fmt!")
+                    print(f"Saving to {full_path}")  # Debug line
+                    with open(full_path, 'w') as f:
+                        f.write(content)
+
+    print("Files saved successfully!")
+
+    # Run terraform fmt on all written files
+    try:
+        print("Running terraform fmt...")
+        subprocess.run(["terraform", "fmt"], cwd=output_directory, check=True)
+        print("Terraform fmt completed successfully!")
+    except subprocess.CalledProcessError:
+        print("Error running terraform fmt!")
