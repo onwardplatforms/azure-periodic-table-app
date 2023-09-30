@@ -7,7 +7,7 @@ import subprocess
 
 # Constants
 NAMESPACE = "hashicorp"
-PROVIDER = "azurerm"
+PROVIDER = "aws"
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
 }
@@ -178,7 +178,7 @@ for cloud in cloud_platforms:
     cloud_name = cloud['name']
     cloud_provider = cloud['provider']
 
-    with open(f'../src/app/{cloud_name}.ts', 'r') as f:
+    with open(f'../src/app/data/{cloud_name}.ts', 'r') as f:
         tsx_content = f.read()
 
     # Use regex to extract terraformUrl and id values
