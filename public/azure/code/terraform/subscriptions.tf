@@ -6,6 +6,6 @@ data "azurerm_billing_enrollment_account_scope" "main" {
 resource "azurerm_subscription" "main" {
   subscription_name = "My Example EA Subscription"
   billing_scope_id  = data.azurerm_billing_enrollment_account_scope.main.id
-  
+
   tags = var.tags
 }
