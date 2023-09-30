@@ -494,7 +494,7 @@ export const columns: ColumnType[] = [
         restrictions: 'Alphanumerics, hyphens, and underscores. Must be unique within your AWS account. 1-64 characters.',
         icon: '/aws/icons',
         terraformCode: ``,
-      }
+      },
       {
         id: 'aws-s3',
         name: 'aws-s3',
